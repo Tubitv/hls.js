@@ -88,6 +88,7 @@ class EMEController extends EventHandler {
   constructor (hls) {
     super(hls,
       Event.MEDIA_ATTACHED,
+      Event.MEDIA_DETACHED,
       Event.MANIFEST_PARSED
     );
 
@@ -104,6 +105,8 @@ class EMEController extends EventHandler {
     this._isMediaEncrypted = false;
 
     this._requestLicenseFailureCount = 0;
+
+    this._onMediaEncrypted = this._onMediaEncrypted.bind(this);
   }
 
   /**
@@ -238,7 +241,9 @@ class EMEController extends EventHandler {
     });
   }
 
-  _onMediaEncrypted (initDataType, initData) {
+  _onMediaEncrypted (event) {
+    const initDataType = event.initDataType;
+    const initData = event.initData;
     logger.log(`Media is encrypted using "${initDataType}" init data type`);
 
     this._isMediaEncrypted = true;
@@ -468,10 +473,38 @@ class EMEController extends EventHandler {
     // keep reference of media
     this._media = media;
 
-    // FIXME: also handle detaching media !
+    media.addEventListener('encrypted', this._onMediaEncrypted);
+  }
 
-    media.addEventListener('encrypted', (e) => {
-      this._onMediaEncrypted(e.initDataType, e.initData);
+  onMediaDetached (data) {
+    const media = this._media;
+
+    if (media) {
+      media.removeEventListener('encrypted', this._onMediaEncrypted);
+    }
+
+    // Close all sessions and remove media keys from the video element.
+    Promise.all(this._mediaKeysList.map((mediaKeysListItem) => {
+      if (mediaKeysListItem.mediaKeysSession) {
+        try {
+          return mediaKeysListItem.mediaKeysSession.close();
+        } catch (ex) {
+          // Ignore errors when closing the sessions. Closing a session that
+          // generated no key requests will throw an error.
+        }
+      }
+      return Promise.resolve();
+    })).then(() => {
+      this._mediaKeysList = [];
+
+      try {
+        return media.setMediaKeys(null);
+      } catch (ex) {
+        // Ignore any failures while removing media keys from the video element.
+      }
+    }).then(() => {
+      // Fire an event so that the application could decide when to destroy Hls instance or other tasks
+      this.hls.trigger(Event.EME_DESTROYED, {});
     });
   }
 
