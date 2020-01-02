@@ -15,4 +15,4 @@ coverage/
 .idea/*
 
 # Build reports
-dist/bundle-analyzer-report.*
+dist/*
