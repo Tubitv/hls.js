@@ -163,6 +163,11 @@ class EMEController extends EventHandler {
       })
       .catch((err) => {
         logger.error(`Failed to obtain key-system "${keySystem}" access:`, err);
+        this.hls.trigger(Event.ERROR, {
+          type: ErrorTypes.KEY_SYSTEM_ERROR,
+          details: ErrorDetails.KEY_SYSTEM_NO_ACCESS,
+          fatal: true
+        });
       });
   }
 
@@ -203,6 +208,11 @@ class EMEController extends EventHandler {
       })
       .catch((err) => {
         logger.error('Failed to create media-keys:', err);
+        this.hls.trigger(Event.ERROR, {
+          type: ErrorTypes.KEY_SYSTEM_ERROR,
+          details: ErrorDetails.KEY_SYSTEM_NO_KEYS,
+          fatal: true
+        });
       });
   }
 
@@ -227,6 +237,7 @@ class EMEController extends EventHandler {
   _onNewMediaKeySession (keySession) {
     logger.log(`New key-system session ${keySession.sessionId}`);
 
+    this.hls.startLoad();
     keySession.addEventListener('message', (event) => {
       this._onKeySessionMessage(keySession, event.message);
     }, false);
@@ -516,6 +527,7 @@ class EMEController extends EventHandler {
     const audioCodecs = data.levels.map((level) => level.audioCodec);
     const videoCodecs = data.levels.map((level) => level.videoCodec);
 
+    this.hls.stopLoad();
     this._attemptKeySystemAccess(KeySystems.WIDEVINE, audioCodecs, videoCodecs);
   }
 }
