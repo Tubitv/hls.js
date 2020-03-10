@@ -30,21 +30,31 @@ const KeySystems = {
  * @returns {Array<MediaSystemConfiguration>} An array of supported configurations
  */
 
-const createWidevineMediaKeySystemConfigurations = function (audioCodecs, videoCodecs, drmSystemOptions) { /* jshint ignore:line */
+const createWidevineMediaKeySystemConfigurations = function (audioCodecs, videoCodecs, drmSystemOptions = {}) { /* jshint ignore:line */
   const baseConfig = {
     // initDataTypes: ['keyids', 'mp4'],
     // label: "",
     // persistentState: "not-allowed", // or "required" ?
     // distinctiveIdentifier: "not-allowed", // or "required" ?
     // sessionTypes: ['temporary'],
+    audioCapabilities: [
+      // { contentType: 'audio/mp4; codecs="mp4a.40.2"' }
+    ],
     videoCapabilities: [
       // { contentType: 'video/mp4; codecs="avc1.42E01E"' }
     ]
   };
 
+  audioCodecs.forEach((codec) => {
+    baseConfig.audioCapabilities.push({
+      contentType: `audio/mp4; codecs="${codec}"`,
+      robustness: drmSystemOptions.audioRobustness || ''
+    });
+  });
   videoCodecs.forEach((codec) => {
     baseConfig.videoCapabilities.push({
-      contentType: `video/mp4; codecs="${codec}"`
+      contentType: `video/mp4; codecs="${codec}"`,
+      robustness: drmSystemOptions.videoRobustness || ''
     });
   });
 
@@ -62,12 +72,13 @@ const createWidevineMediaKeySystemConfigurations = function (audioCodecs, videoC
  * @param {string} keySystem Identifier for the key-system, see `KeySystems` enum
  * @param {Array<string>} audioCodecs List of required audio codecs to support
  * @param {Array<string>} videoCodecs List of required video codecs to support
+ * @param {object} drmSystemOptions Optional parameters/requirements for the key-system
  * @returns {Array<MediaSystemConfiguration> | null} A non-empty Array of MediaKeySystemConfiguration objects or `null`
  */
-const getSupportedMediaKeySystemConfigurations = function (keySystem, audioCodecs, videoCodecs) {
+const getSupportedMediaKeySystemConfigurations = function (keySystem, audioCodecs, videoCodecs, drmSystemOptions = {}) {
   switch (keySystem) {
   case KeySystems.WIDEVINE:
-    return createWidevineMediaKeySystemConfigurations(audioCodecs, videoCodecs);
+    return createWidevineMediaKeySystemConfigurations(audioCodecs, videoCodecs, drmSystemOptions);
   default:
     throw Error('Unknown key-system: ' + keySystem);
   }
@@ -95,6 +106,7 @@ class EMEController extends EventHandler {
     this._widevineLicenseUrl = hls.config.widevineLicenseUrl;
     this._licenseXhrSetup = hls.config.licenseXhrSetup;
     this._emeEnabled = hls.config.emeEnabled;
+    this._drmSystemOptions = hls.config.drmSystemOptions;
 
     this._requestMediaKeySystemAccess = hls.config.requestMediaKeySystemAccessFunc;
 
@@ -145,9 +157,7 @@ class EMEController extends EventHandler {
      * @param {Array<string>} videoCodecs List of required video codecs to support
      */
   _attemptKeySystemAccess (keySystem, audioCodecs, videoCodecs) {
-    // TODO: add other DRM "options"
-
-    const mediaKeySystemConfigs = getSupportedMediaKeySystemConfigurations(keySystem, audioCodecs, videoCodecs);
+    const mediaKeySystemConfigs = getSupportedMediaKeySystemConfigurations(keySystem, audioCodecs, audioCodecs, this._drmSystemOptions);
 
     if (!mediaKeySystemConfigs) {
       logger.warn('Can not create config for key-system (maybe because platform is not supported):', keySystem);
