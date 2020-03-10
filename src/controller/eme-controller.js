@@ -157,7 +157,7 @@ class EMEController extends EventHandler {
      * @param {Array<string>} videoCodecs List of required video codecs to support
      */
   _attemptKeySystemAccess (keySystem, audioCodecs, videoCodecs) {
-    const mediaKeySystemConfigs = getSupportedMediaKeySystemConfigurations(keySystem, audioCodecs, audioCodecs, this._drmSystemOptions);
+    const mediaKeySystemConfigs = getSupportedMediaKeySystemConfigurations(keySystem, audioCodecs, videoCodecs, this._drmSystemOptions);
 
     if (!mediaKeySystemConfigs) {
       logger.warn('Can not create config for key-system (maybe because platform is not supported):', keySystem);
