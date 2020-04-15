@@ -205,6 +205,7 @@ class EMEController extends EventHandler {
 
     mediaKeySystemAccess.createMediaKeys()
       .then((mediaKeys) => {
+        console.log('** mediaKeys **', mediaKeys);
         mediaKeysListItem.mediaKeys = mediaKeys;
 
         logger.log(`Media-keys created for key-system "${keySystem}"`);
@@ -457,6 +458,8 @@ class EMEController extends EventHandler {
         }
         var headerNames = keyMessageXml.getElementsByTagName('name');
         var headerValues = keyMessageXml.getElementsByTagName('value');
+        console.log('** headerNames **', headerNames);
+        console.log('** headerValues **', headerValues);
         if (headerNames.length !== headerValues.length) {
             throw 'Mismatched header <name>/<value> pair in key message';
         }
@@ -499,9 +502,9 @@ class EMEController extends EventHandler {
       logger.log(`Sending license request to URL: ${url}`);
       this._xhr = xhr;
       const challenge = this._generateLicenseRequestChallenge(keysListItem, keyMessage);
+      console.log('** challenge **', challenge);
       xhr.send(challenge);
     } catch (e) {
-      console.error(e);
       logger.error(`Failure requesting DRM license: ${e}`);
       this.hls.trigger(Event.ERROR, {
         type: ErrorTypes.KEY_SYSTEM_ERROR,
