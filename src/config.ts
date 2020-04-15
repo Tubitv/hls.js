@@ -125,8 +125,6 @@ type TSDemuxerConfig = {
   forceKeyFrameOnDiscontinuity: boolean,
 };
 
-console.log('** I AM CONFIG TEST **');
-
 export type HlsConfig =
   {
     debug: boolean,

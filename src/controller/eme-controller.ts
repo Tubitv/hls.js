@@ -171,7 +171,6 @@ class EMEController extends EventHandler {
     // expecting interface like window.navigator.requestMediaKeySystemAccess
     this.requestMediaKeySystemAccess(keySystem, mediaKeySystemConfigs)
       .then((mediaKeySystemAccess) => {
-        console.log('** _attemptKeySystemAccess **', mediaKeySystemAccess);
         this._onMediaKeySystemAccessObtained(keySystem, mediaKeySystemAccess);
       })
       .catch((err) => {
@@ -206,7 +205,6 @@ class EMEController extends EventHandler {
 
     mediaKeySystemAccess.createMediaKeys()
       .then((mediaKeys) => {
-        console.log('** _onMediaKeySystemAccessObtained **', mediaKeys);
         mediaKeysListItem.mediaKeys = mediaKeys;
 
         logger.log(`Media-keys created for key-system "${keySystem}"`);
@@ -283,8 +281,6 @@ class EMEController extends EventHandler {
 
     if (!this._hasSetMediaKeys) {
       // FIXME: see if we can/want/need-to really to deal with several potential key-sessions?
-      console.log('*** this._mediaKeysList *** ')
-      console.dir(this._mediaKeysList);
       const keysListItem = this._mediaKeysList[0];
       if (!keysListItem || !keysListItem.mediaKeys) {
         logger.error('Fatal: Media is encrypted but no CDM access or no keys have been obtained yet');
@@ -452,13 +448,10 @@ class EMEController extends EventHandler {
         // from https://github.com/MicrosoftEdge/Demos/blob/master/eme/scripts/demo.js
         // For PlayReady CDMs, we need to dig the Challenge out of the XML.
         var keyMessageXml = new DOMParser().parseFromString(String.fromCharCode.apply(null, new Uint16Array(keyMessage)), 'application/xml');
-        console.log('** keyMessageXml **');
-        console.log(keyMessageXml.toString());
         let challenge: ArrayBuffer | null = null;
         if (keyMessageXml.getElementsByTagName('Challenge')[0]) {
             // @ts-ignore
             challenge = atob(keyMessageXml.getElementsByTagName('Challenge')[0].childNodes[0].nodeValue);
-            console.log('** _generateLicenseRequestChallenge challenge **', challenge);
         } else {
             throw 'Cannot find <Challenge> in key message';
         }
@@ -506,7 +499,6 @@ class EMEController extends EventHandler {
       logger.log(`Sending license request to URL: ${url}`);
       this._xhr = xhr;
       const challenge = this._generateLicenseRequestChallenge(keysListItem, keyMessage);
-      console.log('** _requestLicense **', challenge);
       xhr.send(challenge);
     } catch (e) {
       console.error(e);
@@ -549,7 +541,6 @@ class EMEController extends EventHandler {
     const videoCodecs = data.levels.map((level) => level.videoCodec);
 
     const keySystem = this._widevineLicenseUrl ? KeySystems.WIDEVINE : KeySystems.PLAYREADY;
-    console.log('** keySystem **', keySystem, this._playreadyLicenseUrl);
     this._attemptKeySystemAccess(keySystem, audioCodecs, videoCodecs);
   }
 }
