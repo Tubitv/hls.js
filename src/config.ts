@@ -46,6 +46,7 @@ export type EMEControllerConfig = {
   licenseXhrSetup?: (xhr: XMLHttpRequest, url: string) => void,
   emeEnabled: boolean,
   widevineLicenseUrl?: string,
+  playreadyLicenseUrl?: string;
   requestMediaKeySystemAccessFunc: MediaKeyFunc | null,
 };
 
@@ -123,6 +124,8 @@ type TimelineControllerConfig = {
 type TSDemuxerConfig = {
   forceKeyFrameOnDiscontinuity: boolean,
 };
+
+console.log('** I AM CONFIG TEST **');
 
 export type HlsConfig =
   {
@@ -234,6 +237,7 @@ export const hlsDefaultConfig: HlsConfig = {
   minAutoBitrate: 0, // used by hls
   emeEnabled: false, // used by eme-controller
   widevineLicenseUrl: void 0, // used by eme-controller
+  playreadyLicenseUrl: void 0, // used by eme-controller
   requestMediaKeySystemAccessFunc: requestMediaKeySystemAccess, // used by eme-controller
 
   // Dynamic Modules
