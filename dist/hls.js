@@ -19440,19 +19440,24 @@ var createPlayreadyMediaKeySystemConfigurations = function createPlayreadyMediaK
     // sessionTypes: ['temporary'],
     videoCapabilities: [] // { contentType: 'video/mp4; codecs="avc1.42E01E"' }
 
-  }; // return [
-  //   baseConfig
+  };
+  return [baseConfig]; // return [
+  //       {
+  //           initDataTypes: ['keyids', 'cenc'],
+  //           audioCapabilities:
+  //               [
+  //                   {
+  //                       contentType: 'audio/mp4; codecs="mp4a"'
+  //                   }
+  //               ],
+  //           videoCapabilities:
+  //               [
+  //                   {
+  //                       contentType: 'video/mp4; codecs="avc1"'
+  //                   }
+  //               ]
+  //       }
   // ]
-
-  return [{
-    initDataTypes: ['keyids', 'cenc'],
-    audioCapabilities: [{
-      contentType: 'audio/mp4; codecs="mp4a"'
-    }],
-    videoCapabilities: [{
-      contentType: 'video/mp4; codecs="avc1"'
-    }]
-  }];
 };
 /**
  * The idea here is to handle key-system (and their respective platforms) specific configuration differences

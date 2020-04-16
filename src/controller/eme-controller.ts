@@ -53,26 +53,26 @@ const createPlayreadyMediaKeySystemConfigurations = function (audioCodecs: strin
     videoCapabilities: [] // { contentType: 'video/mp4; codecs="avc1.42E01E"' }
   };
 
-  // return [
-  //   baseConfig
-  // ]
   return [
-        {
-            initDataTypes: ['keyids', 'cenc'],
-            audioCapabilities:
-                [
-                    {
-                        contentType: 'audio/mp4; codecs="mp4a"'
-                    }
-                ],
-            videoCapabilities:
-                [
-                    {
-                        contentType: 'video/mp4; codecs="avc1"'
-                    }
-                ]
-        }
+    baseConfig
   ]
+  // return [
+  //       {
+  //           initDataTypes: ['keyids', 'cenc'],
+  //           audioCapabilities:
+  //               [
+  //                   {
+  //                       contentType: 'audio/mp4; codecs="mp4a"'
+  //                   }
+  //               ],
+  //           videoCapabilities:
+  //               [
+  //                   {
+  //                       contentType: 'video/mp4; codecs="avc1"'
+  //                   }
+  //               ]
+  //       }
+  // ]
 }
 
 /**
