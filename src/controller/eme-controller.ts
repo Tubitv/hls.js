@@ -53,8 +53,25 @@ const createPlayreadyMediaKeySystemConfigurations = function (audioCodecs: strin
     videoCapabilities: [] // { contentType: 'video/mp4; codecs="avc1.42E01E"' }
   };
 
+  // return [
+  //   baseConfig
+  // ]
   return [
-    baseConfig
+        {
+            initDataTypes: ['keyids', 'cenc'],
+            audioCapabilities:
+                [
+                    {
+                        contentType: 'audio/mp4; codecs="mp4a"'
+                    }
+                ],
+            videoCapabilities:
+                [
+                    {
+                        contentType: 'video/mp4; codecs="avc1"'
+                    }
+                ]
+        }
   ]
 }
 
@@ -458,8 +475,6 @@ class EMEController extends EventHandler {
         }
         var headerNames = keyMessageXml.getElementsByTagName('name');
         var headerValues = keyMessageXml.getElementsByTagName('value');
-        console.log('** headerNames **', headerNames);
-        console.log('** headerValues **', headerValues);
         if (headerNames.length !== headerValues.length) {
             throw 'Mismatched header <name>/<value> pair in key message';
         }
@@ -502,7 +517,6 @@ class EMEController extends EventHandler {
       logger.log(`Sending license request to URL: ${url}`);
       this._xhr = xhr;
       const challenge = this._generateLicenseRequestChallenge(keysListItem, keyMessage);
-      console.log('** challenge **', challenge);
       xhr.send(challenge);
     } catch (e) {
       logger.error(`Failure requesting DRM license: ${e}`);

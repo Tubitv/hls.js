@@ -19440,8 +19440,19 @@ var createPlayreadyMediaKeySystemConfigurations = function createPlayreadyMediaK
     // sessionTypes: ['temporary'],
     videoCapabilities: [] // { contentType: 'video/mp4; codecs="avc1.42E01E"' }
 
-  };
-  return [baseConfig];
+  }; // return [
+  //   baseConfig
+  // ]
+
+  return [{
+    initDataTypes: ['keyids', 'cenc'],
+    audioCapabilities: [{
+      contentType: 'audio/mp4; codecs="mp4a"'
+    }],
+    videoCapabilities: [{
+      contentType: 'video/mp4; codecs="avc1"'
+    }]
+  }];
 };
 /**
  * The idea here is to handle key-system (and their respective platforms) specific configuration differences
@@ -19856,8 +19867,6 @@ var eme_controller_EMEController = /*#__PURE__*/function (_EventHandler) {
 
         var headerNames = keyMessageXml.getElementsByTagName('name');
         var headerValues = keyMessageXml.getElementsByTagName('value');
-        console.log('** headerNames **', headerNames);
-        console.log('** headerValues **', headerValues);
 
         if (headerNames.length !== headerValues.length) {
           throw 'Mismatched header <name>/<value> pair in key message';
@@ -19908,8 +19917,6 @@ var eme_controller_EMEController = /*#__PURE__*/function (_EventHandler) {
       this._xhr = _xhr;
 
       var challenge = this._generateLicenseRequestChallenge(keysListItem, keyMessage);
-
-      console.log('** challenge **', challenge);
 
       _xhr.send(challenge);
     } catch (e) {
