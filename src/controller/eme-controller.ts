@@ -52,11 +52,11 @@ const createPlayreadyMediaKeySystemConfigurations = function (audioCodecs: strin
     // sessionTypes: ['temporary'],
     videoCapabilities: [] // { contentType: 'video/mp4; codecs="avc1.42E01E"' }
   };
-
+  // TODO add proper video and audio codecs for playready
   return [
     baseConfig
-  ]
-}
+  ];
+};
 
 /**
  * The idea here is to handle key-system (and their respective platforms) specific configuration differences
@@ -135,18 +135,17 @@ class EMEController extends EventHandler {
    * @throws if a unsupported keysystem is passed
    */
   getLicenseServerUrl (keySystem: KeySystems): string {
-    logger.log('** getLicenseServerUrl **');
     switch (keySystem) {
-      case KeySystems.WIDEVINE:
-        if (!this._widevineLicenseUrl) {
-          break;
-        }
-        return this._widevineLicenseUrl;
-      case KeySystems.PLAYREADY:
-        if (!this._playreadyLicenseUrl) {
-          break;
-        }
-        return this._playreadyLicenseUrl;
+    case KeySystems.WIDEVINE:
+      if (!this._widevineLicenseUrl) {
+        break;
+      }
+      return this._widevineLicenseUrl;
+    case KeySystems.PLAYREADY:
+      if (!this._playreadyLicenseUrl) {
+        break;
+      }
+      return this._playreadyLicenseUrl;
     }
 
     throw new Error(`no license server URL configured for key-system "${keySystem}"`);
@@ -205,7 +204,6 @@ class EMEController extends EventHandler {
 
     mediaKeySystemAccess.createMediaKeys()
       .then((mediaKeys) => {
-        console.log('** mediaKeys **', mediaKeys);
         mediaKeysListItem.mediaKeys = mediaKeys;
 
         logger.log(`Media-keys created for key-system "${keySystem}"`);
@@ -420,11 +418,7 @@ class EMEController extends EventHandler {
         logger.error(`License Request XHR failed (${url}). Status: ${xhr.status} (${xhr.statusText})`);
         this._requestLicenseFailureCount++;
         if (this._requestLicenseFailureCount > MAX_LICENSE_REQUEST_FAILURES) {
-          this.hls.trigger(Event.ERROR, {
-            type: ErrorTypes.KEY_SYSTEM_ERROR,
-            details: ErrorDetails.KEY_SYSTEM_LICENSE_REQUEST_FAILED,
-            fatal: true
-          });
+          this._throwLicenseSystemError('Request count exceeded maximum retry limit');
           return;
         }
 
@@ -436,6 +430,15 @@ class EMEController extends EventHandler {
     }
   }
 
+  private _throwLicenseSystemError (msg: string): void {
+    logger.error(msg);
+    this.hls.trigger(Event.ERROR, {
+      type: ErrorTypes.KEY_SYSTEM_ERROR,
+      details: ErrorDetails.KEY_SYSTEM_LICENSE_REQUEST_FAILED,
+      fatal: true
+    });
+  }
+
   /**
    * @private
    * @param {MediaKeysListItem} keysListItem
@@ -443,35 +446,36 @@ class EMEController extends EventHandler {
    * @returns {ArrayBuffer} Challenge data posted to license server
    * @throws if KeySystem is unsupported
    */
-  private _generateLicenseRequestChallenge (keysListItem: MediaKeysListItem, keyMessage: ArrayBuffer): ArrayBuffer | null {
+  private _generateLicenseRequestChallenge (keysListItem: MediaKeysListItem, keyMessage: ArrayBuffer): ArrayBuffer {
     switch (keysListItem.mediaKeySystemDomain) {
-      case KeySystems.PLAYREADY:
-        // from https://github.com/MicrosoftEdge/Demos/blob/master/eme/scripts/demo.js
-        // For PlayReady CDMs, we need to dig the Challenge out of the XML.
-        var keyMessageXml = new DOMParser().parseFromString(String.fromCharCode.apply(null, new Uint16Array(keyMessage)), 'application/xml');
-        let challenge: ArrayBuffer | null = null;
-        if (keyMessageXml.getElementsByTagName('Challenge')[0]) {
-            // @ts-ignore
-            challenge = atob(keyMessageXml.getElementsByTagName('Challenge')[0].childNodes[0].nodeValue);
-        } else {
-            throw 'Cannot find <Challenge> in key message';
+    case KeySystems.PLAYREADY:
+      // from https://github.com/MicrosoftEdge/Demos/blob/master/eme/scripts/demo.js
+      // For PlayReady CDMs, we need to dig the Challenge out of the XML.
+      var keyMessageXml = new DOMParser().parseFromString(String.fromCharCode.apply(null, new Uint16Array(keyMessage)), 'application/xml');
+
+      // Just to initialize this with a value so that typescript wont complain
+      let challenge: ArrayBuffer = new ArrayBuffer(0);
+      if (keyMessageXml.getElementsByTagName('Challenge')[0]) {
+        const challengeBufferData = atob(keyMessageXml.getElementsByTagName('Challenge')[0].childNodes[0].nodeValue || '') as unknown;
+        challenge = challengeBufferData as ArrayBuffer;
+      } else {
+        this._throwLicenseSystemError('Cannot find <Challenge> in key message');
+      }
+      var headerNames = keyMessageXml.getElementsByTagName('name');
+      var headerValues = keyMessageXml.getElementsByTagName('value');
+      if (headerNames.length !== headerValues.length) {
+        this._throwLicenseSystemError('Mismatched header <name>/<value> pair in key message');
+      }
+      for (let i = 0; i < headerNames.length; i++) {
+        if (this._xhr) {
+          this._xhr.setRequestHeader(headerNames[i].childNodes[0].nodeValue || '', headerValues[i].childNodes[0].nodeValue || '');
         }
-        var headerNames = keyMessageXml.getElementsByTagName('name');
-        var headerValues = keyMessageXml.getElementsByTagName('value');
-        console.log('** headerNames **', headerNames);
-        console.log('** headerValues **', headerValues);
-        if (headerNames.length !== headerValues.length) {
-            throw 'Mismatched header <name>/<value> pair in key message';
-        }
-        for (var i = 0; i < headerNames.length; i++) {
-            // @ts-ignore
-            this._xhr.setRequestHeader(headerNames[i].childNodes[0].nodeValue, headerValues[i].childNodes[0].nodeValue);
-        }
-        return challenge;
-        // break;
-      case KeySystems.WIDEVINE:
-        // For Widevine CDMs, the challenge is the keyMessage.
-        return keyMessage;
+      }
+      return challenge;
+      // break;
+    case KeySystems.WIDEVINE:
+      // For Widevine CDMs, the challenge is the keyMessage.
+      return keyMessage;
     }
 
     throw new Error(`unsupported key-system: ${keysListItem.mediaKeySystemDomain}`);
@@ -502,15 +506,9 @@ class EMEController extends EventHandler {
       logger.log(`Sending license request to URL: ${url}`);
       this._xhr = xhr;
       const challenge = this._generateLicenseRequestChallenge(keysListItem, keyMessage);
-      console.log('** challenge **', challenge);
       xhr.send(challenge);
     } catch (e) {
-      logger.error(`Failure requesting DRM license: ${e}`);
-      this.hls.trigger(Event.ERROR, {
-        type: ErrorTypes.KEY_SYSTEM_ERROR,
-        details: ErrorDetails.KEY_SYSTEM_LICENSE_REQUEST_FAILED,
-        fatal: true
-      });
+      this._throwLicenseSystemError(`Failure requesting DRM license: ${e}`);
     }
   }
 
