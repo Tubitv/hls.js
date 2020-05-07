@@ -63,6 +63,26 @@ const createWidevineMediaKeySystemConfigurations = function (audioCodecs, videoC
   ];
 };
 
+const createPlayreadyMediaKeySystemConfigurations = function (audioCodecs, videoCodecs) { /* jshint ignore:line */
+  const baseConfig = {
+    // initDataTypes: ['keyids', 'mp4'],
+    // label: "",
+    // persistentState: "not-allowed", // or "required" ?
+    // distinctiveIdentifier: "not-allowed", // or "required" ?
+    // sessionTypes: ['temporary'],
+    audioCapabilities: [
+      // { contentType: 'audio/mp4; codecs="mp4a.40.2"' }
+    ],
+    videoCapabilities: [
+      // { contentType: 'video/mp4; codecs="avc1.42E01E"' }
+    ]
+  };
+  // TODO add proper video and audio codecs for playready
+  return [
+    baseConfig
+  ];
+};
+
 /**
  * The idea here is to handle key-system (and their respective platforms) specific configuration differences
  * in order to work with the local requestMediaKeySystemAccess method.
@@ -79,6 +99,8 @@ const getSupportedMediaKeySystemConfigurations = function (keySystem, audioCodec
   switch (keySystem) {
   case KeySystems.WIDEVINE:
     return createWidevineMediaKeySystemConfigurations(audioCodecs, videoCodecs, drmSystemOptions);
+  case KeySystems.PLAYREADY:
+    return createPlayreadyMediaKeySystemConfigurations(audioCodecs, videoCodecs);
   default:
     throw Error('Unknown key-system: ' + keySystem);
   }
@@ -104,6 +126,7 @@ class EMEController extends EventHandler {
     );
 
     this._widevineLicenseUrl = hls.config.widevineLicenseUrl;
+    this._playreadyLicenseUrl = hls.config.playreadyLicenseUrl;
     this._licenseXhrSetup = hls.config.licenseXhrSetup;
     this._emeEnabled = hls.config.emeEnabled;
     this._drmSystemOptions = hls.config.drmSystemOptions;
@@ -121,6 +144,15 @@ class EMEController extends EventHandler {
     this._onMediaEncrypted = this._onMediaEncrypted.bind(this);
   }
 
+  _throwLicenseSystemError (msg) {
+    logger.error(msg);
+    this.hls.trigger(Event.ERROR, {
+      type: ErrorTypes.KEY_SYSTEM_ERROR,
+      details: ErrorDetails.KEY_SYSTEM_LICENSE_REQUEST_FAILED,
+      fatal: true
+    });
+  }
+
   /**
      *
      * @param {string} keySystem Identifier for the key-system, see `KeySystems` enum
@@ -132,18 +164,16 @@ class EMEController extends EventHandler {
     case KeySystems.WIDEVINE:
       url = this._widevineLicenseUrl;
       break;
+    case KeySystems.PLAYREADY:
+      url = this._playreadyLicenseUrl;
+      break;
     default:
       url = null;
       break;
     }
 
     if (!url) {
-      logger.error(`No license server URL configured for key-system "${keySystem}"`);
-      this.hls.trigger(Event.ERROR, {
-        type: ErrorTypes.KEY_SYSTEM_ERROR,
-        details: ErrorDetails.KEY_SYSTEM_LICENSE_REQUEST_FAILED,
-        fatal: true
-      });
+      this._throwLicenseSystemError(`No license server URL configured for key-system "${keySystem}"`);
     }
 
     return url;
@@ -430,28 +460,23 @@ class EMEController extends EventHandler {
     let challenge;
 
     if (keysListItem.mediaKeySystemDomain === KeySystems.PLAYREADY) {
-      logger.error('PlayReady is not supported (yet)');
-
-      // from https://github.com/MicrosoftEdge/Demos/blob/master/eme/scripts/demo.js
-      /*
-        if (this.licenseType !== this.LICENSE_TYPE_WIDEVINE) {
-            // For PlayReady CDMs, we need to dig the Challenge out of the XML.
-            var keyMessageXml = new DOMParser().parseFromString(String.fromCharCode.apply(null, new Uint16Array(keyMessage)), 'application/xml');
-            if (keyMessageXml.getElementsByTagName('Challenge')[0]) {
-                challenge = atob(keyMessageXml.getElementsByTagName('Challenge')[0].childNodes[0].nodeValue);
-            } else {
-                throw 'Cannot find <Challenge> in key message';
-            }
-            var headerNames = keyMessageXml.getElementsByTagName('name');
-            var headerValues = keyMessageXml.getElementsByTagName('value');
-            if (headerNames.length !== headerValues.length) {
-                throw 'Mismatched header <name>/<value> pair in key message';
-            }
-            for (var i = 0; i < headerNames.length; i++) {
-                xhr.setRequestHeader(headerNames[i].childNodes[0].nodeValue, headerValues[i].childNodes[0].nodeValue);
-            }
-        }
-        */
+      // For PlayReady CDMs, we need to dig the Challenge out of the XML.
+      // eslint-disable-next-line no-undef
+      let keyMessageXml = new DOMParser().parseFromString(String.fromCharCode.apply(null, new Uint16Array(keyMessage)), 'application/xml');
+      if (keyMessageXml.getElementsByTagName('Challenge')[0]) {
+        // eslint-disable-next-line no-undef
+        challenge = atob(keyMessageXml.getElementsByTagName('Challenge')[0].childNodes[0].nodeValue);
+      } else {
+        this._throwLicenseSystemError('Cannot find <Challenge> in key message');
+      }
+      let headerNames = keyMessageXml.getElementsByTagName('name');
+      let headerValues = keyMessageXml.getElementsByTagName('value');
+      if (headerNames.length !== headerValues.length) {
+        this._throwLicenseSystemError('Mismatched header <name>/<value> pair in key message');
+      }
+      for (let i = 0; i < headerNames.length; i++) {
+        this._xhr.setRequestHeader(headerNames[i].childNodes[0].nodeValue, headerValues[i].childNodes[0].nodeValue);
+      }
     } else if (keysListItem.mediaKeySystemDomain === KeySystems.WIDEVINE) {
       // For Widevine CDMs, the challenge is the keyMessage.
       challenge = keyMessage;
@@ -475,13 +500,17 @@ class EMEController extends EventHandler {
       });
       return;
     }
+    try {
+      const url = this.getLicenseServerUrl(keysListItem.mediaKeySystemDomain);
+      const xhr = this._createLicenseXhr(url, keyMessage, callback);
+      this._xhr = xhr;
 
-    const url = this.getLicenseServerUrl(keysListItem.mediaKeySystemDomain);
-    const xhr = this._createLicenseXhr(url, keyMessage, callback);
+      logger.log(`Sending license request to URL: ${url}`);
 
-    logger.log(`Sending license request to URL: ${url}`);
-
-    xhr.send(this._generateLicenseRequestChallenge(keysListItem, keyMessage));
+      xhr.send(this._generateLicenseRequestChallenge(keysListItem, keyMessage));
+    } catch (err) {
+      this._throwLicenseSystemError(`Failure requesting DRM license: ${err}`);
+    }
   }
 
   onMediaAttached (data) {
@@ -538,7 +567,8 @@ class EMEController extends EventHandler {
     const videoCodecs = data.levels.map((level) => level.videoCodec);
 
     this.hls.stopLoad();
-    this._attemptKeySystemAccess(KeySystems.WIDEVINE, audioCodecs, videoCodecs);
+    const keySystem = this._widevineLicenseUrl ? KeySystems.WIDEVINE : KeySystems.PLAYREADY;
+    this._attemptKeySystemAccess(keySystem, audioCodecs, videoCodecs);
   }
 }
 
