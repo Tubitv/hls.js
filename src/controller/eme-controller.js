@@ -278,18 +278,40 @@ class EMEController extends EventHandler {
     logger.log(`New key-system session ${keySession.sessionId}`);
 
     this.hls.startLoad();
+
     keySession.addEventListener('message', (event) => {
       this._onKeySessionMessage(keySession, event.message);
+    }, false);
+
+    keySession.addEventListener('keystatuseschange', () => {
+      this._onKeySessionKeyStatusesChange(keySession);
     }, false);
   }
 
   _onKeySessionMessage (keySession, message) {
-    logger.log('Got EME message event, creating license request');
+    logger.log('Got EME "message" event, creating license request');
 
     this._requestLicense(message, (data) => {
       logger.log('Received license data, updating key-session');
       keySession.update(data);
     });
+  }
+
+  _onKeySessionKeyStatusesChange (keySession) {
+    logger.log('Got EME "keystatuseschange" event, detecting license status');
+
+    for (const key of keySession.keyStatuses.keys()) {
+      const value = keySession.keyStatuses.get(key);
+      if (value !== 'usable') {
+        logger.error('Fatal error: The CDM is currently not usable for decryption.');
+        this.hls.trigger(Event.ERROR, {
+          type: ErrorTypes.KEY_SYSTEM_ERROR,
+          details: ErrorDetails.KEY_SYSTEM_NO_ACCESS,
+          fatal: true
+        });
+        break;
+      }
+    }
   }
 
   _onMediaEncrypted (event) {
