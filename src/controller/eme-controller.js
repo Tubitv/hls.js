@@ -14,8 +14,6 @@ const { XMLHttpRequest } = window;
 
 const MAX_LICENSE_REQUEST_FAILURES = 3;
 
-const textDecoder = new TextDecoder();
-
 /**
  * @see https://developer.mozilla.org/en-US/docs/Web/API/Navigator/requestMediaKeySystemAccess
  */
@@ -300,6 +298,8 @@ class EMEController extends EventHandler {
   _onKeySessionKeyStatusesChange (keySession) {
     logger.log('Got EME keystatuseschange event, detecting license status');
 
+    // `keyStatuses` is `Map`-like object connecting to the length of `KeyIds`,
+    // but every `keyStatuses` needs to be `usable` to continue.
     keySession.keyStatuses.forEach((status) => {
       if (status !== 'usable') {
         logger.error('Fatal error: Key session is not usable.');
