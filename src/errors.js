@@ -16,6 +16,7 @@ export const ErrorTypes = {
  * @typedef {string} ErrorDetail
  */
 export const ErrorDetails = {
+  KEY_STATUSES_ERROR: 'keyStatusesError',
   KEY_SYSTEM_NO_KEYS: 'keySystemNoKeys',
   KEY_SYSTEM_NO_ACCESS: 'keySystemNoAccess',
   KEY_SYSTEM_NO_SESSION: 'keySystemNoSession',

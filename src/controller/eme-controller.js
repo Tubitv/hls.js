@@ -14,6 +14,8 @@ const { XMLHttpRequest } = window;
 
 const MAX_LICENSE_REQUEST_FAILURES = 3;
 
+const textDecoder = new TextDecoder();
+
 /**
  * @see https://developer.mozilla.org/en-US/docs/Web/API/Navigator/requestMediaKeySystemAccess
  */
@@ -278,18 +280,16 @@ class EMEController extends EventHandler {
     logger.log(`New key-system session ${keySession.sessionId}`);
 
     this.hls.startLoad();
-
     keySession.addEventListener('message', (event) => {
-      this._onKeySessionMessage(keySession, event.message);
+      this._onKeySessionMessage(event.target, event.message);
     }, false);
-
-    keySession.addEventListener('keystatuseschange', () => {
-      this._onKeySessionKeyStatusesChange(keySession);
+    keySession.addEventListener('keystatuseschange', (event) => {
+      this._onKeySessionKeyStatusesChange(event.target);
     }, false);
   }
 
   _onKeySessionMessage (keySession, message) {
-    logger.log('Got EME "message" event, creating license request');
+    logger.log('Got EME message event, creating license request');
 
     this._requestLicense(message, (data) => {
       logger.log('Received license data, updating key-session');
@@ -298,20 +298,18 @@ class EMEController extends EventHandler {
   }
 
   _onKeySessionKeyStatusesChange (keySession) {
-    logger.log('Got EME "keystatuseschange" event, detecting license status');
+    logger.log('Got EME keystatuseschange event, detecting license status');
 
-    for (const key of keySession.keyStatuses.keys()) {
-      const value = keySession.keyStatuses.get(key);
-      if (value !== 'usable') {
-        logger.error('Fatal error: The CDM is currently not usable for decryption.');
+    keySession.keyStatuses.forEach((status) => {
+      if (status !== 'usable') {
+        logger.error('Fatal error: Key session is not usable.');
         this.hls.trigger(Event.ERROR, {
           type: ErrorTypes.KEY_SYSTEM_ERROR,
-          details: ErrorDetails.KEY_SYSTEM_NO_ACCESS,
+          details: ErrorDetails.KEY_STATUSES_ERROR,
           fatal: true
         });
-        break;
       }
-    }
+    });
   }
 
   _onMediaEncrypted (event) {
