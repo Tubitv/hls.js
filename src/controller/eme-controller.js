@@ -301,7 +301,7 @@ class EMEController extends EventHandler {
     // `keyStatuses` is `Map`-like object connecting to the length of `KeyIds`,
     // but every `keyStatuses` needs to be `usable` to continue.
     keySession.keyStatuses.forEach((status) => {
-      if (status !== 'usable') {
+      if (status === 'output-downscaled' || status === 'output-restricted') {
         logger.error('Fatal error: Key session is not usable.');
         this.hls.trigger(Event.ERROR, {
           type: ErrorTypes.KEY_SYSTEM_ERROR,
