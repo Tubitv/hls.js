@@ -133,6 +133,8 @@ class EMEController extends EventHandler {
 
     this._requestMediaKeySystemAccess = hls.config.requestMediaKeySystemAccessFunc;
 
+    this._minHdcpVersion = hls.config.minHdcpVersion;
+
     this._mediaKeysList = [];
     this._media = null;
 
@@ -238,16 +240,42 @@ class EMEController extends EventHandler {
 
     this._mediaKeysList.push(mediaKeysListItem);
 
-    mediaKeySystemAccess.createMediaKeys()
+    mediaKeySystemAccess
+      .createMediaKeys()
       .then((mediaKeys) => {
+        logger.log(`Media-keys created for key-system "${keySystem}"`);
+
         mediaKeysListItem.mediaKeys = mediaKeys;
 
-        logger.log(`Media-keys created for key-system "${keySystem}"`);
+        if (
+          typeof this._minHdcpVersion !== 'undefined' &&
+          typeof mediaKeys.getStatusForPolicy === 'function'
+        ) {
+          logger.log(`Checking accessbility of HDCP version ${this._minHdcpVersion}"`);
+
+          return mediaKeys
+            .getStatusForPolicy({ minHdcpVersion: this._minHdcpVersion })
+            .then((status) => {
+              if (status !== 'usable') {
+                return Promise.reject(new Error(`Not a valid HDCP policy status ${status}`));
+              }
+
+              logger.log(`Accessbility of HDCP version ${this._minHdcpVersion}" passed`);
+
+              this._onMediaKeysCreated();
+            })
+            .catch((err) => {
+              logger.error('Failed to pass HDCP policy:', err);
+
+              return Promise.reject(err);
+            });
+        }
 
         this._onMediaKeysCreated();
       })
       .catch((err) => {
         logger.error('Failed to create media-keys:', err);
+
         this.hls.trigger(Event.ERROR, {
           type: ErrorTypes.KEY_SYSTEM_ERROR,
           details: ErrorDetails.KEY_SYSTEM_NO_KEYS,
