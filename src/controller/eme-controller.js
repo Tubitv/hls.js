@@ -133,6 +133,8 @@ class EMEController extends EventHandler {
 
     this._requestMediaKeySystemAccess = hls.config.requestMediaKeySystemAccessFunc;
 
+    this._minHdcpVersion = hls.config.minHdcpVersion;
+
     this._mediaKeysList = [];
     this._media = null;
 
@@ -240,9 +242,35 @@ class EMEController extends EventHandler {
 
     mediaKeySystemAccess.createMediaKeys()
       .then((mediaKeys) => {
+        logger.log(`Media-keys created for key-system "${keySystem}"`);
         mediaKeysListItem.mediaKeys = mediaKeys;
 
-        logger.log(`Media-keys created for key-system "${keySystem}"`);
+        // Using `MediaKeys.getStatusForPolicy()` to check available HDCP version,
+        // only when you manually set up `minHdcpVersion` before.
+        if (
+          typeof this._minHdcpVersion !== 'undefined' &&
+          typeof mediaKeys.getStatusForPolicy === 'function'
+        ) {
+          logger.log(`Checking accessbility of HDCP version ${this._minHdcpVersion}"`);
+          return mediaKeys.getStatusForPolicy({ minHdcpVersion: this._minHdcpVersion })
+            .then((status) => {
+              if (status !== 'usable') {
+                return Promise.reject(new Error(`Not a valid HDCP policy status ${status}`));
+              }
+
+              logger.log(`Accessbility of HDCP version ${this._minHdcpVersion}" passed`);
+              this._onMediaKeysCreated();
+            })
+            // Jump out upcoming handlers if HDCP version does not passed our needs.
+            .catch((err) => {
+              logger.error('Failed to pass HDCP policy:', err);
+              this.hls.trigger(Event.ERROR, {
+                type: ErrorTypes.KEY_SYSTEM_ERROR,
+                details: ErrorDetails.KEY_SYSTEM_INVALID_HDCP_VERSION,
+                fatal: true
+              });
+            });
+        }
 
         this._onMediaKeysCreated();
       })
@@ -279,7 +307,10 @@ class EMEController extends EventHandler {
 
     this.hls.startLoad();
     keySession.addEventListener('message', (event) => {
-      this._onKeySessionMessage(keySession, event.message);
+      this._onKeySessionMessage(event.target, event.message);
+    }, false);
+    keySession.addEventListener('keystatuseschange', (event) => {
+      this._onKeySessionKeyStatusesChange(event.target);
     }, false);
   }
 
@@ -289,6 +320,24 @@ class EMEController extends EventHandler {
     this._requestLicense(message, (data) => {
       logger.log('Received license data, updating key-session');
       keySession.update(data);
+    });
+  }
+
+  _onKeySessionKeyStatusesChange (keySession) {
+    logger.log('Got EME keystatuseschange event, detecting license status');
+
+    // `keyStatuses` is `Map`-like object connecting to the length of `KeyIds`,
+    // but every `keyStatuses` needs to be `usable` to continue.
+    keySession.keyStatuses.forEach((status) => {
+      if (status === 'output-downscaled' || status === 'output-restricted') {
+        logger.error('Fatal error: Key session is not usable.');
+
+        this.hls.trigger(Event.ERROR, {
+          type: ErrorTypes.KEY_SYSTEM_ERROR,
+          details: ErrorDetails.KEY_SYSTEM_LICENSE_INVALID_STATUS,
+          fatal: true
+        });
+      }
     });
   }
 

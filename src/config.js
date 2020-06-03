@@ -1,3 +1,5 @@
+/* eslint-disable no-undefined */
+
 /**
  * HLS config
  */
@@ -20,6 +22,7 @@ import EMEController from './controller/eme-controller';
 
 import { requestMediaKeySystemAccess } from './utils/mediakeys-helper';
 
+// eslint-disable-next-line no-var
 export var hlsDefaultConfig = {
   autoStartLoad: true, // used by stream-controller
   startPosition: -1, // used by stream-controller
@@ -31,7 +34,6 @@ export var hlsDefaultConfig = {
   maxBufferLength: 30, // used by stream-controller
   maxBufferSize: 60 * 1000 * 1000, // used by stream-controller
   maxBufferHole: 0.5, // used by stream-controller
-
   lowBufferWatchdogPeriod: 0.5, // used by stream-controller
   highBufferWatchdogPeriod: 3, // used by stream-controller
   nudgeOffset: 0.1, // used by stream-controller
@@ -91,8 +93,8 @@ export var hlsDefaultConfig = {
   widevineLicenseUrl: undefined, // used by eme-controller
   playreadyLicenseUrl: undefined, // used by eme-controller
   drmSystemOptions: undefined, // used by eme-controller
-  requestMediaKeySystemAccessFunc:
-  requestMediaKeySystemAccess // used by eme-controller
+  requestMediaKeySystemAccessFunc: requestMediaKeySystemAccess, // used by eme-controller
+  minHdcpVersion: undefined // used by eme-controller
 };
 
 if (__USE_SUBTITLES__) {

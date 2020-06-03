@@ -16,10 +16,12 @@ export const ErrorTypes = {
  * @typedef {string} ErrorDetail
  */
 export const ErrorDetails = {
-  KEY_SYSTEM_NO_KEYS: 'keySystemNoKeys',
-  KEY_SYSTEM_NO_ACCESS: 'keySystemNoAccess',
-  KEY_SYSTEM_NO_SESSION: 'keySystemNoSession',
+  KEY_SYSTEM_INVALID_HDCP_VERSION: 'keySystemInvalidHdcpVersion',
+  KEY_SYSTEM_LICENSE_INVALID_STATUS: 'keySystemLicenseInvalidStatus',
   KEY_SYSTEM_LICENSE_REQUEST_FAILED: 'keySystemLicenseRequestFailed',
+  KEY_SYSTEM_NO_ACCESS: 'keySystemNoAccess',
+  KEY_SYSTEM_NO_KEYS: 'keySystemNoKeys',
+  KEY_SYSTEM_NO_SESSION: 'keySystemNoSession',
   // Identifier for a manifest load error - data: { url : faulty URL, response : { code: error code, text: error text }}
   MANIFEST_LOAD_ERROR: 'manifestLoadError',
   // Identifier for a manifest load timeout - data: { url : faulty URL, response : { code: error code, text: error text }}
