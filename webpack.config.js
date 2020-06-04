@@ -75,7 +75,8 @@ function getPluginsForConfig(type, minify = false) {
 
   const plugins = [
     new webpack.optimize.OccurrenceOrderPlugin(),
-    new webpack.DefinePlugin(defineConstants)
+    new webpack.DefinePlugin(defineConstants),
+    new webpack.BannerPlugin({ entryOnly: true, raw: true, banner: 'typeof window !== "undefined" &&' })
   ];
 
   if (minify) {
