@@ -1047,7 +1047,7 @@ declare namespace Hls {
     interface fpsDropData {
         currentDropped: number;
         currentDecoded: number;
-        totalDroppedFragmes: number;
+        totalDroppedFrames: number;
     }
 
     interface fpsDropLevelCappingData {
