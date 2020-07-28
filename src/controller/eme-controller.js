@@ -558,7 +558,9 @@ class EMEController extends EventHandler {
         this._throwLicenseSystemError('Mismatched header <name>/<value> pair in key message');
       }
       for (let i = 0; i < headerNames.length; i++) {
-        xhr.setRequestHeader(headerNames[i].childNodes[0].nodeValue, headerValues[i].childNodes[0].nodeValue);
+        if (xhr) {
+          xhr.setRequestHeader(headerNames[i].childNodes[0].nodeValue, headerValues[i].childNodes[0].nodeValue);
+        }
       }
       break;
     case KeySystems.WIDEVINE:
