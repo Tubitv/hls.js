@@ -57,7 +57,7 @@ const createWidevineMediaKeySystemConfigurations = function (audioCodecs, videoC
 
 const createPlayreadyMediaKeySystemConfigurations = function (audioCodecs, videoCodecs, drmSystemOptions = {}) { /* jshint ignore:line */
   const baseConfig = {
-    initDataTypes: ['cenc'],
+    // initDataTypes: ['keyids', 'mp4'],
     // label: "",
     // persistentState: "not-allowed", // or "required" ?
     // distinctiveIdentifier: "not-allowed", // or "required" ?
@@ -246,45 +246,41 @@ class EMEController extends EventHandler {
         return mediaKeySystemAccess.createMediaKeys();
       })
       .then((mediaKeys) => {
-        mediaKeysListItem.mediaKeys = mediaKeys;
+        const returnMediaKeys = () => {
+          this._onMediaKeysCreated();
+          return mediaKeys;
+        };
 
         logger.log(`Media-keys created for key-system "${keySystem}"`);
+        mediaKeysListItem.mediaKeys = mediaKeys;
 
         // Using `MediaKeys.getStatusForPolicy()` to check available HDCP version,
         // only when you manually set up `minHdcpVersion` before.
         if (typeof this._minHdcpVersion !== 'undefined' && typeof mediaKeys.getStatusForPolicy === 'function') {
           logger.log(`Checking accessbility of HDCP version ${this._minHdcpVersion}"`);
+          return mediaKeys
+            .getStatusForPolicy({ minHdcpVersion: this._minHdcpVersion })
+            .then((status) => {
+              if (status !== 'usable') {
+                throw new Error(`Not a valid HDCP policy status ${status}`);
+              }
 
-          const getStatusForPolicyPromise = mediaKeys.getStatusForPolicy({ minHdcpVersion: this._minHdcpVersion });
+              logger.log(`Accessbility of HDCP version ${this._minHdcpVersion}" passed`);
 
-          getStatusForPolicyPromise.then((status) => {
-            if (status !== 'usable') {
-              return Promise.reject(new Error(`Not a valid HDCP policy status ${status}`));
-            }
-
-            logger.log(`Accessbility of HDCP version ${this._minHdcpVersion}" passed`);
-
-            this._onMediaKeysCreated();
-
-            return mediaKeys;
-          });
-
-          // Jump out upcoming handlers if HDCP version does not passed our needs.
-          getStatusForPolicyPromise.catch((err) => {
-            logger.error('Failed to pass HDCP policy:', err);
-            this.hls.trigger(Event.ERROR, {
-              type: ErrorTypes.KEY_SYSTEM_ERROR,
-              details: ErrorDetails.KEY_SYSTEM_INVALID_HDCP_VERSION,
-              fatal: true
+              return returnMediaKeys();
+            })
+            // Jump out upcoming handlers if HDCP version does not passed our needs.
+            .catch((err) => {
+              logger.error('Failed to pass HDCP policy:', err);
+              this.hls.trigger(Event.ERROR, {
+                type: ErrorTypes.KEY_SYSTEM_ERROR,
+                details: ErrorDetails.KEY_SYSTEM_INVALID_HDCP_VERSION,
+                fatal: true
+              });
             });
-          });
-
-          return getStatusForPolicyPromise;
-        } else {
-          this._onMediaKeysCreated();
-
-          return mediaKeys;
         }
+
+        return returnMediaKeys();
       });
 
     mediaKeysPromise.catch((err) => {
@@ -548,8 +544,10 @@ class EMEController extends EventHandler {
     switch (keysListItem.mediaKeySystemDomain) {
     case KeySystems.PLAYREADY:
       // from https://github.com/MicrosoftEdge/Demos/blob/master/eme/scripts/demo.js
+      // eslint-disable-next-line no-undef
       keyMessageXml = new DOMParser().parseFromString(String.fromCharCode.apply(null, new Uint16Array(keyMessage)), 'application/xml');
       if (keyMessageXml.getElementsByTagName('Challenge')[0]) {
+        // eslint-disable-next-line no-undef
         challenge = atob(keyMessageXml.getElementsByTagName('Challenge')[0].childNodes[0].nodeValue);
       } else {
         this._throwLicenseSystemError('Cannot find <Challenge> in key message');
@@ -568,7 +566,7 @@ class EMEController extends EventHandler {
       challenge = keyMessage;
       break;
     default:
-      this._throwLicenseSystemError(`unsupported key-system: ${keysListItem.mediaKeySystemDomain}`);
+      this._throwLicenseSystemError(`Unsupported key-system: ${keysListItem.mediaKeySystemDomain}`);
     }
 
     return challenge;
@@ -630,29 +628,24 @@ class EMEController extends EventHandler {
     Promise.all(
       mediaKeysList.map((mediaKeysListItem) => {
         if (mediaKeysListItem.mediaKeysSession) {
-          try {
-            return mediaKeysListItem.mediaKeysSession.close();
-          } catch (ex) {
+          return Promise.resolve()
+            .then(() => mediaKeysListItem.mediaKeysSession.close())
             // Ignore errors when closing the sessions. Closing a session that
             // generated no key requests will throw an error.
-          }
+            .catch(() => {});
         }
       })
     )
       .then(() => {
-        try {
-          return media.setMediaKeys(null);
-        } catch (ex) {
+        return Promise.resolve()
+          .then(() => media.setMediaKeys(null))
+          // Fire an event so that the application could decide when to destroy Hls instance or other tasks
           // Ignore any failures while removing media keys from the video element.
-        }
+          .catch(() => {});
       })
-      .then(() => {
-        // Fire an event so that the application could decide when to destroy Hls instance or other tasks
-        this.hls.trigger(Event.EME_DESTROYED, {});
-      })
-      .catch(() => {
-        // Ignore any failures while removing media keys from the video element.
-      });
+      .then(() => this.hls.trigger(Event.EME_DESTROYED, {}))
+      // Ignore any failures while removing media keys from the video element.
+      .catch(() => {});
   }
 
   onManifestParsed (data) {
