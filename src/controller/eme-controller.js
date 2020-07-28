@@ -242,9 +242,7 @@ class EMEController extends EventHandler {
     this._mediaKeysList.push(mediaKeysListItem);
 
     const mediaKeysPromise = Promise.resolve()
-      .then(() => {
-        return mediaKeySystemAccess.createMediaKeys();
-      })
+      .then(() => mediaKeySystemAccess.createMediaKeys())
       .then((mediaKeys) => {
         const returnMediaKeys = () => {
           this._onMediaKeysCreated();
@@ -285,6 +283,11 @@ class EMEController extends EventHandler {
 
     mediaKeysPromise.catch((err) => {
       logger.error('Failed to create media-keys:', err);
+      this.hls.trigger(Event.ERROR, {
+        type: ErrorTypes.KEY_SYSTEM_ERROR,
+        details: ErrorDetails.KEY_SYSTEM_NO_KEYS,
+        fatal: true
+      });
     });
 
     return mediaKeysPromise;
@@ -543,7 +546,9 @@ class EMEController extends EventHandler {
 
     switch (keysListItem.mediaKeySystemDomain) {
     case KeySystems.PLAYREADY:
-      // from https://github.com/MicrosoftEdge/Demos/blob/master/eme/scripts/demo.js
+      // for PlayReady CDMs, we need to dig the Challenge out of the XML,
+      // example from https://github.com/MicrosoftEdge/Demos/blob/master/eme/scripts/demo.js
+
       // eslint-disable-next-line no-undef
       keyMessageXml = new DOMParser().parseFromString(String.fromCharCode.apply(null, new Uint16Array(keyMessage)), 'application/xml');
       if (keyMessageXml.getElementsByTagName('Challenge')[0]) {
@@ -579,7 +584,7 @@ class EMEController extends EventHandler {
 
     const keysListItem = this._mediaKeysList[0];
     if (!keysListItem) {
-      logger.error('Fatal error: Media is encrypted but no key-system access has been obtained yet');
+      logger.error('Fatal: Media is encrypted but no key-system access has been obtained yet');
       this.hls.trigger(Event.ERROR, {
         type: ErrorTypes.KEY_SYSTEM_ERROR,
         details: ErrorDetails.KEY_SYSTEM_NO_ACCESS,
