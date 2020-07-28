@@ -7,20 +7,12 @@
 import EventHandler from '../event-handler';
 import Event from '../events';
 import { ErrorTypes, ErrorDetails } from '../errors';
-
 import { logger } from '../utils/logger';
+import { KeySystems } from '../utils/mediakeys-helper';
 
 const { XMLHttpRequest } = window;
 
 const MAX_LICENSE_REQUEST_FAILURES = 3;
-
-/**
- * @see https://developer.mozilla.org/en-US/docs/Web/API/Navigator/requestMediaKeySystemAccess
- */
-const KeySystems = {
-  WIDEVINE: 'com.widevine.alpha',
-  PLAYREADY: 'com.microsoft.playready'
-};
 
 /**
  * @see https://developer.mozilla.org/en-US/docs/Web/API/MediaKeySystemConfiguration
@@ -63,9 +55,9 @@ const createWidevineMediaKeySystemConfigurations = function (audioCodecs, videoC
   ];
 };
 
-const createPlayreadyMediaKeySystemConfigurations = function (audioCodecs, videoCodecs) { /* jshint ignore:line */
+const createPlayreadyMediaKeySystemConfigurations = function (audioCodecs, videoCodecs, drmSystemOptions = {}) { /* jshint ignore:line */
   const baseConfig = {
-    // initDataTypes: ['keyids', 'mp4'],
+    initDataTypes: ['cenc'],
     // label: "",
     // persistentState: "not-allowed", // or "required" ?
     // distinctiveIdentifier: "not-allowed", // or "required" ?
@@ -77,7 +69,20 @@ const createPlayreadyMediaKeySystemConfigurations = function (audioCodecs, video
       // { contentType: 'video/mp4; codecs="avc1.42E01E"' }
     ]
   };
-  // TODO add proper video and audio codecs for playready
+
+  audioCodecs.forEach((codec) => {
+    baseConfig.audioCapabilities.push({
+      contentType: `audio/mp4; codecs="${codec}"`,
+      robustness: drmSystemOptions.audioRobustness || ''
+    });
+  });
+  videoCodecs.forEach((codec) => {
+    baseConfig.videoCapabilities.push({
+      contentType: `video/mp4; codecs="${codec}"`,
+      robustness: drmSystemOptions.videoRobustness || ''
+    });
+  });
+
   return [
     baseConfig
   ];
@@ -100,9 +105,9 @@ const getSupportedMediaKeySystemConfigurations = function (keySystem, audioCodec
   case KeySystems.WIDEVINE:
     return createWidevineMediaKeySystemConfigurations(audioCodecs, videoCodecs, drmSystemOptions);
   case KeySystems.PLAYREADY:
-    return createPlayreadyMediaKeySystemConfigurations(audioCodecs, videoCodecs);
+    return createPlayreadyMediaKeySystemConfigurations(audioCodecs, videoCodecs, drmSystemOptions);
   default:
-    throw Error('Unknown key-system: ' + keySystem);
+    throw new Error('Unknown key-system: ' + keySystem);
   }
 };
 
@@ -125,25 +130,21 @@ class EMEController extends EventHandler {
       Event.MANIFEST_PARSED
     );
 
-    this._widevineLicenseUrl = hls.config.widevineLicenseUrl;
-    this._playreadyLicenseUrl = hls.config.playreadyLicenseUrl;
-    this._licenseXhrSetup = hls.config.licenseXhrSetup;
-    this._emeEnabled = hls.config.emeEnabled;
     this._drmSystemOptions = hls.config.drmSystemOptions;
-
-    this._requestMediaKeySystemAccess = hls.config.requestMediaKeySystemAccessFunc;
-
+    this._emeEnabled = hls.config.emeEnabled;
+    this._licenseXhrSetup = hls.config.licenseXhrSetup;
     this._minHdcpVersion = hls.config.minHdcpVersion;
-
-    this._mediaKeysList = [];
-    this._media = null;
+    this._playreadyLicenseUrl = hls.config.playreadyLicenseUrl;
+    this._requestMediaKeySystemAccess = hls.config.requestMediaKeySystemAccessFunc;
+    this._widevineLicenseUrl = hls.config.widevineLicenseUrl;
 
     this._hasSetMediaKeys = false;
-    this._isMediaEncrypted = false;
-
-    this._requestLicenseFailureCount = 0;
-
+    this._media = null;
+    this._mediaKeysList = [];
+    this._mediaKeysPromise = null;
     this._onMediaEncrypted = this._onMediaEncrypted.bind(this);
+    this._requestLicenseFailureCount = 0;
+    this._xhr = null;
   }
 
   _throwLicenseSystemError (msg) {
@@ -189,33 +190,35 @@ class EMEController extends EventHandler {
      * @param {Array<string>} videoCodecs List of required video codecs to support
      */
   _attemptKeySystemAccess (keySystem, audioCodecs, videoCodecs) {
-    const mediaKeySystemConfigs = getSupportedMediaKeySystemConfigurations(keySystem, audioCodecs, videoCodecs, this._drmSystemOptions);
-
-    if (!mediaKeySystemConfigs) {
-      logger.warn('Can not create config for key-system (maybe because platform is not supported):', keySystem);
-      return;
+    let mediaKeySystemConfigs;
+    try {
+      mediaKeySystemConfigs = getSupportedMediaKeySystemConfigurations(keySystem, audioCodecs, videoCodecs, this._drmSystemOptions);
+    } catch (err) {
+      this._throwLicenseSystemError(err);
     }
 
     logger.log('Requesting encrypted media key-system access');
 
     // expecting interface like window.navigator.requestMediaKeySystemAccess
-    this.requestMediaKeySystemAccess(keySystem, mediaKeySystemConfigs)
-      .then((mediaKeySystemAccess) => {
-        this._onMediaKeySystemAccessObtained(keySystem, mediaKeySystemAccess);
-      })
-      .catch((err) => {
-        logger.error(`Failed to obtain key-system "${keySystem}" access:`, err);
-        this.hls.trigger(Event.ERROR, {
-          type: ErrorTypes.KEY_SYSTEM_ERROR,
-          details: ErrorDetails.KEY_SYSTEM_NO_ACCESS,
-          fatal: true
-        });
+    const keySystemAccessPromise = this.requestMediaKeySystemAccess(keySystem, mediaKeySystemConfigs);
+
+    this._mediaKeysPromise = keySystemAccessPromise.then((mediaKeySystemAccess) => {
+      return this._onMediaKeySystemAccessObtained(keySystem, mediaKeySystemAccess);
+    });
+
+    keySystemAccessPromise.catch((err) => {
+      logger.error(`Failed to obtain key-system "${keySystem}" access:`, err);
+      this.hls.trigger(Event.ERROR, {
+        type: ErrorTypes.KEY_SYSTEM_ERROR,
+        details: ErrorDetails.KEY_SYSTEM_NO_ACCESS,
+        fatal: true
       });
+    });
   }
 
   get requestMediaKeySystemAccess () {
     if (!this._requestMediaKeySystemAccess) {
-      throw new Error('No requestMediaKeySystemAccess function configured');
+      this._throwLicenseSystemError('No requestMediaKeySystemAccess function configured');
     }
 
     return this._requestMediaKeySystemAccess;
@@ -231,8 +234,6 @@ class EMEController extends EventHandler {
     logger.log(`Access for key-system "${keySystem}" obtained`);
 
     const mediaKeysListItem = {
-      mediaKeys: null,
-      mediaKeysSession: null,
       mediaKeysSessionInitialized: false,
       mediaKeySystemAccess: mediaKeySystemAccess,
       mediaKeySystemDomain: keySystem
@@ -240,48 +241,57 @@ class EMEController extends EventHandler {
 
     this._mediaKeysList.push(mediaKeysListItem);
 
-    mediaKeySystemAccess.createMediaKeys()
+    const mediaKeysPromise = Promise.resolve()
+      .then(() => {
+        return mediaKeySystemAccess.createMediaKeys();
+      })
       .then((mediaKeys) => {
-        logger.log(`Media-keys created for key-system "${keySystem}"`);
         mediaKeysListItem.mediaKeys = mediaKeys;
+
+        logger.log(`Media-keys created for key-system "${keySystem}"`);
 
         // Using `MediaKeys.getStatusForPolicy()` to check available HDCP version,
         // only when you manually set up `minHdcpVersion` before.
-        if (
-          typeof this._minHdcpVersion !== 'undefined' &&
-          typeof mediaKeys.getStatusForPolicy === 'function'
-        ) {
+        if (typeof this._minHdcpVersion !== 'undefined' && typeof mediaKeys.getStatusForPolicy === 'function') {
           logger.log(`Checking accessbility of HDCP version ${this._minHdcpVersion}"`);
-          return mediaKeys.getStatusForPolicy({ minHdcpVersion: this._minHdcpVersion })
-            .then((status) => {
-              if (status !== 'usable') {
-                return Promise.reject(new Error(`Not a valid HDCP policy status ${status}`));
-              }
 
-              logger.log(`Accessbility of HDCP version ${this._minHdcpVersion}" passed`);
-              this._onMediaKeysCreated();
-            })
-            // Jump out upcoming handlers if HDCP version does not passed our needs.
-            .catch((err) => {
-              logger.error('Failed to pass HDCP policy:', err);
-              this.hls.trigger(Event.ERROR, {
-                type: ErrorTypes.KEY_SYSTEM_ERROR,
-                details: ErrorDetails.KEY_SYSTEM_INVALID_HDCP_VERSION,
-                fatal: true
-              });
+          const getStatusForPolicyPromise = mediaKeys.getStatusForPolicy({ minHdcpVersion: this._minHdcpVersion });
+
+          getStatusForPolicyPromise.then((status) => {
+            if (status !== 'usable') {
+              return Promise.reject(new Error(`Not a valid HDCP policy status ${status}`));
+            }
+
+            logger.log(`Accessbility of HDCP version ${this._minHdcpVersion}" passed`);
+
+            this._onMediaKeysCreated();
+
+            return mediaKeys;
+          });
+
+          // Jump out upcoming handlers if HDCP version does not passed our needs.
+          getStatusForPolicyPromise.catch((err) => {
+            logger.error('Failed to pass HDCP policy:', err);
+            this.hls.trigger(Event.ERROR, {
+              type: ErrorTypes.KEY_SYSTEM_ERROR,
+              details: ErrorDetails.KEY_SYSTEM_INVALID_HDCP_VERSION,
+              fatal: true
             });
-        }
+          });
 
-        this._onMediaKeysCreated();
-      })
-      .catch((err) => {
-        logger.error('Failed to create media-keys:', err);
-        this.hls.trigger(Event.ERROR, {
-          type: ErrorTypes.KEY_SYSTEM_ERROR,
-          details: ErrorDetails.KEY_SYSTEM_NO_KEYS,
-          fatal: true
-        });
+          return getStatusForPolicyPromise;
+        } else {
+          this._onMediaKeysCreated();
+
+          return mediaKeys;
+        }
       });
+
+    mediaKeysPromise.catch((err) => {
+      logger.error('Failed to create media-keys:', err);
+    });
+
+    return mediaKeysPromise;
   }
 
   /**
@@ -292,6 +302,7 @@ class EMEController extends EventHandler {
     // check for all key-list items if a session exists, otherwise, create one
     this._mediaKeysList.forEach((mediaKeysListItem) => {
       if (!mediaKeysListItem.mediaKeysSession) {
+        // mediaKeys is definitely initialized here
         mediaKeysListItem.mediaKeysSession = mediaKeysListItem.mediaKeys.createSession();
         this._onNewMediaKeySession(mediaKeysListItem.mediaKeysSession);
       }
@@ -305,10 +316,10 @@ class EMEController extends EventHandler {
   _onNewMediaKeySession (keySession) {
     logger.log(`New key-system session ${keySession.sessionId}`);
 
-    this.hls.startLoad();
     keySession.addEventListener('message', (event) => {
       this._onKeySessionMessage(event.target, event.message);
     }, false);
+
     keySession.addEventListener('keystatuseschange', (event) => {
       this._onKeySessionKeyStatusesChange(event.target);
     }, false);
@@ -318,7 +329,7 @@ class EMEController extends EventHandler {
     logger.log('Got EME message event, creating license request');
 
     this._requestLicense(message, (data) => {
-      logger.log('Received license data, updating key-session');
+      logger.log(`Received license data (length: ${data ? data.byteLength : data}), updating key-session`);
       keySession.update(data);
     });
   }
@@ -330,7 +341,7 @@ class EMEController extends EventHandler {
     // but every `keyStatuses` needs to be `usable` to continue.
     keySession.keyStatuses.forEach((status) => {
       if (status === 'output-downscaled' || status === 'output-restricted') {
-        logger.error('Fatal error: Key session is not usable.');
+        logger.error(`Key session (status: ${status}) is not in a valid status.`);
 
         this.hls.trigger(Event.ERROR, {
           type: ErrorTypes.KEY_SYSTEM_ERROR,
@@ -342,16 +353,28 @@ class EMEController extends EventHandler {
   }
 
   _onMediaEncrypted (event) {
-    const initDataType = event.initDataType;
-    const initData = event.initData;
-    logger.log(`Media is encrypted using "${initDataType}" init data type`);
+    logger.log(`Media is encrypted using "${event.initDataType}" init data type`);
 
-    this._isMediaEncrypted = true;
-    this._mediaEncryptionInitDataType = initDataType;
-    this._mediaEncryptionInitData = initData;
+    if (!this._mediaKeysPromise) {
+      logger.error('Fatal: Media is encrypted but no CDM access or no keys have been requested');
+      this.hls.trigger(Event.ERROR, {
+        type: ErrorTypes.KEY_SYSTEM_ERROR,
+        details: ErrorDetails.KEY_SYSTEM_NO_KEYS,
+        fatal: true
+      });
+      return;
+    }
 
-    this._attemptSetMediaKeys();
-    this._generateRequestWithPreferredKeySession();
+    const finallySetKeyAndStartSession = (mediaKeys) => {
+      if (!this._media) {
+        return;
+      }
+      this._attemptSetMediaKeys(mediaKeys);
+      this._generateRequestWithPreferredKeySession(event.initDataType, event.initData);
+    };
+
+    // Could use `Promise.finally` but some Promise polyfills are missing it
+    this._mediaKeysPromise.then(finallySetKeyAndStartSession).catch(finallySetKeyAndStartSession);
   }
 
   _attemptSetMediaKeys () {
@@ -375,7 +398,7 @@ class EMEController extends EventHandler {
     }
   }
 
-  _generateRequestWithPreferredKeySession () {
+  _generateRequestWithPreferredKeySession (initDataType, initData) {
     // FIXME: see if we can/want/need-to really to deal with several potential key-sessions?
     const keysListItem = this._mediaKeysList[0];
     if (!keysListItem) {
@@ -401,16 +424,25 @@ class EMEController extends EventHandler {
         details: ErrorDetails.KEY_SYSTEM_NO_SESSION,
         fatal: true
       });
+      return;
     }
 
-    const initDataType = this._mediaEncryptionInitDataType;
-    const initData = this._mediaEncryptionInitData;
+    // initData is null if the media is not CORS-same-origin
+    if (!initData) {
+      logger.warn('Fatal: initData required for generating a key session is null');
+      this.hls.trigger(Event.ERROR, {
+        type: ErrorTypes.KEY_SYSTEM_ERROR,
+        details: ErrorDetails.KEY_SYSTEM_NO_INIT_DATA,
+        fatal: true
+      });
+      return;
+    }
 
     logger.log(`Generating key-session request for "${initDataType}" init data type`);
-
     keysListItem.mediaKeysSessionInitialized = true;
 
-    keySession.generateRequest(initDataType, initData)
+    keySession
+      .generateRequest(initDataType, initData)
       .then(() => {
         logger.debug('Key-session generation succeeded');
       })
@@ -506,31 +538,37 @@ class EMEController extends EventHandler {
      * @returns {ArrayBuffer} Challenge data posted to license server
      */
   _generateLicenseRequestChallenge (keysListItem, keyMessage) {
-    let challenge;
+    const xhr = this._xhr;
 
-    if (keysListItem.mediaKeySystemDomain === KeySystems.PLAYREADY) {
-      // For PlayReady CDMs, we need to dig the Challenge out of the XML.
-      // eslint-disable-next-line no-undef
-      let keyMessageXml = new DOMParser().parseFromString(String.fromCharCode.apply(null, new Uint16Array(keyMessage)), 'application/xml');
+    let challenge;
+    let headerNames;
+    let headerValues;
+    let keyMessageXml;
+
+    switch (keysListItem.mediaKeySystemDomain) {
+    case KeySystems.PLAYREADY:
+      // from https://github.com/MicrosoftEdge/Demos/blob/master/eme/scripts/demo.js
+      keyMessageXml = new DOMParser().parseFromString(String.fromCharCode.apply(null, new Uint16Array(keyMessage)), 'application/xml');
       if (keyMessageXml.getElementsByTagName('Challenge')[0]) {
-        // eslint-disable-next-line no-undef
         challenge = atob(keyMessageXml.getElementsByTagName('Challenge')[0].childNodes[0].nodeValue);
       } else {
         this._throwLicenseSystemError('Cannot find <Challenge> in key message');
       }
-      let headerNames = keyMessageXml.getElementsByTagName('name');
-      let headerValues = keyMessageXml.getElementsByTagName('value');
+      headerNames = keyMessageXml.getElementsByTagName('name');
+      headerValues = keyMessageXml.getElementsByTagName('value');
       if (headerNames.length !== headerValues.length) {
         this._throwLicenseSystemError('Mismatched header <name>/<value> pair in key message');
       }
       for (let i = 0; i < headerNames.length; i++) {
-        this._xhr.setRequestHeader(headerNames[i].childNodes[0].nodeValue, headerValues[i].childNodes[0].nodeValue);
+        xhr.setRequestHeader(headerNames[i].childNodes[0].nodeValue, headerValues[i].childNodes[0].nodeValue);
       }
-    } else if (keysListItem.mediaKeySystemDomain === KeySystems.WIDEVINE) {
-      // For Widevine CDMs, the challenge is the keyMessage.
+      break;
+    case KeySystems.WIDEVINE:
+      // for Widevine CDMs, the challenge is the keyMessage.
       challenge = keyMessage;
-    } else {
-      logger.error('Unsupported key-system:', keysListItem.mediaKeySystemDomain);
+      break;
+    default:
+      this._throwLicenseSystemError(`unsupported key-system: ${keysListItem.mediaKeySystemDomain}`);
     }
 
     return challenge;
@@ -556,7 +594,8 @@ class EMEController extends EventHandler {
 
       logger.log(`Sending license request to URL: ${url}`);
 
-      xhr.send(this._generateLicenseRequestChallenge(keysListItem, keyMessage));
+      const challenge = this._generateLicenseRequestChallenge(keysListItem, keyMessage);
+      xhr.send(challenge);
     } catch (err) {
       this._throwLicenseSystemError(`Failure requesting DRM license: ${err}`);
     }
@@ -575,36 +614,45 @@ class EMEController extends EventHandler {
     media.addEventListener('encrypted', this._onMediaEncrypted);
   }
 
-  onMediaDetached (data) {
+  onMediaDetached () {
     const media = this._media;
+    const mediaKeysList = this._mediaKeysList;
 
-    if (media) {
-      media.removeEventListener('encrypted', this._onMediaEncrypted);
+    if (!media) {
+      return;
     }
 
-    // Close all sessions and remove media keys from the video element.
-    Promise.all(this._mediaKeysList.map((mediaKeysListItem) => {
-      if (mediaKeysListItem.mediaKeysSession) {
-        try {
-          return mediaKeysListItem.mediaKeysSession.close();
-        } catch (ex) {
-          // Ignore errors when closing the sessions. Closing a session that
-          // generated no key requests will throw an error.
-        }
-      }
-      return Promise.resolve();
-    })).then(() => {
-      this._mediaKeysList = [];
+    media.removeEventListener('encrypted', this._onMediaEncrypted);
+    this._media = null;
+    this._mediaKeysList = [];
 
-      try {
-        return media.setMediaKeys(null);
-      } catch (ex) {
+    // Close all sessions and remove media keys from the video element.
+    Promise.all(
+      mediaKeysList.map((mediaKeysListItem) => {
+        if (mediaKeysListItem.mediaKeysSession) {
+          try {
+            return mediaKeysListItem.mediaKeysSession.close();
+          } catch (ex) {
+            // Ignore errors when closing the sessions. Closing a session that
+            // generated no key requests will throw an error.
+          }
+        }
+      })
+    )
+      .then(() => {
+        try {
+          return media.setMediaKeys(null);
+        } catch (ex) {
+          // Ignore any failures while removing media keys from the video element.
+        }
+      })
+      .then(() => {
+        // Fire an event so that the application could decide when to destroy Hls instance or other tasks
+        this.hls.trigger(Event.EME_DESTROYED, {});
+      })
+      .catch(() => {
         // Ignore any failures while removing media keys from the video element.
-      }
-    }).then(() => {
-      // Fire an event so that the application could decide when to destroy Hls instance or other tasks
-      this.hls.trigger(Event.EME_DESTROYED, {});
-    });
+      });
   }
 
   onManifestParsed (data) {
@@ -615,8 +663,15 @@ class EMEController extends EventHandler {
     const audioCodecs = data.levels.map((level) => level.audioCodec);
     const videoCodecs = data.levels.map((level) => level.videoCodec);
 
-    this.hls.stopLoad();
-    const keySystem = this._widevineLicenseUrl ? KeySystems.WIDEVINE : KeySystems.PLAYREADY;
+    let keySystem;
+    if (this._playreadyLicenseUrl) {
+      keySystem = KeySystems.PLAYREADY;
+    } else if (this._widevineLicenseUrl) {
+      keySystem = KeySystems.WIDEVINE;
+    } else {
+      this._throwLicenseSystemError('Unknown license url type, please use "playreadyLicenseUrl" or "widevineLicenseUrl"');
+    }
+
     this._attemptKeySystemAccess(keySystem, audioCodecs, videoCodecs);
   }
 }
