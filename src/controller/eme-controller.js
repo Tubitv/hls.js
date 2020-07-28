@@ -641,6 +641,7 @@ class EMEController extends EventHandler {
             // generated no key requests will throw an error.
             .catch(() => {});
         }
+        return Promise.resolve();
       })
     )
       .then(() => {
