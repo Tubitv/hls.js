@@ -3,7 +3,8 @@
  */
 export const KeySystems = {
   PLAYREADY: 'com.microsoft.playready',
-  WIDEVINE: 'com.widevine.alpha'
+  WIDEVINE: 'com.widevine.alpha',
+  FAIRPLAY: 'com.apple.fps.1_0'
 };
 
 export const requestMediaKeySystemAccess = (function () {

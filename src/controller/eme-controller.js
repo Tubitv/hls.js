@@ -14,6 +14,94 @@ const { XMLHttpRequest } = window;
 
 const MAX_LICENSE_REQUEST_FAILURES = 3;
 
+function stringToArray(string) {
+    var buffer = new ArrayBuffer(string.length * 2); // 2 bytes for each char
+    var array = new Uint16Array(buffer);
+    for (var i = 0, strLen = string.length; i < strLen; i++) {
+        array[i] = string.charCodeAt(i);
+    }
+    return array;
+}
+
+function arrayToString(array) {
+    var uint16array = new Uint16Array(array.buffer);
+    return String.fromCharCode.apply(null, uint16array);
+}
+
+// TODO ArrayBuffer -> Uint8Array
+function base64EncodeUint8Array(input) {
+    var keyStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
+    var output = "";
+    var chr1, chr2, chr3, enc1, enc2, enc3, enc4;
+    var i = 0;
+
+    while (i < input.length) {
+        chr1 = input[i++];
+        chr2 = i < input.length ? input[i++] : Number.NaN; // Not sure if the index
+        chr3 = i < input.length ? input[i++] : Number.NaN; // checks are needed here
+
+        enc1 = chr1 >> 2;
+        enc2 = ((chr1 & 3) << 4) | (chr2 >> 4);
+        enc3 = ((chr2 & 15) << 2) | (chr3 >> 6);
+        enc4 = chr3 & 63;
+
+        if (isNaN(chr2)) {
+            enc3 = enc4 = 64;
+        } else if (isNaN(chr3)) {
+            enc4 = 64;
+        }
+        output += keyStr.charAt(enc1) + keyStr.charAt(enc2) +
+            keyStr.charAt(enc3) + keyStr.charAt(enc4);
+    }
+    return output;
+}
+
+function extractContentId(initData) {
+    let contentId = arrayToString(initData);
+    console.log('extractContentId contentId', contentId);
+
+    // ADAPTed by KC. For some reason this code really extracts the hostname,
+    // not the content ID as the original author inteded. So if the string begins
+    // with skd:// I'm going to use my version.
+    if (contentId.startsWith("L\u0000skd://")) {
+        contentId = contentId.substr(8);
+    } else {
+        // contentId is passed up as a URI, from which the host must be extracted:
+        const link = document.createElement('a');
+        link.href = contentId;
+        contentId = link.hostname;
+    }
+    return contentId;
+}
+
+function concatInitDataIdAndCertificate(initData, id, cert) {
+    if (typeof id == "string")
+        id = stringToArray(id);
+    // layout is [initData][4 byte: idLength][idLength byte: id][4 byte:certLength][certLength byte: cert]
+    var offset = 0;
+    var buffer = new ArrayBuffer(initData.byteLength + 4 + id.byteLength + 4 + cert.byteLength);
+    var dataView = new DataView(buffer);
+
+    var initDataArray = new Uint8Array(buffer, offset, initData.byteLength);
+    initDataArray.set(initData);
+    offset += initData.byteLength;
+
+    dataView.setUint32(offset, id.byteLength, true);
+    offset += 4;
+
+    var idArray = new Uint16Array(buffer, offset, id.length);
+    idArray.set(id);
+    offset += idArray.byteLength;
+
+    dataView.setUint32(offset, cert.byteLength, true);
+    offset += 4;
+
+    var certArray = new Uint8Array(buffer, offset, cert.byteLength);
+    certArray.set(cert);
+
+    return new Uint8Array(buffer, 0, buffer.byteLength);
+}
+
 /**
  * @see https://developer.mozilla.org/en-US/docs/Web/API/MediaKeySystemConfiguration
  * @param {Array<string>} audioCodecs List of required audio codecs to support
@@ -22,40 +110,7 @@ const MAX_LICENSE_REQUEST_FAILURES = 3;
  * @returns {Array<MediaSystemConfiguration>} An array of supported configurations
  */
 
-const createWidevineMediaKeySystemConfigurations = function (audioCodecs, videoCodecs, drmSystemOptions = {}) { /* jshint ignore:line */
-  const baseConfig = {
-    // initDataTypes: ['keyids', 'mp4'],
-    // label: "",
-    // persistentState: "not-allowed", // or "required" ?
-    // distinctiveIdentifier: "not-allowed", // or "required" ?
-    // sessionTypes: ['temporary'],
-    audioCapabilities: [
-      // { contentType: 'audio/mp4; codecs="mp4a.40.2"' }
-    ],
-    videoCapabilities: [
-      // { contentType: 'video/mp4; codecs="avc1.42E01E"' }
-    ]
-  };
-
-  audioCodecs.forEach((codec) => {
-    baseConfig.audioCapabilities.push({
-      contentType: `audio/mp4; codecs="${codec}"`,
-      robustness: drmSystemOptions.audioRobustness || ''
-    });
-  });
-  videoCodecs.forEach((codec) => {
-    baseConfig.videoCapabilities.push({
-      contentType: `video/mp4; codecs="${codec}"`,
-      robustness: drmSystemOptions.videoRobustness || ''
-    });
-  });
-
-  return [
-    baseConfig
-  ];
-};
-
-const createPlayreadyMediaKeySystemConfigurations = function (audioCodecs, videoCodecs, drmSystemOptions = {}) { /* jshint ignore:line */
+const createMediaKeySystemConfigurations = function (audioCodecs, videoCodecs, drmSystemOptions = {}) { /* jshint ignore:line */
   const baseConfig = {
     // initDataTypes: ['keyids', 'mp4'],
     // label: "",
@@ -103,9 +158,9 @@ const createPlayreadyMediaKeySystemConfigurations = function (audioCodecs, video
 const getSupportedMediaKeySystemConfigurations = function (keySystem, audioCodecs, videoCodecs, drmSystemOptions = {}) {
   switch (keySystem) {
   case KeySystems.WIDEVINE:
-    return createWidevineMediaKeySystemConfigurations(audioCodecs, videoCodecs, drmSystemOptions);
   case KeySystems.PLAYREADY:
-    return createPlayreadyMediaKeySystemConfigurations(audioCodecs, videoCodecs, drmSystemOptions);
+  case KeySystems.FAIRPLAY:
+    return createMediaKeySystemConfigurations(audioCodecs, videoCodecs, drmSystemOptions);
   default:
     throw new Error('Unknown key-system: ' + keySystem);
   }
@@ -134,9 +189,9 @@ class EMEController extends EventHandler {
     this._emeEnabled = hls.config.emeEnabled;
     this._licenseXhrSetup = hls.config.licenseXhrSetup;
     this._minHdcpVersion = hls.config.minHdcpVersion;
-    this._playreadyLicenseUrl = hls.config.playreadyLicenseUrl;
+    this._keySystem = hls.config.keySystem;
+    this._licenseUrl = hls.config.licenseUrl;
     this._requestMediaKeySystemAccess = hls.config.requestMediaKeySystemAccessFunc;
-    this._widevineLicenseUrl = hls.config.widevineLicenseUrl;
 
     this._hasSetMediaKeys = false;
     this._media = null;
@@ -165,10 +220,9 @@ class EMEController extends EventHandler {
     let url;
     switch (keySystem) {
     case KeySystems.WIDEVINE:
-      url = this._widevineLicenseUrl;
-      break;
     case KeySystems.PLAYREADY:
-      url = this._playreadyLicenseUrl;
+    case KeySystems.FAIRPLAY:
+      url = this._licenseUrl;
       break;
     default:
       url = null;
@@ -251,6 +305,7 @@ class EMEController extends EventHandler {
 
         logger.log(`Media-keys created for key-system "${keySystem}"`);
         mediaKeysListItem.mediaKeys = mediaKeys;
+        this._attemptSetMediaKeys();
 
         // Using `MediaKeys.getStatusForPolicy()` to check available HDCP version,
         // only when you manually set up `minHdcpVersion` before.
@@ -364,11 +419,10 @@ class EMEController extends EventHandler {
       return;
     }
 
-    const finallySetKeyAndStartSession = (mediaKeys) => {
+    const finallySetKeyAndStartSession = () => {
       if (!this._media) {
         return;
       }
-      this._attemptSetMediaKeys(mediaKeys);
       this._generateRequestWithPreferredKeySession(event.initDataType, event.initData);
     };
 
@@ -440,8 +494,17 @@ class EMEController extends EventHandler {
     logger.log(`Generating key-session request for "${initDataType}" init data type`);
     keysListItem.mediaKeysSessionInitialized = true;
 
+    let data = initData;
+    if (this._keySystem.startsWith('com.apple.fps')) {
+      const cert = this._drmSystemOptions.serverCertificate;
+      const uint8Data = new Uint8Array(data);
+      const contentId = extractContentId(uint8Data);
+      keySession.contentId = contentId;
+      data = concatInitDataIdAndCertificate(uint8Data, contentId, cert);
+    }
+
     keySession
-      .generateRequest(initDataType, initData)
+      .generateRequest(initDataType, data)
       .then(() => {
         logger.debug('Key-session generation succeeded');
       })
@@ -572,6 +635,11 @@ class EMEController extends EventHandler {
       // for Widevine CDMs, the challenge is the keyMessage.
       challenge = keyMessage;
       break;
+    case KeySystems.FAIRPLAY:
+      challenge = 'spc=' + base64EncodeUint8Array(new Uint8Array(keyMessage)) + '&assetId=' + encodeURIComponent(keysListItem.keySession.contentId);
+      xhr.setRequestHeader('Content-type', 'text/html; charset=utf-8');
+      xhr.responseType = 'text';
+      break;
     default:
       this._throwLicenseSystemError(`Unsupported key-system: ${keysListItem.mediaKeySystemDomain}`);
     }
@@ -663,17 +731,7 @@ class EMEController extends EventHandler {
 
     const audioCodecs = data.levels.map((level) => level.audioCodec);
     const videoCodecs = data.levels.map((level) => level.videoCodec);
-
-    let keySystem;
-    if (this._playreadyLicenseUrl) {
-      keySystem = KeySystems.PLAYREADY;
-    } else if (this._widevineLicenseUrl) {
-      keySystem = KeySystems.WIDEVINE;
-    } else {
-      this._throwLicenseSystemError('Unknown license url type, please use "playreadyLicenseUrl" or "widevineLicenseUrl"');
-    }
-
-    this._attemptKeySystemAccess(keySystem, audioCodecs, videoCodecs);
+    this._attemptKeySystemAccess(this._keySystem, audioCodecs, videoCodecs);
   }
 }
 

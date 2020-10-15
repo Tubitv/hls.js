@@ -1,5 +1,7 @@
 import URLToolkit from 'url-toolkit';
 
+import EMEPolyfillSafari from './polyfills/eme-safari';
+
 import {
   ErrorTypes,
   ErrorDetails

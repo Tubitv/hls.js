@@ -90,8 +90,8 @@ export var hlsDefaultConfig = {
   maxLoadingDelay: 4, // used by abr-controller
   minAutoBitrate: 0, // used by hls
   emeEnabled: false, // used by eme-controller
-  widevineLicenseUrl: undefined, // used by eme-controller
-  playreadyLicenseUrl: undefined, // used by eme-controller
+  keySystem: undefined, // used by eme-controller
+  licenseUrl: undefined, // used by eme-controller
   drmSystemOptions: undefined, // used by eme-controller
   requestMediaKeySystemAccessFunc: requestMediaKeySystemAccess, // used by eme-controller
   minHdcpVersion: undefined // used by eme-controller
