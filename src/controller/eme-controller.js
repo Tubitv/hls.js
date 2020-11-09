@@ -21,66 +21,58 @@ const MAX_LICENSE_REQUEST_FAILURES = 3;
  * @param {object} drmSystemOptions Optional parameters/requirements for the key-system
  * @returns {Array<MediaSystemConfiguration>} An array of supported configurations
  */
-
-const createWidevineMediaKeySystemConfigurations = function (audioCodecs, videoCodecs, drmSystemOptions = {}) { /* jshint ignore:line */
+const buildKeySystemConfigurations = function (audioCodecs, videoCodecs, drmSystemOptions = {}) {
   const baseConfig = {
     // initDataTypes: ['keyids', 'mp4'],
     // label: "",
     // persistentState: "not-allowed", // or "required" ?
-    // distinctiveIdentifier: "not-allowed", // or "required" ?
+    // distinctiveIdentifier: "not-allowed", // "not-allowed" or "required" ?
     // sessionTypes: ['temporary'],
-    audioCapabilities: [
-      // { contentType: 'audio/mp4; codecs="mp4a.40.2"' }
-    ],
-    videoCapabilities: [
-      // { contentType: 'video/mp4; codecs="avc1.42E01E"' }
-    ]
+    // audioCapabilities: [
+    // { contentType: 'audio/mp4; codecs="mp4a.40.2"' }
+    // ],
+    // videoCapabilities: [
+    // { contentType: 'video/mp4; codecs="avc1.42E01E"' }
+    // ]
   };
 
-  audioCodecs.forEach((codec) => {
-    baseConfig.audioCapabilities.push({
-      contentType: `audio/mp4; codecs="${codec}"`,
-      robustness: drmSystemOptions.audioRobustness || ''
-    });
-  });
-  videoCodecs.forEach((codec) => {
-    baseConfig.videoCapabilities.push({
-      contentType: `video/mp4; codecs="${codec}"`,
-      robustness: drmSystemOptions.videoRobustness || ''
-    });
-  });
+  if (drmSystemOptions.distinctiveIdentifier) {
+    baseConfig.distinctiveIdentifier = drmSystemOptions.distinctiveIdentifier;
+  }
 
-  return [
-    baseConfig
-  ];
-};
+  if (drmSystemOptions.initDataTypes) {
+    baseConfig.initDataTypes = drmSystemOptions.initDataTypes;
+  }
 
-const createPlayreadyMediaKeySystemConfigurations = function (audioCodecs, videoCodecs, drmSystemOptions = {}) { /* jshint ignore:line */
-  const baseConfig = {
-    // initDataTypes: ['keyids', 'mp4'],
-    // label: "",
-    // persistentState: "not-allowed", // or "required" ?
-    // distinctiveIdentifier: "not-allowed", // or "required" ?
-    // sessionTypes: ['temporary'],
-    audioCapabilities: [
-      // { contentType: 'audio/mp4; codecs="mp4a.40.2"' }
-    ],
-    videoCapabilities: [
-      // { contentType: 'video/mp4; codecs="avc1.42E01E"' }
-    ]
-  };
+  if (drmSystemOptions.label) {
+    baseConfig.label = drmSystemOptions.label;
+  }
+
+  if (drmSystemOptions.persistentState) {
+    baseConfig.persistentState = drmSystemOptions.persistentState;
+  }
+
+  if (drmSystemOptions.sessionTypes) {
+    baseConfig.sessionTypes = drmSystemOptions.sessionTypes;
+  }
 
   audioCodecs.forEach((codec) => {
-    baseConfig.audioCapabilities.push({
-      contentType: `audio/mp4; codecs="${codec}"`,
-      robustness: drmSystemOptions.audioRobustness || ''
-    });
+    const audioCapability = {
+      contentType: `audio/mp4; codecs="${codec}"`
+    };
+    if (drmSystemOptions.audioRobustness) {
+      audioCapability.robustness = drmSystemOptions.audioRobustness;
+    }
+    baseConfig.audioCapabilities.push(audioCapability);
   });
   videoCodecs.forEach((codec) => {
-    baseConfig.videoCapabilities.push({
-      contentType: `video/mp4; codecs="${codec}"`,
-      robustness: drmSystemOptions.videoRobustness || ''
-    });
+    const videoCapability = {
+      contentType: `video/mp4; codecs="${codec}"`
+    };
+    if (drmSystemOptions.videoRobustness) {
+      videoCapability.robustness = drmSystemOptions.videoRobustness;
+    }
+    baseConfig.videoCapabilities.push(videoCapability);
   });
 
   return [
@@ -103,9 +95,8 @@ const createPlayreadyMediaKeySystemConfigurations = function (audioCodecs, video
 const getSupportedMediaKeySystemConfigurations = function (keySystem, audioCodecs, videoCodecs, drmSystemOptions = {}) {
   switch (keySystem) {
   case KeySystems.WIDEVINE:
-    return createWidevineMediaKeySystemConfigurations(audioCodecs, videoCodecs, drmSystemOptions);
   case KeySystems.PLAYREADY:
-    return createPlayreadyMediaKeySystemConfigurations(audioCodecs, videoCodecs, drmSystemOptions);
+    return buildKeySystemConfigurations(audioCodecs, videoCodecs, drmSystemOptions);
   default:
     throw new Error('Unknown key-system: ' + keySystem);
   }
@@ -545,12 +536,18 @@ class EMEController extends EventHandler {
     let keyMessageXml;
 
     switch (keysListItem.mediaKeySystemDomain) {
+    // eslint-disable-next-line no-case-declarations
     case KeySystems.PLAYREADY:
+      const utfEncodingType = this._drmSystemOptions.utfEncodingType;
+      const isUtf8EncodedPlatform = utfEncodingType === 'utf-8';
+      const uIntArray = isUtf8EncodedPlatform ? new Uint8Array(keyMessage) : new Uint16Array(keyMessage);
       // for PlayReady CDMs, we need to dig the Challenge out of the XML,
       // example from https://github.com/MicrosoftEdge/Demos/blob/master/eme/scripts/demo.js
-
       // eslint-disable-next-line no-undef
-      keyMessageXml = new DOMParser().parseFromString(String.fromCharCode.apply(null, new Uint16Array(keyMessage)), 'application/xml');
+      keyMessageXml = new DOMParser().parseFromString(String.fromCharCode.apply(null, uIntArray), 'application/xml');
+      if (isUtf8EncodedPlatform) {
+        return keyMessageXml;
+      }
       if (keyMessageXml.getElementsByTagName('Challenge')[0]) {
         // eslint-disable-next-line no-undef
         challenge = atob(keyMessageXml.getElementsByTagName('Challenge')[0].childNodes[0].nodeValue);
