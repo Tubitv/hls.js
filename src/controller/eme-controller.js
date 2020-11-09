@@ -14,6 +14,13 @@ const { XMLHttpRequest } = window;
 
 const MAX_LICENSE_REQUEST_FAILURES = 3;
 
+/**
+ * @see https://developer.mozilla.org/en-US/docs/Web/API/MediaKeySystemConfiguration
+ * @param {Array<string>} audioCodecs List of required audio codecs to support
+ * @param {Array<string>} videoCodecs List of required video codecs to support
+ * @param {object} drmSystemOptions Optional parameters/requirements for the key-system
+ * @returns {Array<MediaSystemConfiguration>} An array of supported configurations
+ */
 const buildKeySystemConfigurations = function (audioCodecs, videoCodecs, drmSystemOptions = {}) {
   const baseConfig = {
     // initDataTypes: ['keyids', 'mp4'],
@@ -74,22 +81,6 @@ const buildKeySystemConfigurations = function (audioCodecs, videoCodecs, drmSyst
 };
 
 /**
- * @see https://developer.mozilla.org/en-US/docs/Web/API/MediaKeySystemConfiguration
- * @param {Array<string>} audioCodecs List of required audio codecs to support
- * @param {Array<string>} videoCodecs List of required video codecs to support
- * @param {object} drmSystemOptions Optional parameters/requirements for the key-system
- * @returns {Array<MediaSystemConfiguration>} An array of supported configurations
- */
-
-const createWidevineMediaKeySystemConfigurations = function (audioCodecs, videoCodecs, drmSystemOptions = {}) { /* jshint ignore:line */
-  return buildKeySystemConfigurations(audioCodecs, videoCodecs, drmSystemOptions);
-};
-
-const createPlayreadyMediaKeySystemConfigurations = function (audioCodecs, videoCodecs, drmSystemOptions = {}) { /* jshint ignore:line */
-  return buildKeySystemConfigurations(audioCodecs, videoCodecs, drmSystemOptions);
-};
-
-/**
  * The idea here is to handle key-system (and their respective platforms) specific configuration differences
  * in order to work with the local requestMediaKeySystemAccess method.
  *
@@ -104,9 +95,8 @@ const createPlayreadyMediaKeySystemConfigurations = function (audioCodecs, video
 const getSupportedMediaKeySystemConfigurations = function (keySystem, audioCodecs, videoCodecs, drmSystemOptions = {}) {
   switch (keySystem) {
   case KeySystems.WIDEVINE:
-    return createWidevineMediaKeySystemConfigurations(audioCodecs, videoCodecs, drmSystemOptions);
   case KeySystems.PLAYREADY:
-    return createPlayreadyMediaKeySystemConfigurations(audioCodecs, videoCodecs, drmSystemOptions);
+    return buildKeySystemConfigurations(audioCodecs, videoCodecs, drmSystemOptions);
   default:
     throw new Error('Unknown key-system: ' + keySystem);
   }
