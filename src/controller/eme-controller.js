@@ -34,6 +34,8 @@ const buildKeySystemConfigurations = function (audioCodecs, videoCodecs, drmSyst
     // videoCapabilities: [
     // { contentType: 'video/mp4; codecs="avc1.42E01E"' }
     // ]
+    audioCapabilities: [],
+    videoCapabilities: []
   };
 
   if (drmSystemOptions.distinctiveIdentifier) {
