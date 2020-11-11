@@ -34,8 +34,6 @@ const buildKeySystemConfigurations = function (audioCodecs, videoCodecs, drmSyst
     // videoCapabilities: [
     // { contentType: 'video/mp4; codecs="avc1.42E01E"' }
     // ]
-    audioCapabilities: [],
-    videoCapabilities: []
   };
 
   if (drmSystemOptions.distinctiveIdentifier) {
@@ -58,6 +56,9 @@ const buildKeySystemConfigurations = function (audioCodecs, videoCodecs, drmSyst
     baseConfig.sessionTypes = drmSystemOptions.sessionTypes;
   }
 
+  if (audioCodecs.length > 0) {
+    baseConfig.audioCapabilities = [];
+  }
   audioCodecs.forEach((codec) => {
     const audioCapability = {
       contentType: `audio/mp4; codecs="${codec}"`
@@ -67,6 +68,10 @@ const buildKeySystemConfigurations = function (audioCodecs, videoCodecs, drmSyst
     }
     baseConfig.audioCapabilities.push(audioCapability);
   });
+
+  if (videoCodecs.length > 0) {
+    baseConfig.videoCapabilities = [];
+  }
   videoCodecs.forEach((codec) => {
     const videoCapability = {
       contentType: `video/mp4; codecs="${codec}"`
