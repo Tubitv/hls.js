@@ -145,15 +145,6 @@ class EMEController extends EventHandler {
     this._xhr = null;
   }
 
-  _throwLicenseSystemError (msg) {
-    logger.error(msg);
-    this.hls.trigger(Event.ERROR, {
-      type: ErrorTypes.KEY_SYSTEM_ERROR,
-      details: ErrorDetails.KEY_SYSTEM_LICENSE_REQUEST_FAILED,
-      fatal: true
-    });
-  }
-
   /**
      *
      * @param {string} keySystem Identifier for the key-system, see `KeySystems` enum
@@ -174,7 +165,12 @@ class EMEController extends EventHandler {
     }
 
     if (!url) {
-      this._throwLicenseSystemError(`No license server URL configured for key-system "${keySystem}"`);
+      logger.error(`No license server URL configured for key-system "${keySystem}"`);
+      this.hls.trigger(Event.ERROR, {
+        type: ErrorTypes.KEY_SYSTEM_ERROR,
+        details: ErrorDetails.KEY_SYSTEM_NO_LICENSE_URL,
+        fatal: true
+      });
     }
 
     return url;
@@ -192,7 +188,12 @@ class EMEController extends EventHandler {
     try {
       mediaKeySystemConfigs = getSupportedMediaKeySystemConfigurations(keySystem, audioCodecs, videoCodecs, this._drmSystemOptions);
     } catch (err) {
-      this._throwLicenseSystemError(err);
+      logger.error(err);
+      this.hls.trigger(Event.ERROR, {
+        type: ErrorTypes.KEY_SYSTEM_ERROR,
+        details: ErrorDetails.KEY_SYSTEM_NO_CONFIGS,
+        fatal: true
+      });
     }
 
     logger.log('Requesting encrypted media key-system access');
@@ -216,7 +217,12 @@ class EMEController extends EventHandler {
 
   get requestMediaKeySystemAccess () {
     if (!this._requestMediaKeySystemAccess) {
-      this._throwLicenseSystemError('No requestMediaKeySystemAccess function configured');
+      logger.error('No requestMediaKeySystemAccess function configured');
+      this.hls.trigger(Event.ERROR, {
+        type: ErrorTypes.KEY_SYSTEM_ERROR,
+        details: ErrorDetails.KEY_SYSTEM_NO_REQUEST_MEDIA_KEY_SYSTEM_ACCESS,
+        fatal: true
+      });
     }
 
     return this._requestMediaKeySystemAccess;
@@ -342,7 +348,7 @@ class EMEController extends EventHandler {
 
         this.hls.trigger(Event.ERROR, {
           type: ErrorTypes.KEY_SYSTEM_ERROR,
-          details: ErrorDetails.KEY_SYSTEM_LICENSE_INVALID_STATUS,
+          details: ErrorDetails.KEY_SYSTEM_INVALID_KEY_STATUS,
           fatal: true
         });
       }
@@ -482,15 +488,14 @@ class EMEController extends EventHandler {
       logger.error('Error setting up key-system license XHR', e);
       this.hls.trigger(Event.ERROR, {
         type: ErrorTypes.KEY_SYSTEM_ERROR,
-        details: ErrorDetails.KEY_SYSTEM_LICENSE_REQUEST_FAILED,
+        details: ErrorDetails.KEY_SYSTEM_LICENSE_REQUEST_SETUP_XHR_ERROR,
         fatal: true
       });
       return;
     }
 
     xhr.responseType = 'arraybuffer';
-    xhr.onreadystatechange =
-        this._onLicenseRequestReadyStageChange.bind(this, xhr, url, keyMessage, callback);
+    xhr.onreadystatechange = this._onLicenseRequestReadyStageChange.bind(this, xhr, url, keyMessage, callback);
     return xhr;
   }
 
@@ -521,7 +526,7 @@ class EMEController extends EventHandler {
 
         this.hls.trigger(Event.ERROR, {
           type: ErrorTypes.KEY_SYSTEM_ERROR,
-          details: ErrorDetails.KEY_SYSTEM_LICENSE_REQUEST_FAILED,
+          details: ErrorDetails.KEY_SYSTEM_LICENSE_REQUEST_INVALID_XHR_STATUS,
           fatal: true
         });
       }
@@ -559,12 +564,22 @@ class EMEController extends EventHandler {
         // eslint-disable-next-line no-undef
         challenge = atob(keyMessageXml.getElementsByTagName('Challenge')[0].childNodes[0].nodeValue);
       } else {
-        this._throwLicenseSystemError('Cannot find <Challenge> in key message');
+        logger.error('Cannot find <Challenge> in key message');
+        this.hls.trigger(Event.ERROR, {
+          type: ErrorTypes.KEY_SYSTEM_ERROR,
+          details: ErrorDetails.KEY_SYSTEM_INVALID_PLAYREADY_CHALLENGE,
+          fatal: true
+        });
       }
       headerNames = keyMessageXml.getElementsByTagName('name');
       headerValues = keyMessageXml.getElementsByTagName('value');
       if (headerNames.length !== headerValues.length) {
-        this._throwLicenseSystemError('Mismatched header <name>/<value> pair in key message');
+        logger.error('Mismatched header <name>/<value> pair in key message');
+        this.hls.trigger(Event.ERROR, {
+          type: ErrorTypes.KEY_SYSTEM_ERROR,
+          details: ErrorDetails.KEY_SYSTEM_INVALID_PLAYREADY_KEY_PAIRS,
+          fatal: true
+        });
       }
       for (let i = 0; i < headerNames.length; i++) {
         if (xhr) {
@@ -577,7 +592,12 @@ class EMEController extends EventHandler {
       challenge = keyMessage;
       break;
     default:
-      this._throwLicenseSystemError(`Unsupported key-system: ${keysListItem.mediaKeySystemDomain}`);
+      logger.error(`Unsupported key-system: ${keysListItem.mediaKeySystemDomain}`);
+      this.hls.trigger(Event.ERROR, {
+        type: ErrorTypes.KEY_SYSTEM_ERROR,
+        details: ErrorDetails.KEY_SYSTEM_INVALID_SYSTEM,
+        fatal: true
+      });
     }
 
     return challenge;
@@ -606,7 +626,12 @@ class EMEController extends EventHandler {
       const challenge = this._generateLicenseRequestChallenge(keysListItem, keyMessage);
       xhr.send(challenge);
     } catch (err) {
-      this._throwLicenseSystemError(`Failure requesting DRM license: ${err}`);
+      logger.error(`Failure requesting DRM license: ${err}`);
+      this.hls.trigger(Event.ERROR, {
+        type: ErrorTypes.KEY_SYSTEM_ERROR,
+        details: ErrorDetails.KEY_SYSTEM_LICENSE_REQUEST_FAILED,
+        fatal: true
+      });
     }
   }
 
@@ -674,7 +699,12 @@ class EMEController extends EventHandler {
     } else if (this._widevineLicenseUrl) {
       keySystem = KeySystems.WIDEVINE;
     } else {
-      this._throwLicenseSystemError('Unknown license url type, please use "playreadyLicenseUrl" or "widevineLicenseUrl"');
+      logger.error('Unknown license url type, please use "playreadyLicenseUrl" or "widevineLicenseUrl"');
+      this.hls.trigger(Event.ERROR, {
+        type: ErrorTypes.KEY_SYSTEM_ERROR,
+        details: ErrorDetails.KEY_SYSTEM_INVALID_URL_TYPE,
+        fatal: true
+      });
     }
 
     this._attemptKeySystemAccess(keySystem, audioCodecs, videoCodecs);

@@ -17,10 +17,21 @@ export const ErrorTypes = {
  */
 export const ErrorDetails = {
   KEY_SYSTEM_INVALID_HDCP_VERSION: 'keySystemInvalidHdcpVersion',
-  KEY_SYSTEM_LICENSE_INVALID_STATUS: 'keySystemLicenseInvalidStatus',
+  KEY_SYSTEM_INVALID_KEY_STATUS: 'keySystemInvalidKeyStatus',
+  KEY_SYSTEM_INVALID_PLAYREADY_CHALLENGE: 'keySystemInvalidPlayreadyChallenge',
+  KEY_SYSTEM_INVALID_PLAYREADY_KEY_PAIRS: 'keySystemInvalidPlayreadyKeyPairs',
+  KEY_SYSTEM_INVALID_SYSTEM: 'keySystemInvalidSystem',
+  KEY_SYSTEM_INVALID_URL_TYPE: 'keySystemInvalidUrlType',
   KEY_SYSTEM_LICENSE_REQUEST_FAILED: 'keySystemLicenseRequestFailed',
+  KEY_SYSTEM_LICENSE_REQUEST_INVALID_XHR_STATUS: 'keySystemLicenseRequestInvalidXhrStatus',
+  KEY_SYSTEM_LICENSE_REQUEST_SETUP_XHR_ERROR: 'keySystemLicenseRequestSetupXhrError',
+  KEY_SYSTEM_LICENSE_SYSTEM_ERROR: 'keySystemLicenseSystemError',
   KEY_SYSTEM_NO_ACCESS: 'keySystemNoAccess',
+  KEY_SYSTEM_NO_CONFIGS: 'keySystemNoConfigs',
+  KEY_SYSTEM_NO_INIT_DATA: 'keySystemNoInitData',
   KEY_SYSTEM_NO_KEYS: 'keySystemNoKeys',
+  KEY_SYSTEM_NO_LICENSE_URL: 'keySystemNoLicenseUrl',
+  KEY_SYSTEM_NO_REQUEST_MEDIA_KEY_SYSTEM_ACCESS: 'keySystemNoRequestMediaKeySystemAccess',
   KEY_SYSTEM_NO_SESSION: 'keySystemNoSession',
   // Identifier for a manifest load error - data: { url : faulty URL, response : { code: error code, text: error text }}
   MANIFEST_LOAD_ERROR: 'manifestLoadError',
