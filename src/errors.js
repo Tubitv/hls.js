@@ -18,6 +18,7 @@ export const ErrorTypes = {
 export const ErrorDetails = {
   KEY_SYSTEM_INVALID_HDCP_VERSION: 'keySystemInvalidHdcpVersion',
   KEY_SYSTEM_LICENSE_INVALID_STATUS: 'keySystemLicenseInvalidStatus',
+  KEY_SYSTEM_LICENSE_EXPIRED: 'keySystemLicenseExpired',
   KEY_SYSTEM_LICENSE_REQUEST_FAILED: 'keySystemLicenseRequestFailed',
   KEY_SYSTEM_NO_ACCESS: 'keySystemNoAccess',
   KEY_SYSTEM_NO_KEYS: 'keySystemNoKeys',
