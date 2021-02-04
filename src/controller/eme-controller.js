@@ -241,6 +241,7 @@ class EMEController extends EventHandler {
 
     const mediaKeysPromise = Promise.resolve()
       .then(() => mediaKeySystemAccess.createMediaKeys())
+      .then((mediaKeys) => this._loadServerCertificate(mediaKeys))
       .then((mediaKeys) => {
         const returnMediaKeys = () => {
           this._onMediaKeysCreated();
@@ -304,6 +305,25 @@ class EMEController extends EventHandler {
         this._onNewMediaKeySession(mediaKeysListItem.mediaKeysSession);
       }
     });
+  }
+
+  _loadServerCertificate (mediaKeys) {
+    const certUrl = this._drmSystemOptions && this._drmSystemOptions.serverCertificateUrl;
+    if (!certUrl) {
+      return mediaKeys;
+    }
+    return window.fetch(certUrl)
+      .then(response => response.arrayBuffer())
+      .then(cert => mediaKeys.setServerCertificate(cert))
+      .then(supported => {
+        if (!supported) {
+          logger.log('Server certificates are not supported by the key system. The server certificate has been ignored.');
+        }
+      }).catch(e => {
+        logger.error(`Error setting Widevine Server certificate: ${e}`);
+      }).then(() => {
+        return mediaKeys;
+      });
   }
 
   /**
