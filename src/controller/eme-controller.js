@@ -241,7 +241,7 @@ class EMEController extends EventHandler {
 
     const mediaKeysPromise = Promise.resolve()
       .then(() => mediaKeySystemAccess.createMediaKeys())
-      .then((mediaKeys) => this._loadServerCert(mediaKeys))
+      .then((mediaKeys) => this._loadServerCertificate(mediaKeys))
       .then((mediaKeys) => {
         const returnMediaKeys = () => {
           this._onMediaKeysCreated();
@@ -307,8 +307,8 @@ class EMEController extends EventHandler {
     });
   }
 
-  async _loadServerCert (mediaKeys) {
-    const certUrl = this._drmSystemOptions && this._drmSystemOptions.serverCert;
+  async _loadServerCertificate (mediaKeys) {
+    const certUrl = this._drmSystemOptions && this._drmSystemOptions.serverCertificateUrl;
     if (!certUrl) {
       return mediaKeys;
     }
