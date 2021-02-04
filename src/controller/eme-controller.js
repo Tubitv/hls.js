@@ -307,23 +307,23 @@ class EMEController extends EventHandler {
     });
   }
 
-  async _loadServerCertificate (mediaKeys) {
+  _loadServerCertificate (mediaKeys) {
     const certUrl = this._drmSystemOptions && this._drmSystemOptions.serverCertificateUrl;
     if (!certUrl) {
       return mediaKeys;
     }
-    try {
-      const req = await window.fetch(certUrl);
-      const cert = await req.arrayBuffer();
-      const supported = await mediaKeys.setServerCertificate(cert);
-
-      if (!supported) {
-        logger.log('Server certificates are not supported by the key system. The server certificate has been ignored.');
-      }
-    } catch (e) {
-      logger.error(`Error setting Widevine Server certificate: ${e}`);
-    }
-    return mediaKeys;
+    return window.fetch(certUrl)
+      .then(response => response.arrayBuffer())
+      .then(cert => mediaKeys.setServerCertificate(cert))
+      .then(supported => {
+        if (!supported) {
+          logger.log('Server certificates are not supported by the key system. The server certificate has been ignored.');
+        }
+      }).catch(e => {
+        logger.error(`Error setting Widevine Server certificate: ${e}`);
+      }).then(() => {
+        return mediaKeys;
+      });
   }
 
   /**
