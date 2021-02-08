@@ -102,8 +102,7 @@ describe('EMEController', () => {
     media.emit('encrypted', badData);
 
     setTimeout(() => {
-      assert.equal(emeController.hls.trigger.args[0][1].details, ErrorDetails.KEY_SYSTEM_NO_KEYS);
-      assert.equal(emeController.hls.trigger.args[1][1].details, ErrorDetails.KEY_SYSTEM_NO_ACCESS);
+      assert.equal(emeController.hls.trigger.args[0][1].details, ErrorDetails.KEY_SYSTEM_LICENSE_REQUEST_FAILED);
       done();
     }, 0);
   });
