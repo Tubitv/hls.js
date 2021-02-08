@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../../../">
-  <title data-ice="title">EMEController | hls.js</title>
+  <title data-ice="title">EMEController | @tubitv/hls.js</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
   <script src="script/manual.js"></script>
-<meta name="description" content="JavaScript HLS client using MediaSourceExtension"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="hls.js"><meta property="twitter:description" content="JavaScript HLS client using MediaSourceExtension"></head>
+<meta name="description" content="JavaScript HLS client using MediaSourceExtension"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="@tubitv/hls.js"><meta property="twitter:description" content="JavaScript HLS client using MediaSourceExtension"></head>
 <body class="layout-container" data-ice="rootContainer">
 
 <header>
@@ -126,7 +126,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BinarySearch">BinarySearch</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Hex">Hex</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-logger">logger</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-makeArrayFromArrayLike">makeArrayFromArrayLike</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-KeySystems">KeySystems</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-requestMediaKeySystemAccess">requestMediaKeySystemAccess</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-TimeRanges">TimeRanges</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-WebVTTParser">WebVTTParser</a></span></span></li>
@@ -135,13 +135,13 @@
 </nav>
 
 <div class="content" data-ice="content"><div class="header-notice">
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import EMEController from &apos;<span><a href="file/src/controller/eme-controller.js.html#lineNumber83">hls.js/src/controller/eme-controller.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import EMEController from &apos;<span><a href="file/src/controller/eme-controller.js.html#lineNumber121">@tubitv/hls.js/src/controller/eme-controller.js</a></span>&apos;</code></pre></div>
   <span data-ice="access">public</span>
   <span data-ice="kind">class</span>
   
   
   
-  <span data-ice="source">| <span><a href="file/src/controller/eme-controller.js.html#lineNumber83">source</a></span></span>
+  <span data-ice="source">| <span><a href="file/src/controller/eme-controller.js.html#lineNumber121">source</a></span></span>
 </div>
 
 <div class="self-detail detail">
@@ -263,6 +263,34 @@
           
           
           
+          <span class="code" data-ice="name"><span><a href="class/src/controller/eme-controller.js~EMEController.html#instance-member-_drmSystemOptions">_drmSystemOptions</a></span></span><span class="code" data-ice="signature">: <span>*</span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">private</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
           <span class="code" data-ice="name"><span><a href="class/src/controller/eme-controller.js~EMEController.html#instance-member-_emeEnabled">_emeEnabled</a></span></span><span class="code" data-ice="signature">: <span>*</span></span>
         </p>
       </div>
@@ -292,34 +320,6 @@
           
           
           <span class="code" data-ice="name"><span><a href="class/src/controller/eme-controller.js~EMEController.html#instance-member-_hasSetMediaKeys">_hasSetMediaKeys</a></span></span><span class="code" data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span></span>
-        </p>
-      </div>
-      <div>
-        
-        
-        
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">private</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          
-          
-          <span class="code" data-ice="name"><span><a href="class/src/controller/eme-controller.js~EMEController.html#instance-member-_isMediaEncrypted">_isMediaEncrypted</a></span></span><span class="code" data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span></span>
         </p>
       </div>
       <div>
@@ -403,63 +403,91 @@
           
           
           
-          <span class="code" data-ice="name"><span><a href="class/src/controller/eme-controller.js~EMEController.html#instance-member-_mediaEncryptionInitData">_mediaEncryptionInitData</a></span></span><span class="code" data-ice="signature">: <span>*</span></span>
-        </p>
-      </div>
-      <div>
-        
-        
-        
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">private</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          
-          
-          <span class="code" data-ice="name"><span><a href="class/src/controller/eme-controller.js~EMEController.html#instance-member-_mediaEncryptionInitDataType">_mediaEncryptionInitDataType</a></span></span><span class="code" data-ice="signature">: <span>*</span></span>
-        </p>
-      </div>
-      <div>
-        
-        
-        
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">private</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          
-          
           <span class="code" data-ice="name"><span><a href="class/src/controller/eme-controller.js~EMEController.html#instance-member-_mediaKeysList">_mediaKeysList</a></span></span><span class="code" data-ice="signature">: <span><span>*</span><span>[]</span></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">private</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/controller/eme-controller.js~EMEController.html#instance-member-_mediaKeysPromise">_mediaKeysPromise</a></span></span><span class="code" data-ice="signature">: <span>*</span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">private</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/controller/eme-controller.js~EMEController.html#instance-member-_minHdcpVersion">_minHdcpVersion</a></span></span><span class="code" data-ice="signature">: <span>*</span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">private</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/controller/eme-controller.js~EMEController.html#instance-member-_playreadyLicenseUrl">_playreadyLicenseUrl</a></span></span><span class="code" data-ice="signature">: <span>*</span></span>
         </p>
       </div>
       <div>
@@ -557,6 +585,34 @@
       
     </td>
   </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">private</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/controller/eme-controller.js~EMEController.html#instance-member-_xhr">_xhr</a></span></span><span class="code" data-ice="signature">: <span>*</span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
 </tbody>
 </table>
 </div>
@@ -635,6 +691,34 @@
           
           
           <span class="code" data-ice="name"><span><a href="class/src/controller/eme-controller.js~EMEController.html#instance-method-onMediaAttached">onMediaAttached</a></span></span><span class="code" data-ice="signature">(data: <span>*</span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/controller/eme-controller.js~EMEController.html#instance-method-onMediaDetached">onMediaDetached</a></span></span><span class="code" data-ice="signature">()</span>
         </p>
       </div>
       <div>
@@ -781,7 +865,63 @@
           
           
           
-          <span class="code" data-ice="name"><span><a href="class/src/controller/eme-controller.js~EMEController.html#instance-method-_generateRequestWithPreferredKeySession">_generateRequestWithPreferredKeySession</a></span></span><span class="code" data-ice="signature">()</span>
+          <span class="code" data-ice="name"><span><a href="class/src/controller/eme-controller.js~EMEController.html#instance-method-_generateRequestWithPreferredKeySession">_generateRequestWithPreferredKeySession</a></span></span><span class="code" data-ice="signature">(initDataType: <span>*</span>, initData: <span>*</span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">private</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/controller/eme-controller.js~EMEController.html#instance-method-_loadServerCertificate">_loadServerCertificate</a></span></span><span class="code" data-ice="signature">(mediaKeys: <span>*</span>): <span>*</span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">private</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/controller/eme-controller.js~EMEController.html#instance-method-_onKeySessionKeyStatusesChange">_onKeySessionKeyStatusesChange</a></span></span><span class="code" data-ice="signature">(keySession: <span>*</span>)</span>
         </p>
       </div>
       <div>
@@ -865,7 +1005,7 @@
           
           
           
-          <span class="code" data-ice="name"><span><a href="class/src/controller/eme-controller.js~EMEController.html#instance-method-_onMediaEncrypted">_onMediaEncrypted</a></span></span><span class="code" data-ice="signature">(initDataType: <span>*</span>, initData: <span>*</span>)</span>
+          <span class="code" data-ice="name"><span><a href="class/src/controller/eme-controller.js~EMEController.html#instance-method-_onMediaEncrypted">_onMediaEncrypted</a></span></span><span class="code" data-ice="signature">(event: <span>*</span>)</span>
         </p>
       </div>
       <div>
@@ -893,7 +1033,7 @@
           
           
           
-          <span class="code" data-ice="name"><span><a href="class/src/controller/eme-controller.js~EMEController.html#instance-method-_onMediaKeySystemAccessObtained">_onMediaKeySystemAccessObtained</a></span></span><span class="code" data-ice="signature">(keySystem: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, mediaKeySystemAccess: <span>MediaKeySystemAccess</span>)</span>
+          <span class="code" data-ice="name"><span><a href="class/src/controller/eme-controller.js~EMEController.html#instance-method-_onMediaKeySystemAccessObtained">_onMediaKeySystemAccessObtained</a></span></span><span class="code" data-ice="signature">(keySystem: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, mediaKeySystemAccess: <span>MediaKeySystemAccess</span>): <span>*</span></span>
         </p>
       </div>
       <div>
@@ -980,6 +1120,34 @@
           
           
           <span class="code" data-ice="name"><span><a href="class/src/controller/eme-controller.js~EMEController.html#instance-method-_requestLicense">_requestLicense</a></span></span><span class="code" data-ice="signature">(keyMessage: <span>*</span>, callback: <span>*</span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">private</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/controller/eme-controller.js~EMEController.html#instance-method-_throwLicenseSystemError">_throwLicenseSystemError</a></span></span><span class="code" data-ice="signature">(msg: <span>*</span>)</span>
         </p>
       </div>
       <div>
@@ -1330,7 +1498,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/controller/eme-controller.js.html#lineNumber88">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/controller/eme-controller.js.html#lineNumber126">source</a></span></span>
     </span>
   </h3>
 
@@ -1393,7 +1561,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/controller/eme-controller.js.html#lineNumber166">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/controller/eme-controller.js.html#lineNumber219">source</a></span></span>
     </span>
   </h3>
 
@@ -1427,6 +1595,49 @@
 <h2 data-ice="title">Private Members</h2>
 
 <div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-member-_drmSystemOptions">
+    <span class="access" data-ice="access">private</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">_drmSystemOptions</span><span class="code" data-ice="signature">: <span>*</span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/controller/eme-controller.js.html#lineNumber133">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
   <h3 data-ice="anchor" id="instance-member-_emeEnabled">
     <span class="access" data-ice="access">private</span>
     
@@ -1438,7 +1649,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/controller/eme-controller.js.html#lineNumber96">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/controller/eme-controller.js.html#lineNumber134">source</a></span></span>
     </span>
   </h3>
 
@@ -1481,50 +1692,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/controller/eme-controller.js.html#lineNumber103">source</a></span></span>
-    </span>
-  </h3>
-
-  
-  
-  
-  
-
-  
-
-  <div data-ice="properties">
-</div>
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-</div>
-<div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="instance-member-_isMediaEncrypted">
-    <span class="access" data-ice="access">private</span>
-    
-    
-    
-    
-    
-    <span class="code" data-ice="name">_isMediaEncrypted</span><span class="code" data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span></span>
-    <span class="right-info">
-      
-      
-      <span data-ice="source"><span><a href="file/src/controller/eme-controller.js.html#lineNumber104">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/controller/eme-controller.js.html#lineNumber141">source</a></span></span>
     </span>
   </h3>
 
@@ -1567,7 +1735,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/controller/eme-controller.js.html#lineNumber95">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/controller/eme-controller.js.html#lineNumber135">source</a></span></span>
     </span>
   </h3>
 
@@ -1610,93 +1778,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/controller/eme-controller.js.html#lineNumber101">source</a></span></span>
-    </span>
-  </h3>
-
-  
-  
-  
-  
-
-  
-
-  <div data-ice="properties">
-</div>
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-</div>
-<div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="instance-member-_mediaEncryptionInitData">
-    <span class="access" data-ice="access">private</span>
-    
-    
-    
-    
-    
-    <span class="code" data-ice="name">_mediaEncryptionInitData</span><span class="code" data-ice="signature">: <span>*</span></span>
-    <span class="right-info">
-      
-      
-      <span data-ice="source"><span><a href="file/src/controller/eme-controller.js.html#lineNumber246">source</a></span></span>
-    </span>
-  </h3>
-
-  
-  
-  
-  
-
-  
-
-  <div data-ice="properties">
-</div>
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-</div>
-<div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="instance-member-_mediaEncryptionInitDataType">
-    <span class="access" data-ice="access">private</span>
-    
-    
-    
-    
-    
-    <span class="code" data-ice="name">_mediaEncryptionInitDataType</span><span class="code" data-ice="signature">: <span>*</span></span>
-    <span class="right-info">
-      
-      
-      <span data-ice="source"><span><a href="file/src/controller/eme-controller.js.html#lineNumber245">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/controller/eme-controller.js.html#lineNumber142">source</a></span></span>
     </span>
   </h3>
 
@@ -1739,7 +1821,136 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/controller/eme-controller.js.html#lineNumber100">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/controller/eme-controller.js.html#lineNumber143">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-member-_mediaKeysPromise">
+    <span class="access" data-ice="access">private</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">_mediaKeysPromise</span><span class="code" data-ice="signature">: <span>*</span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/controller/eme-controller.js.html#lineNumber144">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-member-_minHdcpVersion">
+    <span class="access" data-ice="access">private</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">_minHdcpVersion</span><span class="code" data-ice="signature">: <span>*</span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/controller/eme-controller.js.html#lineNumber136">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-member-_playreadyLicenseUrl">
+    <span class="access" data-ice="access">private</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">_playreadyLicenseUrl</span><span class="code" data-ice="signature">: <span>*</span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/controller/eme-controller.js.html#lineNumber137">source</a></span></span>
     </span>
   </h3>
 
@@ -1782,7 +1993,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/controller/eme-controller.js.html#lineNumber106">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/controller/eme-controller.js.html#lineNumber146">source</a></span></span>
     </span>
   </h3>
 
@@ -1825,7 +2036,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/controller/eme-controller.js.html#lineNumber98">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/controller/eme-controller.js.html#lineNumber138">source</a></span></span>
     </span>
   </h3>
 
@@ -1868,7 +2079,50 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/controller/eme-controller.js.html#lineNumber94">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/controller/eme-controller.js.html#lineNumber139">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-member-_xhr">
+    <span class="access" data-ice="access">private</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">_xhr</span><span class="code" data-ice="signature">: <span>*</span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/controller/eme-controller.js.html#lineNumber147">source</a></span></span>
     </span>
   </h3>
 
@@ -1914,7 +2168,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/controller/eme-controller.js.html#lineNumber114">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/controller/eme-controller.js.html#lineNumber164">source</a></span></span>
     </span>
   </h3>
 
@@ -1987,7 +2241,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/controller/eme-controller.js.html#lineNumber478">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/controller/eme-controller.js.html#lineNumber699">source</a></span></span>
     </span>
   </h3>
 
@@ -2046,7 +2300,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/controller/eme-controller.js.html#lineNumber461">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/controller/eme-controller.js.html#lineNumber649">source</a></span></span>
     </span>
   </h3>
 
@@ -2093,6 +2347,49 @@
   
   
 </div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-onMediaDetached">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">onMediaDetached</span><span class="code" data-ice="signature">()</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/controller/eme-controller.js.html#lineNumber662">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
 <h2 data-ice="title">Private Methods</h2>
 
 <div class="detail" data-ice="detail">
@@ -2107,7 +2404,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/controller/eme-controller.js.html#lineNumber144">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/controller/eme-controller.js.html#lineNumber192">source</a></span></span>
     </span>
   </h3>
 
@@ -2182,7 +2479,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/controller/eme-controller.js.html#lineNumber252">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/controller/eme-controller.js.html#lineNumber413">source</a></span></span>
     </span>
   </h3>
 
@@ -2225,7 +2522,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/controller/eme-controller.js.html#lineNumber328">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/controller/eme-controller.js.html#lineNumber498">source</a></span></span>
     </span>
   </h3>
 
@@ -2312,7 +2609,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/controller/eme-controller.js.html#lineNumber403">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/controller/eme-controller.js.html#lineNumber573">source</a></span></span>
     </span>
   </h3>
 
@@ -2386,11 +2683,11 @@
     
     
     
-    <span class="code" data-ice="name">_generateRequestWithPreferredKeySession</span><span class="code" data-ice="signature">()</span>
+    <span class="code" data-ice="name">_generateRequestWithPreferredKeySession</span><span class="code" data-ice="signature">(initDataType: <span>*</span>, initData: <span>*</span>)</span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/controller/eme-controller.js.html#lineNumber273">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/controller/eme-controller.js.html#lineNumber434">source</a></span></span>
     </span>
   </h3>
 
@@ -2401,7 +2698,159 @@
 
   
 
-  <div data-ice="properties">
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">initDataType</td>
+      <td data-ice="type" class="code"><span>*</span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"></td>
+    </tr>
+<tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">initData</td>
+      <td data-ice="type" class="code"><span>*</span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"></td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-_loadServerCertificate">
+    <span class="access" data-ice="access">private</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">_loadServerCertificate</span><span class="code" data-ice="signature">(mediaKeys: <span>*</span>): <span>*</span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/controller/eme-controller.js.html#lineNumber312">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">mediaKeys</td>
+      <td data-ice="type" class="code"><span>*</span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"></td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span>*</span></td>
+          
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-_onKeySessionKeyStatusesChange">
+    <span class="access" data-ice="access">private</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">_onKeySessionKeyStatusesChange</span><span class="code" data-ice="signature">(keySession: <span>*</span>)</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/controller/eme-controller.js.html#lineNumber356">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">keySession</td>
+      <td data-ice="type" class="code"><span>*</span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"></td>
+    </tr>
+</tbody>
+  </table>
+</div>
 </div>
 
   
@@ -2433,7 +2882,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/controller/eme-controller.js.html#lineNumber232">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/controller/eme-controller.js.html#lineNumber347">source</a></span></span>
     </span>
   </h3>
 
@@ -2498,7 +2947,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/controller/eme-controller.js.html#lineNumber370">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/controller/eme-controller.js.html#lineNumber540">source</a></span></span>
     </span>
   </h3>
 
@@ -2574,11 +3023,11 @@
     
     
     
-    <span class="code" data-ice="name">_onMediaEncrypted</span><span class="code" data-ice="signature">(initDataType: <span>*</span>, initData: <span>*</span>)</span>
+    <span class="code" data-ice="name">_onMediaEncrypted</span><span class="code" data-ice="signature">(event: <span>*</span>)</span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/controller/eme-controller.js.html#lineNumber241">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/controller/eme-controller.js.html#lineNumber388">source</a></span></span>
     </span>
   </h3>
 
@@ -2598,13 +3047,7 @@
     <tbody>
     
     <tr data-ice="property" data-depth="0">
-      <td data-ice="name" class="code" data-depth="0">initDataType</td>
-      <td data-ice="type" class="code"><span>*</span></td>
-      <td data-ice="appendix"></td>
-      <td data-ice="description"></td>
-    </tr>
-<tr data-ice="property" data-depth="0">
-      <td data-ice="name" class="code" data-depth="0">initData</td>
+      <td data-ice="name" class="code" data-depth="0">event</td>
       <td data-ice="type" class="code"><span>*</span></td>
       <td data-ice="appendix"></td>
       <td data-ice="description"></td>
@@ -2639,11 +3082,11 @@
     
     
     
-    <span class="code" data-ice="name">_onMediaKeySystemAccessObtained</span><span class="code" data-ice="signature">(keySystem: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, mediaKeySystemAccess: <span>MediaKeySystemAccess</span>)</span>
+    <span class="code" data-ice="name">_onMediaKeySystemAccessObtained</span><span class="code" data-ice="signature">(keySystem: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, mediaKeySystemAccess: <span>MediaKeySystemAccess</span>): <span>*</span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/controller/eme-controller.js.html#lineNumber180">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/controller/eme-controller.js.html#lineNumber233">source</a></span></span>
     </span>
   </h3>
 
@@ -2681,7 +3124,19 @@
 </div>
 </div>
 
-  
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span>*</span></td>
+          
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
 
   
 
@@ -2710,7 +3165,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/controller/eme-controller.js.html#lineNumber210">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/controller/eme-controller.js.html#lineNumber301">source</a></span></span>
     </span>
   </h3>
 
@@ -2755,7 +3210,7 @@ for all existing keys where no session exists yet.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/controller/eme-controller.js.html#lineNumber224">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/controller/eme-controller.js.html#lineNumber335">source</a></span></span>
     </span>
   </h3>
 
@@ -2814,7 +3269,7 @@ for all existing keys where no session exists yet.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/controller/eme-controller.js.html#lineNumber439">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/controller/eme-controller.js.html#lineNumber622">source</a></span></span>
     </span>
   </h3>
 
@@ -2841,6 +3296,65 @@ for all existing keys where no session exists yet.</p>
     </tr>
 <tr data-ice="property" data-depth="0">
       <td data-ice="name" class="code" data-depth="0">callback</td>
+      <td data-ice="type" class="code"><span>*</span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"></td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-_throwLicenseSystemError">
+    <span class="access" data-ice="access">private</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">_throwLicenseSystemError</span><span class="code" data-ice="signature">(msg: <span>*</span>)</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/controller/eme-controller.js.html#lineNumber150">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">msg</td>
       <td data-ice="type" class="code"><span>*</span></td>
       <td data-ice="appendix"></td>
       <td data-ice="description"></td>

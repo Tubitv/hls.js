@@ -1,28 +1,28 @@
 {
   "type": "File",
   "start": 0,
-  "end": 4449,
+  "end": 4642,
   "loc": {
     "start": {
       "line": 1,
       "column": 0
     },
     "end": {
-      "line": 73,
+      "line": 76,
       "column": 0
     }
   },
   "program": {
     "type": "Program",
     "start": 0,
-    "end": 4449,
+    "end": 4642,
     "loc": {
       "start": {
         "line": 1,
         "column": 0
       },
       "end": {
-        "line": 73,
+        "line": 76,
         "column": 0
       }
     },
@@ -522,14 +522,14 @@
       {
         "type": "ExportNamedDeclaration",
         "start": 518,
-        "end": 4448,
+        "end": 4641,
         "loc": {
           "start": {
             "line": 18,
             "column": 0
           },
           "end": {
-            "line": 72,
+            "line": 75,
             "column": 2
           }
         },
@@ -538,14 +538,14 @@
         "declaration": {
           "type": "VariableDeclaration",
           "start": 525,
-          "end": 4448,
+          "end": 4641,
           "loc": {
             "start": {
               "line": 18,
               "column": 7
             },
             "end": {
-              "line": 72,
+              "line": 75,
               "column": 2
             }
           },
@@ -553,14 +553,14 @@
             {
               "type": "VariableDeclarator",
               "start": 531,
-              "end": 4447,
+              "end": 4640,
               "loc": {
                 "start": {
                   "line": 18,
                   "column": 13
                 },
                 "end": {
-                  "line": 72,
+                  "line": 75,
                   "column": 1
                 }
               },
@@ -585,14 +585,14 @@
               "init": {
                 "type": "ObjectExpression",
                 "start": 546,
-                "end": 4447,
+                "end": 4640,
                 "loc": {
                   "start": {
                     "line": 18,
                     "column": 28
                   },
                   "end": {
-                    "line": 72,
+                    "line": 75,
                     "column": 1
                   }
                 },
@@ -600,7 +600,7 @@
                   {
                     "type": "ObjectProperty",
                     "start": 550,
-                    "end": 587,
+                    "end": 612,
                     "loc": {
                       "start": {
                         "line": 19,
@@ -608,7 +608,7 @@
                       },
                       "end": {
                         "line": 19,
-                        "column": 39
+                        "column": 64
                       }
                     },
                     "method": false,
@@ -617,7 +617,7 @@
                     "key": {
                       "type": "Identifier",
                       "start": 550,
-                      "end": 568,
+                      "end": 581,
                       "loc": {
                         "start": {
                           "line": 19,
@@ -625,37 +625,37 @@
                         },
                         "end": {
                           "line": 19,
-                          "column": 20
+                          "column": 33
                         },
-                        "identifierName": "KEY_SYSTEM_NO_KEYS"
+                        "identifierName": "KEY_SYSTEM_INVALID_HDCP_VERSION"
                       },
-                      "name": "KEY_SYSTEM_NO_KEYS"
+                      "name": "KEY_SYSTEM_INVALID_HDCP_VERSION"
                     },
                     "value": {
                       "type": "StringLiteral",
-                      "start": 570,
-                      "end": 587,
+                      "start": 583,
+                      "end": 612,
                       "loc": {
                         "start": {
                           "line": 19,
-                          "column": 22
+                          "column": 35
                         },
                         "end": {
                           "line": 19,
-                          "column": 39
+                          "column": 64
                         }
                       },
                       "extra": {
-                        "rawValue": "keySystemNoKeys",
-                        "raw": "'keySystemNoKeys'"
+                        "rawValue": "keySystemInvalidHdcpVersion",
+                        "raw": "'keySystemInvalidHdcpVersion'"
                       },
-                      "value": "keySystemNoKeys"
+                      "value": "keySystemInvalidHdcpVersion"
                     }
                   },
                   {
                     "type": "ObjectProperty",
-                    "start": 591,
-                    "end": 632,
+                    "start": 616,
+                    "end": 682,
                     "loc": {
                       "start": {
                         "line": 20,
@@ -663,7 +663,7 @@
                       },
                       "end": {
                         "line": 20,
-                        "column": 43
+                        "column": 68
                       }
                     },
                     "method": false,
@@ -671,8 +671,8 @@
                     "computed": false,
                     "key": {
                       "type": "Identifier",
-                      "start": 591,
-                      "end": 611,
+                      "start": 616,
+                      "end": 649,
                       "loc": {
                         "start": {
                           "line": 20,
@@ -680,37 +680,37 @@
                         },
                         "end": {
                           "line": 20,
-                          "column": 22
+                          "column": 35
                         },
-                        "identifierName": "KEY_SYSTEM_NO_ACCESS"
+                        "identifierName": "KEY_SYSTEM_LICENSE_INVALID_STATUS"
                       },
-                      "name": "KEY_SYSTEM_NO_ACCESS"
+                      "name": "KEY_SYSTEM_LICENSE_INVALID_STATUS"
                     },
                     "value": {
                       "type": "StringLiteral",
-                      "start": 613,
-                      "end": 632,
+                      "start": 651,
+                      "end": 682,
                       "loc": {
                         "start": {
                           "line": 20,
-                          "column": 24
+                          "column": 37
                         },
                         "end": {
                           "line": 20,
-                          "column": 43
+                          "column": 68
                         }
                       },
                       "extra": {
-                        "rawValue": "keySystemNoAccess",
-                        "raw": "'keySystemNoAccess'"
+                        "rawValue": "keySystemLicenseInvalidStatus",
+                        "raw": "'keySystemLicenseInvalidStatus'"
                       },
-                      "value": "keySystemNoAccess"
+                      "value": "keySystemLicenseInvalidStatus"
                     }
                   },
                   {
                     "type": "ObjectProperty",
-                    "start": 636,
-                    "end": 679,
+                    "start": 686,
+                    "end": 739,
                     "loc": {
                       "start": {
                         "line": 21,
@@ -718,7 +718,7 @@
                       },
                       "end": {
                         "line": 21,
-                        "column": 45
+                        "column": 55
                       }
                     },
                     "method": false,
@@ -726,8 +726,8 @@
                     "computed": false,
                     "key": {
                       "type": "Identifier",
-                      "start": 636,
-                      "end": 657,
+                      "start": 686,
+                      "end": 712,
                       "loc": {
                         "start": {
                           "line": 21,
@@ -735,37 +735,37 @@
                         },
                         "end": {
                           "line": 21,
-                          "column": 23
+                          "column": 28
                         },
-                        "identifierName": "KEY_SYSTEM_NO_SESSION"
+                        "identifierName": "KEY_SYSTEM_LICENSE_EXPIRED"
                       },
-                      "name": "KEY_SYSTEM_NO_SESSION"
+                      "name": "KEY_SYSTEM_LICENSE_EXPIRED"
                     },
                     "value": {
                       "type": "StringLiteral",
-                      "start": 659,
-                      "end": 679,
+                      "start": 714,
+                      "end": 739,
                       "loc": {
                         "start": {
                           "line": 21,
-                          "column": 25
+                          "column": 30
                         },
                         "end": {
                           "line": 21,
-                          "column": 45
+                          "column": 55
                         }
                       },
                       "extra": {
-                        "rawValue": "keySystemNoSession",
-                        "raw": "'keySystemNoSession'"
+                        "rawValue": "keySystemLicenseExpired",
+                        "raw": "'keySystemLicenseExpired'"
                       },
-                      "value": "keySystemNoSession"
+                      "value": "keySystemLicenseExpired"
                     }
                   },
                   {
                     "type": "ObjectProperty",
-                    "start": 683,
-                    "end": 749,
+                    "start": 743,
+                    "end": 809,
                     "loc": {
                       "start": {
                         "line": 22,
@@ -781,8 +781,8 @@
                     "computed": false,
                     "key": {
                       "type": "Identifier",
-                      "start": 683,
-                      "end": 716,
+                      "start": 743,
+                      "end": 776,
                       "loc": {
                         "start": {
                           "line": 22,
@@ -798,8 +798,8 @@
                     },
                     "value": {
                       "type": "StringLiteral",
-                      "start": 718,
-                      "end": 749,
+                      "start": 778,
+                      "end": 809,
                       "loc": {
                         "start": {
                           "line": 22,
@@ -819,8 +819,63 @@
                   },
                   {
                     "type": "ObjectProperty",
-                    "start": 874,
-                    "end": 914,
+                    "start": 813,
+                    "end": 854,
+                    "loc": {
+                      "start": {
+                        "line": 23,
+                        "column": 2
+                      },
+                      "end": {
+                        "line": 23,
+                        "column": 43
+                      }
+                    },
+                    "method": false,
+                    "shorthand": false,
+                    "computed": false,
+                    "key": {
+                      "type": "Identifier",
+                      "start": 813,
+                      "end": 833,
+                      "loc": {
+                        "start": {
+                          "line": 23,
+                          "column": 2
+                        },
+                        "end": {
+                          "line": 23,
+                          "column": 22
+                        },
+                        "identifierName": "KEY_SYSTEM_NO_ACCESS"
+                      },
+                      "name": "KEY_SYSTEM_NO_ACCESS"
+                    },
+                    "value": {
+                      "type": "StringLiteral",
+                      "start": 835,
+                      "end": 854,
+                      "loc": {
+                        "start": {
+                          "line": 23,
+                          "column": 24
+                        },
+                        "end": {
+                          "line": 23,
+                          "column": 43
+                        }
+                      },
+                      "extra": {
+                        "rawValue": "keySystemNoAccess",
+                        "raw": "'keySystemNoAccess'"
+                      },
+                      "value": "keySystemNoAccess"
+                    }
+                  },
+                  {
+                    "type": "ObjectProperty",
+                    "start": 858,
+                    "end": 895,
                     "loc": {
                       "start": {
                         "line": 24,
@@ -828,6 +883,116 @@
                       },
                       "end": {
                         "line": 24,
+                        "column": 39
+                      }
+                    },
+                    "method": false,
+                    "shorthand": false,
+                    "computed": false,
+                    "key": {
+                      "type": "Identifier",
+                      "start": 858,
+                      "end": 876,
+                      "loc": {
+                        "start": {
+                          "line": 24,
+                          "column": 2
+                        },
+                        "end": {
+                          "line": 24,
+                          "column": 20
+                        },
+                        "identifierName": "KEY_SYSTEM_NO_KEYS"
+                      },
+                      "name": "KEY_SYSTEM_NO_KEYS"
+                    },
+                    "value": {
+                      "type": "StringLiteral",
+                      "start": 878,
+                      "end": 895,
+                      "loc": {
+                        "start": {
+                          "line": 24,
+                          "column": 22
+                        },
+                        "end": {
+                          "line": 24,
+                          "column": 39
+                        }
+                      },
+                      "extra": {
+                        "rawValue": "keySystemNoKeys",
+                        "raw": "'keySystemNoKeys'"
+                      },
+                      "value": "keySystemNoKeys"
+                    }
+                  },
+                  {
+                    "type": "ObjectProperty",
+                    "start": 899,
+                    "end": 942,
+                    "loc": {
+                      "start": {
+                        "line": 25,
+                        "column": 2
+                      },
+                      "end": {
+                        "line": 25,
+                        "column": 45
+                      }
+                    },
+                    "method": false,
+                    "shorthand": false,
+                    "computed": false,
+                    "key": {
+                      "type": "Identifier",
+                      "start": 899,
+                      "end": 920,
+                      "loc": {
+                        "start": {
+                          "line": 25,
+                          "column": 2
+                        },
+                        "end": {
+                          "line": 25,
+                          "column": 23
+                        },
+                        "identifierName": "KEY_SYSTEM_NO_SESSION"
+                      },
+                      "name": "KEY_SYSTEM_NO_SESSION"
+                    },
+                    "value": {
+                      "type": "StringLiteral",
+                      "start": 922,
+                      "end": 942,
+                      "loc": {
+                        "start": {
+                          "line": 25,
+                          "column": 25
+                        },
+                        "end": {
+                          "line": 25,
+                          "column": 45
+                        }
+                      },
+                      "extra": {
+                        "rawValue": "keySystemNoSession",
+                        "raw": "'keySystemNoSession'"
+                      },
+                      "value": "keySystemNoSession"
+                    }
+                  },
+                  {
+                    "type": "ObjectProperty",
+                    "start": 1067,
+                    "end": 1107,
+                    "loc": {
+                      "start": {
+                        "line": 27,
+                        "column": 2
+                      },
+                      "end": {
+                        "line": 27,
                         "column": 42
                       }
                     },
@@ -836,15 +1001,15 @@
                     "computed": false,
                     "key": {
                       "type": "Identifier",
-                      "start": 874,
-                      "end": 893,
+                      "start": 1067,
+                      "end": 1086,
                       "loc": {
                         "start": {
-                          "line": 24,
+                          "line": 27,
                           "column": 2
                         },
                         "end": {
-                          "line": 24,
+                          "line": 27,
                           "column": 21
                         },
                         "identifierName": "MANIFEST_LOAD_ERROR"
@@ -854,15 +1019,15 @@
                     },
                     "value": {
                       "type": "StringLiteral",
-                      "start": 895,
-                      "end": 914,
+                      "start": 1088,
+                      "end": 1107,
                       "loc": {
                         "start": {
-                          "line": 24,
+                          "line": 27,
                           "column": 23
                         },
                         "end": {
-                          "line": 24,
+                          "line": 27,
                           "column": 42
                         }
                       },
@@ -876,15 +1041,15 @@
                       {
                         "type": "CommentLine",
                         "value": " Identifier for a manifest load error - data: { url : faulty URL, response : { code: error code, text: error text }}",
-                        "start": 753,
-                        "end": 871,
+                        "start": 946,
+                        "end": 1064,
                         "loc": {
                           "start": {
-                            "line": 23,
+                            "line": 26,
                             "column": 2
                           },
                           "end": {
-                            "line": 23,
+                            "line": 26,
                             "column": 120
                           }
                         }
@@ -893,15 +1058,15 @@
                   },
                   {
                     "type": "ObjectProperty",
-                    "start": 1041,
-                    "end": 1085,
+                    "start": 1234,
+                    "end": 1278,
                     "loc": {
                       "start": {
-                        "line": 26,
+                        "line": 29,
                         "column": 2
                       },
                       "end": {
-                        "line": 26,
+                        "line": 29,
                         "column": 46
                       }
                     },
@@ -910,15 +1075,15 @@
                     "computed": false,
                     "key": {
                       "type": "Identifier",
-                      "start": 1041,
-                      "end": 1062,
+                      "start": 1234,
+                      "end": 1255,
                       "loc": {
                         "start": {
-                          "line": 26,
+                          "line": 29,
                           "column": 2
                         },
                         "end": {
-                          "line": 26,
+                          "line": 29,
                           "column": 23
                         },
                         "identifierName": "MANIFEST_LOAD_TIMEOUT"
@@ -928,15 +1093,15 @@
                     },
                     "value": {
                       "type": "StringLiteral",
-                      "start": 1064,
-                      "end": 1085,
+                      "start": 1257,
+                      "end": 1278,
                       "loc": {
                         "start": {
-                          "line": 26,
+                          "line": 29,
                           "column": 25
                         },
                         "end": {
-                          "line": 26,
+                          "line": 29,
                           "column": 46
                         }
                       },
@@ -950,15 +1115,15 @@
                       {
                         "type": "CommentLine",
                         "value": " Identifier for a manifest load timeout - data: { url : faulty URL, response : { code: error code, text: error text }}",
-                        "start": 918,
-                        "end": 1038,
+                        "start": 1111,
+                        "end": 1231,
                         "loc": {
                           "start": {
-                            "line": 25,
+                            "line": 28,
                             "column": 2
                           },
                           "end": {
-                            "line": 25,
+                            "line": 28,
                             "column": 122
                           }
                         }
@@ -967,15 +1132,15 @@
                   },
                   {
                     "type": "ObjectProperty",
-                    "start": 1185,
-                    "end": 1231,
+                    "start": 1378,
+                    "end": 1424,
                     "loc": {
                       "start": {
-                        "line": 28,
+                        "line": 31,
                         "column": 2
                       },
                       "end": {
-                        "line": 28,
+                        "line": 31,
                         "column": 48
                       }
                     },
@@ -984,15 +1149,15 @@
                     "computed": false,
                     "key": {
                       "type": "Identifier",
-                      "start": 1185,
-                      "end": 1207,
+                      "start": 1378,
+                      "end": 1400,
                       "loc": {
                         "start": {
-                          "line": 28,
+                          "line": 31,
                           "column": 2
                         },
                         "end": {
-                          "line": 28,
+                          "line": 31,
                           "column": 24
                         },
                         "identifierName": "MANIFEST_PARSING_ERROR"
@@ -1002,15 +1167,15 @@
                     },
                     "value": {
                       "type": "StringLiteral",
-                      "start": 1209,
-                      "end": 1231,
+                      "start": 1402,
+                      "end": 1424,
                       "loc": {
                         "start": {
-                          "line": 28,
+                          "line": 31,
                           "column": 26
                         },
                         "end": {
-                          "line": 28,
+                          "line": 31,
                           "column": 48
                         }
                       },
@@ -1024,15 +1189,15 @@
                       {
                         "type": "CommentLine",
                         "value": " Identifier for a manifest parsing error - data: { url : faulty URL, reason : error reason}",
-                        "start": 1089,
-                        "end": 1182,
+                        "start": 1282,
+                        "end": 1375,
                         "loc": {
                           "start": {
-                            "line": 27,
+                            "line": 30,
                             "column": 2
                           },
                           "end": {
-                            "line": 27,
+                            "line": 30,
                             "column": 95
                           }
                         }
@@ -1041,15 +1206,15 @@
                   },
                   {
                     "type": "ObjectProperty",
-                    "start": 1353,
-                    "end": 1422,
+                    "start": 1546,
+                    "end": 1615,
                     "loc": {
                       "start": {
-                        "line": 30,
+                        "line": 33,
                         "column": 2
                       },
                       "end": {
-                        "line": 30,
+                        "line": 33,
                         "column": 71
                       }
                     },
@@ -1058,15 +1223,15 @@
                     "computed": false,
                     "key": {
                       "type": "Identifier",
-                      "start": 1353,
-                      "end": 1387,
+                      "start": 1546,
+                      "end": 1580,
                       "loc": {
                         "start": {
-                          "line": 30,
+                          "line": 33,
                           "column": 2
                         },
                         "end": {
-                          "line": 30,
+                          "line": 33,
                           "column": 36
                         },
                         "identifierName": "MANIFEST_INCOMPATIBLE_CODECS_ERROR"
@@ -1076,15 +1241,15 @@
                     },
                     "value": {
                       "type": "StringLiteral",
-                      "start": 1389,
-                      "end": 1422,
+                      "start": 1582,
+                      "end": 1615,
                       "loc": {
                         "start": {
-                          "line": 30,
+                          "line": 33,
                           "column": 38
                         },
                         "end": {
-                          "line": 30,
+                          "line": 33,
                           "column": 71
                         }
                       },
@@ -1098,15 +1263,15 @@
                       {
                         "type": "CommentLine",
                         "value": " Identifier for a manifest with only incompatible codecs error - data: { url : faulty URL, reason : error reason}",
-                        "start": 1235,
-                        "end": 1350,
+                        "start": 1428,
+                        "end": 1543,
                         "loc": {
                           "start": {
-                            "line": 29,
+                            "line": 32,
                             "column": 2
                           },
                           "end": {
-                            "line": 29,
+                            "line": 32,
                             "column": 117
                           }
                         }
@@ -1115,15 +1280,15 @@
                   },
                   {
                     "type": "ObjectProperty",
-                    "start": 1544,
-                    "end": 1578,
+                    "start": 1737,
+                    "end": 1771,
                     "loc": {
                       "start": {
-                        "line": 32,
+                        "line": 35,
                         "column": 2
                       },
                       "end": {
-                        "line": 32,
+                        "line": 35,
                         "column": 36
                       }
                     },
@@ -1132,15 +1297,15 @@
                     "computed": false,
                     "key": {
                       "type": "Identifier",
-                      "start": 1544,
-                      "end": 1560,
+                      "start": 1737,
+                      "end": 1753,
                       "loc": {
                         "start": {
-                          "line": 32,
+                          "line": 35,
                           "column": 2
                         },
                         "end": {
-                          "line": 32,
+                          "line": 35,
                           "column": 18
                         },
                         "identifierName": "LEVEL_LOAD_ERROR"
@@ -1150,15 +1315,15 @@
                     },
                     "value": {
                       "type": "StringLiteral",
-                      "start": 1562,
-                      "end": 1578,
+                      "start": 1755,
+                      "end": 1771,
                       "loc": {
                         "start": {
-                          "line": 32,
+                          "line": 35,
                           "column": 20
                         },
                         "end": {
-                          "line": 32,
+                          "line": 35,
                           "column": 36
                         }
                       },
@@ -1172,15 +1337,15 @@
                       {
                         "type": "CommentLine",
                         "value": " Identifier for a level load error - data: { url : faulty URL, response : { code: error code, text: error text }}",
-                        "start": 1426,
-                        "end": 1541,
+                        "start": 1619,
+                        "end": 1734,
                         "loc": {
                           "start": {
-                            "line": 31,
+                            "line": 34,
                             "column": 2
                           },
                           "end": {
-                            "line": 31,
+                            "line": 34,
                             "column": 117
                           }
                         }
@@ -1189,15 +1354,15 @@
                   },
                   {
                     "type": "ObjectProperty",
-                    "start": 1702,
-                    "end": 1740,
+                    "start": 1895,
+                    "end": 1933,
                     "loc": {
                       "start": {
-                        "line": 34,
+                        "line": 37,
                         "column": 2
                       },
                       "end": {
-                        "line": 34,
+                        "line": 37,
                         "column": 40
                       }
                     },
@@ -1206,15 +1371,15 @@
                     "computed": false,
                     "key": {
                       "type": "Identifier",
-                      "start": 1702,
-                      "end": 1720,
+                      "start": 1895,
+                      "end": 1913,
                       "loc": {
                         "start": {
-                          "line": 34,
+                          "line": 37,
                           "column": 2
                         },
                         "end": {
-                          "line": 34,
+                          "line": 37,
                           "column": 20
                         },
                         "identifierName": "LEVEL_LOAD_TIMEOUT"
@@ -1224,15 +1389,15 @@
                     },
                     "value": {
                       "type": "StringLiteral",
-                      "start": 1722,
-                      "end": 1740,
+                      "start": 1915,
+                      "end": 1933,
                       "loc": {
                         "start": {
-                          "line": 34,
+                          "line": 37,
                           "column": 22
                         },
                         "end": {
-                          "line": 34,
+                          "line": 37,
                           "column": 40
                         }
                       },
@@ -1246,15 +1411,15 @@
                       {
                         "type": "CommentLine",
                         "value": " Identifier for a level load timeout - data: { url : faulty URL, response : { code: error code, text: error text }}",
-                        "start": 1582,
-                        "end": 1699,
+                        "start": 1775,
+                        "end": 1892,
                         "loc": {
                           "start": {
-                            "line": 33,
+                            "line": 36,
                             "column": 2
                           },
                           "end": {
-                            "line": 33,
+                            "line": 36,
                             "column": 119
                           }
                         }
@@ -1263,15 +1428,15 @@
                   },
                   {
                     "type": "ObjectProperty",
-                    "start": 1847,
-                    "end": 1885,
+                    "start": 2040,
+                    "end": 2078,
                     "loc": {
                       "start": {
-                        "line": 36,
+                        "line": 39,
                         "column": 2
                       },
                       "end": {
-                        "line": 36,
+                        "line": 39,
                         "column": 40
                       }
                     },
@@ -1280,15 +1445,15 @@
                     "computed": false,
                     "key": {
                       "type": "Identifier",
-                      "start": 1847,
-                      "end": 1865,
+                      "start": 2040,
+                      "end": 2058,
                       "loc": {
                         "start": {
-                          "line": 36,
+                          "line": 39,
                           "column": 2
                         },
                         "end": {
-                          "line": 36,
+                          "line": 39,
                           "column": 20
                         },
                         "identifierName": "LEVEL_SWITCH_ERROR"
@@ -1298,15 +1463,15 @@
                     },
                     "value": {
                       "type": "StringLiteral",
-                      "start": 1867,
-                      "end": 1885,
+                      "start": 2060,
+                      "end": 2078,
                       "loc": {
                         "start": {
-                          "line": 36,
+                          "line": 39,
                           "column": 22
                         },
                         "end": {
-                          "line": 36,
+                          "line": 39,
                           "column": 40
                         }
                       },
@@ -1320,15 +1485,15 @@
                       {
                         "type": "CommentLine",
                         "value": " Identifier for a level switch error - data: { level : faulty level Id, event : error description}",
-                        "start": 1744,
-                        "end": 1844,
+                        "start": 1937,
+                        "end": 2037,
                         "loc": {
                           "start": {
-                            "line": 35,
+                            "line": 38,
                             "column": 2
                           },
                           "end": {
-                            "line": 35,
+                            "line": 38,
                             "column": 102
                           }
                         }
@@ -1337,15 +1502,15 @@
                   },
                   {
                     "type": "ObjectProperty",
-                    "start": 2014,
-                    "end": 2059,
+                    "start": 2207,
+                    "end": 2252,
                     "loc": {
                       "start": {
-                        "line": 38,
+                        "line": 41,
                         "column": 2
                       },
                       "end": {
-                        "line": 38,
+                        "line": 41,
                         "column": 47
                       }
                     },
@@ -1354,15 +1519,15 @@
                     "computed": false,
                     "key": {
                       "type": "Identifier",
-                      "start": 2014,
-                      "end": 2036,
+                      "start": 2207,
+                      "end": 2229,
                       "loc": {
                         "start": {
-                          "line": 38,
+                          "line": 41,
                           "column": 2
                         },
                         "end": {
-                          "line": 38,
+                          "line": 41,
                           "column": 24
                         },
                         "identifierName": "AUDIO_TRACK_LOAD_ERROR"
@@ -1372,15 +1537,15 @@
                     },
                     "value": {
                       "type": "StringLiteral",
-                      "start": 2038,
-                      "end": 2059,
+                      "start": 2231,
+                      "end": 2252,
                       "loc": {
                         "start": {
-                          "line": 38,
+                          "line": 41,
                           "column": 26
                         },
                         "end": {
-                          "line": 38,
+                          "line": 41,
                           "column": 47
                         }
                       },
@@ -1394,15 +1559,15 @@
                       {
                         "type": "CommentLine",
                         "value": " Identifier for an audio track load error - data: { url : faulty URL, response : { code: error code, text: error text }}",
-                        "start": 1889,
-                        "end": 2011,
+                        "start": 2082,
+                        "end": 2204,
                         "loc": {
                           "start": {
-                            "line": 37,
+                            "line": 40,
                             "column": 2
                           },
                           "end": {
-                            "line": 37,
+                            "line": 40,
                             "column": 124
                           }
                         }
@@ -1411,15 +1576,15 @@
                   },
                   {
                     "type": "ObjectProperty",
-                    "start": 2190,
-                    "end": 2239,
+                    "start": 2383,
+                    "end": 2432,
                     "loc": {
                       "start": {
-                        "line": 40,
+                        "line": 43,
                         "column": 2
                       },
                       "end": {
-                        "line": 40,
+                        "line": 43,
                         "column": 51
                       }
                     },
@@ -1428,15 +1593,15 @@
                     "computed": false,
                     "key": {
                       "type": "Identifier",
-                      "start": 2190,
-                      "end": 2214,
+                      "start": 2383,
+                      "end": 2407,
                       "loc": {
                         "start": {
-                          "line": 40,
+                          "line": 43,
                           "column": 2
                         },
                         "end": {
-                          "line": 40,
+                          "line": 43,
                           "column": 26
                         },
                         "identifierName": "AUDIO_TRACK_LOAD_TIMEOUT"
@@ -1446,15 +1611,15 @@
                     },
                     "value": {
                       "type": "StringLiteral",
-                      "start": 2216,
-                      "end": 2239,
+                      "start": 2409,
+                      "end": 2432,
                       "loc": {
                         "start": {
-                          "line": 40,
+                          "line": 43,
                           "column": 28
                         },
                         "end": {
-                          "line": 40,
+                          "line": 43,
                           "column": 51
                         }
                       },
@@ -1468,15 +1633,15 @@
                       {
                         "type": "CommentLine",
                         "value": " Identifier for an audio track load timeout - data: { url : faulty URL, response : { code: error code, text: error text }}",
-                        "start": 2063,
-                        "end": 2187,
+                        "start": 2256,
+                        "end": 2380,
                         "loc": {
                           "start": {
-                            "line": 39,
+                            "line": 42,
                             "column": 2
                           },
                           "end": {
-                            "line": 39,
+                            "line": 42,
                             "column": 126
                           }
                         }
@@ -1485,15 +1650,15 @@
                   },
                   {
                     "type": "ObjectProperty",
-                    "start": 2368,
-                    "end": 2400,
+                    "start": 2561,
+                    "end": 2593,
                     "loc": {
                       "start": {
-                        "line": 42,
+                        "line": 45,
                         "column": 2
                       },
                       "end": {
-                        "line": 42,
+                        "line": 45,
                         "column": 34
                       }
                     },
@@ -1502,15 +1667,15 @@
                     "computed": false,
                     "key": {
                       "type": "Identifier",
-                      "start": 2368,
-                      "end": 2383,
+                      "start": 2561,
+                      "end": 2576,
                       "loc": {
                         "start": {
-                          "line": 42,
+                          "line": 45,
                           "column": 2
                         },
                         "end": {
-                          "line": 42,
+                          "line": 45,
                           "column": 17
                         },
                         "identifierName": "FRAG_LOAD_ERROR"
@@ -1520,15 +1685,15 @@
                     },
                     "value": {
                       "type": "StringLiteral",
-                      "start": 2385,
-                      "end": 2400,
+                      "start": 2578,
+                      "end": 2593,
                       "loc": {
                         "start": {
-                          "line": 42,
+                          "line": 45,
                           "column": 19
                         },
                         "end": {
-                          "line": 42,
+                          "line": 45,
                           "column": 34
                         }
                       },
@@ -1542,15 +1707,15 @@
                       {
                         "type": "CommentLine",
                         "value": " Identifier for fragment load error - data: { frag : fragment object, response : { code: error code, text: error text }}",
-                        "start": 2243,
-                        "end": 2365,
+                        "start": 2436,
+                        "end": 2558,
                         "loc": {
                           "start": {
-                            "line": 41,
+                            "line": 44,
                             "column": 2
                           },
                           "end": {
-                            "line": 41,
+                            "line": 44,
                             "column": 124
                           }
                         }
@@ -1559,15 +1724,15 @@
                   },
                   {
                     "type": "ObjectProperty",
-                    "start": 2486,
-                    "end": 2522,
+                    "start": 2679,
+                    "end": 2715,
                     "loc": {
                       "start": {
-                        "line": 44,
+                        "line": 47,
                         "column": 2
                       },
                       "end": {
-                        "line": 44,
+                        "line": 47,
                         "column": 38
                       }
                     },
@@ -1576,15 +1741,15 @@
                     "computed": false,
                     "key": {
                       "type": "Identifier",
-                      "start": 2486,
-                      "end": 2503,
+                      "start": 2679,
+                      "end": 2696,
                       "loc": {
                         "start": {
-                          "line": 44,
+                          "line": 47,
                           "column": 2
                         },
                         "end": {
-                          "line": 44,
+                          "line": 47,
                           "column": 19
                         },
                         "identifierName": "FRAG_LOAD_TIMEOUT"
@@ -1594,15 +1759,15 @@
                     },
                     "value": {
                       "type": "StringLiteral",
-                      "start": 2505,
-                      "end": 2522,
+                      "start": 2698,
+                      "end": 2715,
                       "loc": {
                         "start": {
-                          "line": 44,
+                          "line": 47,
                           "column": 21
                         },
                         "end": {
-                          "line": 44,
+                          "line": 47,
                           "column": 38
                         }
                       },
@@ -1616,15 +1781,15 @@
                       {
                         "type": "CommentLine",
                         "value": " Identifier for fragment load timeout error - data: { frag : fragment object}",
-                        "start": 2404,
-                        "end": 2483,
+                        "start": 2597,
+                        "end": 2676,
                         "loc": {
                           "start": {
-                            "line": 43,
+                            "line": 46,
                             "column": 2
                           },
                           "end": {
-                            "line": 43,
+                            "line": 46,
                             "column": 81
                           }
                         }
@@ -1633,15 +1798,15 @@
                   },
                   {
                     "type": "ObjectProperty",
-                    "start": 2665,
-                    "end": 2703,
+                    "start": 2858,
+                    "end": 2896,
                     "loc": {
                       "start": {
-                        "line": 46,
+                        "line": 49,
                         "column": 2
                       },
                       "end": {
-                        "line": 46,
+                        "line": 49,
                         "column": 40
                       }
                     },
@@ -1650,15 +1815,15 @@
                     "computed": false,
                     "key": {
                       "type": "Identifier",
-                      "start": 2665,
-                      "end": 2683,
+                      "start": 2858,
+                      "end": 2876,
                       "loc": {
                         "start": {
-                          "line": 46,
+                          "line": 49,
                           "column": 2
                         },
                         "end": {
-                          "line": 46,
+                          "line": 49,
                           "column": 20
                         },
                         "identifierName": "FRAG_DECRYPT_ERROR"
@@ -1668,15 +1833,15 @@
                     },
                     "value": {
                       "type": "StringLiteral",
-                      "start": 2685,
-                      "end": 2703,
+                      "start": 2878,
+                      "end": 2896,
                       "loc": {
                         "start": {
-                          "line": 46,
+                          "line": 49,
                           "column": 22
                         },
                         "end": {
-                          "line": 46,
+                          "line": 49,
                           "column": 40
                         }
                       },
@@ -1690,15 +1855,15 @@
                       {
                         "type": "CommentLine",
                         "value": " Identifier for a fragment decryption error event - data: {id : demuxer Id,frag: fragment object, reason : parsing error description }",
-                        "start": 2526,
-                        "end": 2662,
+                        "start": 2719,
+                        "end": 2855,
                         "loc": {
                           "start": {
-                            "line": 45,
+                            "line": 48,
                             "column": 2
                           },
                           "end": {
-                            "line": 45,
+                            "line": 48,
                             "column": 138
                           }
                         }
@@ -1707,15 +1872,15 @@
                   },
                   {
                     "type": "ObjectProperty",
-                    "start": 2915,
-                    "end": 2953,
+                    "start": 3108,
+                    "end": 3146,
                     "loc": {
                       "start": {
-                        "line": 49,
+                        "line": 52,
                         "column": 2
                       },
                       "end": {
-                        "line": 49,
+                        "line": 52,
                         "column": 40
                       }
                     },
@@ -1724,15 +1889,15 @@
                     "computed": false,
                     "key": {
                       "type": "Identifier",
-                      "start": 2915,
-                      "end": 2933,
+                      "start": 3108,
+                      "end": 3126,
                       "loc": {
                         "start": {
-                          "line": 49,
+                          "line": 52,
                           "column": 2
                         },
                         "end": {
-                          "line": 49,
+                          "line": 52,
                           "column": 20
                         },
                         "identifierName": "FRAG_PARSING_ERROR"
@@ -1742,15 +1907,15 @@
                     },
                     "value": {
                       "type": "StringLiteral",
-                      "start": 2935,
-                      "end": 2953,
+                      "start": 3128,
+                      "end": 3146,
                       "loc": {
                         "start": {
-                          "line": 49,
+                          "line": 52,
                           "column": 22
                         },
                         "end": {
-                          "line": 49,
+                          "line": 52,
                           "column": 40
                         }
                       },
@@ -1764,15 +1929,15 @@
                       {
                         "type": "CommentLine",
                         "value": " Identifier for a fragment parsing error event - data: { id : demuxer Id, reason : parsing error description }",
-                        "start": 2707,
-                        "end": 2819,
+                        "start": 2900,
+                        "end": 3012,
                         "loc": {
                           "start": {
-                            "line": 47,
+                            "line": 50,
                             "column": 2
                           },
                           "end": {
-                            "line": 47,
+                            "line": 50,
                             "column": 114
                           }
                         }
@@ -1780,15 +1945,15 @@
                       {
                         "type": "CommentLine",
                         "value": " will be renamed DEMUX_PARSING_ERROR and switched to MUX_ERROR in the next major release",
-                        "start": 2822,
-                        "end": 2912,
+                        "start": 3015,
+                        "end": 3105,
                         "loc": {
                           "start": {
-                            "line": 48,
+                            "line": 51,
                             "column": 2
                           },
                           "end": {
-                            "line": 48,
+                            "line": 51,
                             "column": 92
                           }
                         }
@@ -1797,15 +1962,15 @@
                   },
                   {
                     "type": "ObjectProperty",
-                    "start": 3125,
-                    "end": 3161,
+                    "start": 3318,
+                    "end": 3354,
                     "loc": {
                       "start": {
-                        "line": 51,
+                        "line": 54,
                         "column": 2
                       },
                       "end": {
-                        "line": 51,
+                        "line": 54,
                         "column": 38
                       }
                     },
@@ -1814,15 +1979,15 @@
                     "computed": false,
                     "key": {
                       "type": "Identifier",
-                      "start": 3125,
-                      "end": 3142,
+                      "start": 3318,
+                      "end": 3335,
                       "loc": {
                         "start": {
-                          "line": 51,
+                          "line": 54,
                           "column": 2
                         },
                         "end": {
-                          "line": 51,
+                          "line": 54,
                           "column": 19
                         },
                         "identifierName": "REMUX_ALLOC_ERROR"
@@ -1832,15 +1997,15 @@
                     },
                     "value": {
                       "type": "StringLiteral",
-                      "start": 3144,
-                      "end": 3161,
+                      "start": 3337,
+                      "end": 3354,
                       "loc": {
                         "start": {
-                          "line": 51,
+                          "line": 54,
                           "column": 21
                         },
                         "end": {
-                          "line": 51,
+                          "line": 54,
                           "column": 38
                         }
                       },
@@ -1854,15 +2019,15 @@
                       {
                         "type": "CommentLine",
                         "value": " Identifier for a remux alloc error event - data: { id : demuxer Id, frag : fragment object, bytes : nb of bytes on which allocation failed , reason : error text }",
-                        "start": 2957,
-                        "end": 3122,
+                        "start": 3150,
+                        "end": 3315,
                         "loc": {
                           "start": {
-                            "line": 50,
+                            "line": 53,
                             "column": 2
                           },
                           "end": {
-                            "line": 50,
+                            "line": 53,
                             "column": 167
                           }
                         }
@@ -1871,15 +2036,15 @@
                   },
                   {
                     "type": "ObjectProperty",
-                    "start": 3293,
-                    "end": 3323,
+                    "start": 3486,
+                    "end": 3516,
                     "loc": {
                       "start": {
-                        "line": 53,
+                        "line": 56,
                         "column": 2
                       },
                       "end": {
-                        "line": 53,
+                        "line": 56,
                         "column": 32
                       }
                     },
@@ -1888,15 +2053,15 @@
                     "computed": false,
                     "key": {
                       "type": "Identifier",
-                      "start": 3293,
-                      "end": 3307,
+                      "start": 3486,
+                      "end": 3500,
                       "loc": {
                         "start": {
-                          "line": 53,
+                          "line": 56,
                           "column": 2
                         },
                         "end": {
-                          "line": 53,
+                          "line": 56,
                           "column": 16
                         },
                         "identifierName": "KEY_LOAD_ERROR"
@@ -1906,15 +2071,15 @@
                     },
                     "value": {
                       "type": "StringLiteral",
-                      "start": 3309,
-                      "end": 3323,
+                      "start": 3502,
+                      "end": 3516,
                       "loc": {
                         "start": {
-                          "line": 53,
+                          "line": 56,
                           "column": 18
                         },
                         "end": {
-                          "line": 53,
+                          "line": 56,
                           "column": 32
                         }
                       },
@@ -1928,15 +2093,15 @@
                       {
                         "type": "CommentLine",
                         "value": " Identifier for decrypt key load error - data: { frag : fragment object, response : { code: error code, text: error text }}",
-                        "start": 3165,
-                        "end": 3290,
+                        "start": 3358,
+                        "end": 3483,
                         "loc": {
                           "start": {
-                            "line": 52,
+                            "line": 55,
                             "column": 2
                           },
                           "end": {
-                            "line": 52,
+                            "line": 55,
                             "column": 127
                           }
                         }
@@ -1945,15 +2110,15 @@
                   },
                   {
                     "type": "ObjectProperty",
-                    "start": 3412,
-                    "end": 3446,
+                    "start": 3605,
+                    "end": 3639,
                     "loc": {
                       "start": {
-                        "line": 55,
+                        "line": 58,
                         "column": 2
                       },
                       "end": {
-                        "line": 55,
+                        "line": 58,
                         "column": 36
                       }
                     },
@@ -1962,15 +2127,15 @@
                     "computed": false,
                     "key": {
                       "type": "Identifier",
-                      "start": 3412,
-                      "end": 3428,
+                      "start": 3605,
+                      "end": 3621,
                       "loc": {
                         "start": {
-                          "line": 55,
+                          "line": 58,
                           "column": 2
                         },
                         "end": {
-                          "line": 55,
+                          "line": 58,
                           "column": 18
                         },
                         "identifierName": "KEY_LOAD_TIMEOUT"
@@ -1980,15 +2145,15 @@
                     },
                     "value": {
                       "type": "StringLiteral",
-                      "start": 3430,
-                      "end": 3446,
+                      "start": 3623,
+                      "end": 3639,
                       "loc": {
                         "start": {
-                          "line": 55,
+                          "line": 58,
                           "column": 20
                         },
                         "end": {
-                          "line": 55,
+                          "line": 58,
                           "column": 36
                         }
                       },
@@ -2002,15 +2167,15 @@
                       {
                         "type": "CommentLine",
                         "value": " Identifier for decrypt key load timeout error - data: { frag : fragment object}",
-                        "start": 3327,
-                        "end": 3409,
+                        "start": 3520,
+                        "end": 3602,
                         "loc": {
                           "start": {
-                            "line": 54,
+                            "line": 57,
                             "column": 2
                           },
                           "end": {
-                            "line": 54,
+                            "line": 57,
                             "column": 84
                           }
                         }
@@ -2019,15 +2184,15 @@
                   },
                   {
                     "type": "ObjectProperty",
-                    "start": 3585,
-                    "end": 3630,
+                    "start": 3778,
+                    "end": 3823,
                     "loc": {
                       "start": {
-                        "line": 57,
+                        "line": 60,
                         "column": 2
                       },
                       "end": {
-                        "line": 57,
+                        "line": 60,
                         "column": 47
                       }
                     },
@@ -2036,15 +2201,15 @@
                     "computed": false,
                     "key": {
                       "type": "Identifier",
-                      "start": 3585,
-                      "end": 3607,
+                      "start": 3778,
+                      "end": 3800,
                       "loc": {
                         "start": {
-                          "line": 57,
+                          "line": 60,
                           "column": 2
                         },
                         "end": {
-                          "line": 57,
+                          "line": 60,
                           "column": 24
                         },
                         "identifierName": "BUFFER_ADD_CODEC_ERROR"
@@ -2054,15 +2219,15 @@
                     },
                     "value": {
                       "type": "StringLiteral",
-                      "start": 3609,
-                      "end": 3630,
+                      "start": 3802,
+                      "end": 3823,
                       "loc": {
                         "start": {
-                          "line": 57,
+                          "line": 60,
                           "column": 26
                         },
                         "end": {
-                          "line": 57,
+                          "line": 60,
                           "column": 47
                         }
                       },
@@ -2076,15 +2241,15 @@
                       {
                         "type": "CommentLine",
                         "value": " Triggered when an exception occurs while adding a sourceBuffer to MediaSource - data : {  err : exception , mimeType : mimeType }",
-                        "start": 3450,
-                        "end": 3582,
+                        "start": 3643,
+                        "end": 3775,
                         "loc": {
                           "start": {
-                            "line": 56,
+                            "line": 59,
                             "column": 2
                           },
                           "end": {
-                            "line": 56,
+                            "line": 59,
                             "column": 134
                           }
                         }
@@ -2093,15 +2258,15 @@
                   },
                   {
                     "type": "ObjectProperty",
-                    "start": 3709,
-                    "end": 3749,
+                    "start": 3902,
+                    "end": 3942,
                     "loc": {
                       "start": {
-                        "line": 59,
+                        "line": 62,
                         "column": 2
                       },
                       "end": {
-                        "line": 59,
+                        "line": 62,
                         "column": 42
                       }
                     },
@@ -2110,15 +2275,15 @@
                     "computed": false,
                     "key": {
                       "type": "Identifier",
-                      "start": 3709,
-                      "end": 3728,
+                      "start": 3902,
+                      "end": 3921,
                       "loc": {
                         "start": {
-                          "line": 59,
+                          "line": 62,
                           "column": 2
                         },
                         "end": {
-                          "line": 59,
+                          "line": 62,
                           "column": 21
                         },
                         "identifierName": "BUFFER_APPEND_ERROR"
@@ -2128,15 +2293,15 @@
                     },
                     "value": {
                       "type": "StringLiteral",
-                      "start": 3730,
-                      "end": 3749,
+                      "start": 3923,
+                      "end": 3942,
                       "loc": {
                         "start": {
-                          "line": 59,
+                          "line": 62,
                           "column": 23
                         },
                         "end": {
-                          "line": 59,
+                          "line": 62,
                           "column": 42
                         }
                       },
@@ -2150,15 +2315,15 @@
                       {
                         "type": "CommentLine",
                         "value": " Identifier for a buffer append error - data: append error description",
-                        "start": 3634,
-                        "end": 3706,
+                        "start": 3827,
+                        "end": 3899,
                         "loc": {
                           "start": {
-                            "line": 58,
+                            "line": 61,
                             "column": 2
                           },
                           "end": {
-                            "line": 58,
+                            "line": 61,
                             "column": 74
                           }
                         }
@@ -2167,15 +2332,15 @@
                   },
                   {
                     "type": "ObjectProperty",
-                    "start": 3840,
-                    "end": 3886,
+                    "start": 4033,
+                    "end": 4079,
                     "loc": {
                       "start": {
-                        "line": 61,
+                        "line": 64,
                         "column": 2
                       },
                       "end": {
-                        "line": 61,
+                        "line": 64,
                         "column": 48
                       }
                     },
@@ -2184,15 +2349,15 @@
                     "computed": false,
                     "key": {
                       "type": "Identifier",
-                      "start": 3840,
-                      "end": 3862,
+                      "start": 4033,
+                      "end": 4055,
                       "loc": {
                         "start": {
-                          "line": 61,
+                          "line": 64,
                           "column": 2
                         },
                         "end": {
-                          "line": 61,
+                          "line": 64,
                           "column": 24
                         },
                         "identifierName": "BUFFER_APPENDING_ERROR"
@@ -2202,15 +2367,15 @@
                     },
                     "value": {
                       "type": "StringLiteral",
-                      "start": 3864,
-                      "end": 3886,
+                      "start": 4057,
+                      "end": 4079,
                       "loc": {
                         "start": {
-                          "line": 61,
+                          "line": 64,
                           "column": 26
                         },
                         "end": {
-                          "line": 61,
+                          "line": 64,
                           "column": 48
                         }
                       },
@@ -2224,15 +2389,15 @@
                       {
                         "type": "CommentLine",
                         "value": " Identifier for a buffer appending error event - data: appending error description",
-                        "start": 3753,
-                        "end": 3837,
+                        "start": 3946,
+                        "end": 4030,
                         "loc": {
                           "start": {
-                            "line": 60,
+                            "line": 63,
                             "column": 2
                           },
                           "end": {
-                            "line": 60,
+                            "line": 63,
                             "column": 86
                           }
                         }
@@ -2241,15 +2406,15 @@
                   },
                   {
                     "type": "ObjectProperty",
-                    "start": 3939,
-                    "end": 3981,
+                    "start": 4132,
+                    "end": 4174,
                     "loc": {
                       "start": {
-                        "line": 63,
+                        "line": 66,
                         "column": 2
                       },
                       "end": {
-                        "line": 63,
+                        "line": 66,
                         "column": 44
                       }
                     },
@@ -2258,15 +2423,15 @@
                     "computed": false,
                     "key": {
                       "type": "Identifier",
-                      "start": 3939,
-                      "end": 3959,
+                      "start": 4132,
+                      "end": 4152,
                       "loc": {
                         "start": {
-                          "line": 63,
+                          "line": 66,
                           "column": 2
                         },
                         "end": {
-                          "line": 63,
+                          "line": 66,
                           "column": 22
                         },
                         "identifierName": "BUFFER_STALLED_ERROR"
@@ -2276,15 +2441,15 @@
                     },
                     "value": {
                       "type": "StringLiteral",
-                      "start": 3961,
-                      "end": 3981,
+                      "start": 4154,
+                      "end": 4174,
                       "loc": {
                         "start": {
-                          "line": 63,
+                          "line": 66,
                           "column": 24
                         },
                         "end": {
-                          "line": 63,
+                          "line": 66,
                           "column": 44
                         }
                       },
@@ -2298,15 +2463,15 @@
                       {
                         "type": "CommentLine",
                         "value": " Identifier for a buffer stalled error event",
-                        "start": 3890,
-                        "end": 3936,
+                        "start": 4083,
+                        "end": 4129,
                         "loc": {
                           "start": {
-                            "line": 62,
+                            "line": 65,
                             "column": 2
                           },
                           "end": {
-                            "line": 62,
+                            "line": 65,
                             "column": 48
                           }
                         }
@@ -2315,15 +2480,15 @@
                   },
                   {
                     "type": "ObjectProperty",
-                    "start": 4025,
-                    "end": 4061,
+                    "start": 4218,
+                    "end": 4254,
                     "loc": {
                       "start": {
-                        "line": 65,
+                        "line": 68,
                         "column": 2
                       },
                       "end": {
-                        "line": 65,
+                        "line": 68,
                         "column": 38
                       }
                     },
@@ -2332,15 +2497,15 @@
                     "computed": false,
                     "key": {
                       "type": "Identifier",
-                      "start": 4025,
-                      "end": 4042,
+                      "start": 4218,
+                      "end": 4235,
                       "loc": {
                         "start": {
-                          "line": 65,
+                          "line": 68,
                           "column": 2
                         },
                         "end": {
-                          "line": 65,
+                          "line": 68,
                           "column": 19
                         },
                         "identifierName": "BUFFER_FULL_ERROR"
@@ -2350,15 +2515,15 @@
                     },
                     "value": {
                       "type": "StringLiteral",
-                      "start": 4044,
-                      "end": 4061,
+                      "start": 4237,
+                      "end": 4254,
                       "loc": {
                         "start": {
-                          "line": 65,
+                          "line": 68,
                           "column": 21
                         },
                         "end": {
-                          "line": 65,
+                          "line": 68,
                           "column": 38
                         }
                       },
@@ -2372,15 +2537,15 @@
                       {
                         "type": "CommentLine",
                         "value": " Identifier for a buffer full event",
-                        "start": 3985,
-                        "end": 4022,
+                        "start": 4178,
+                        "end": 4215,
                         "loc": {
                           "start": {
-                            "line": 64,
+                            "line": 67,
                             "column": 2
                           },
                           "end": {
-                            "line": 64,
+                            "line": 67,
                             "column": 39
                           }
                         }
@@ -2389,15 +2554,15 @@
                   },
                   {
                     "type": "ObjectProperty",
-                    "start": 4115,
-                    "end": 4158,
+                    "start": 4308,
+                    "end": 4351,
                     "loc": {
                       "start": {
-                        "line": 67,
+                        "line": 70,
                         "column": 2
                       },
                       "end": {
-                        "line": 67,
+                        "line": 70,
                         "column": 45
                       }
                     },
@@ -2406,15 +2571,15 @@
                     "computed": false,
                     "key": {
                       "type": "Identifier",
-                      "start": 4115,
-                      "end": 4136,
+                      "start": 4308,
+                      "end": 4329,
                       "loc": {
                         "start": {
-                          "line": 67,
+                          "line": 70,
                           "column": 2
                         },
                         "end": {
-                          "line": 67,
+                          "line": 70,
                           "column": 23
                         },
                         "identifierName": "BUFFER_SEEK_OVER_HOLE"
@@ -2424,15 +2589,15 @@
                     },
                     "value": {
                       "type": "StringLiteral",
-                      "start": 4138,
-                      "end": 4158,
+                      "start": 4331,
+                      "end": 4351,
                       "loc": {
                         "start": {
-                          "line": 67,
+                          "line": 70,
                           "column": 25
                         },
                         "end": {
-                          "line": 67,
+                          "line": 70,
                           "column": 45
                         }
                       },
@@ -2446,15 +2611,15 @@
                       {
                         "type": "CommentLine",
                         "value": " Identifier for a buffer seek over hole event",
-                        "start": 4065,
-                        "end": 4112,
+                        "start": 4258,
+                        "end": 4305,
                         "loc": {
                           "start": {
-                            "line": 66,
+                            "line": 69,
                             "column": 2
                           },
                           "end": {
-                            "line": 66,
+                            "line": 69,
                             "column": 49
                           }
                         }
@@ -2463,15 +2628,15 @@
                   },
                   {
                     "type": "ObjectProperty",
-                    "start": 4269,
-                    "end": 4312,
+                    "start": 4462,
+                    "end": 4505,
                     "loc": {
                       "start": {
-                        "line": 69,
+                        "line": 72,
                         "column": 2
                       },
                       "end": {
-                        "line": 69,
+                        "line": 72,
                         "column": 45
                       }
                     },
@@ -2480,15 +2645,15 @@
                     "computed": false,
                     "key": {
                       "type": "Identifier",
-                      "start": 4269,
-                      "end": 4290,
+                      "start": 4462,
+                      "end": 4483,
                       "loc": {
                         "start": {
-                          "line": 69,
+                          "line": 72,
                           "column": 2
                         },
                         "end": {
-                          "line": 69,
+                          "line": 72,
                           "column": 23
                         },
                         "identifierName": "BUFFER_NUDGE_ON_STALL"
@@ -2498,15 +2663,15 @@
                     },
                     "value": {
                       "type": "StringLiteral",
-                      "start": 4292,
-                      "end": 4312,
+                      "start": 4485,
+                      "end": 4505,
                       "loc": {
                         "start": {
-                          "line": 69,
+                          "line": 72,
                           "column": 25
                         },
                         "end": {
-                          "line": 69,
+                          "line": 72,
                           "column": 45
                         }
                       },
@@ -2520,15 +2685,15 @@
                       {
                         "type": "CommentLine",
                         "value": " Identifier for a buffer nudge on stall (playback is stuck although currentTime is in a buffered area)",
-                        "start": 4162,
-                        "end": 4266,
+                        "start": 4355,
+                        "end": 4459,
                         "loc": {
                           "start": {
-                            "line": 68,
+                            "line": 71,
                             "column": 2
                           },
                           "end": {
-                            "line": 68,
+                            "line": 71,
                             "column": 106
                           }
                         }
@@ -2537,15 +2702,15 @@
                   },
                   {
                     "type": "ObjectProperty",
-                    "start": 4406,
-                    "end": 4445,
+                    "start": 4599,
+                    "end": 4638,
                     "loc": {
                       "start": {
-                        "line": 71,
+                        "line": 74,
                         "column": 2
                       },
                       "end": {
-                        "line": 71,
+                        "line": 74,
                         "column": 41
                       }
                     },
@@ -2554,15 +2719,15 @@
                     "computed": false,
                     "key": {
                       "type": "Identifier",
-                      "start": 4406,
-                      "end": 4424,
+                      "start": 4599,
+                      "end": 4617,
                       "loc": {
                         "start": {
-                          "line": 71,
+                          "line": 74,
                           "column": 2
                         },
                         "end": {
-                          "line": 71,
+                          "line": 74,
                           "column": 20
                         },
                         "identifierName": "INTERNAL_EXCEPTION"
@@ -2572,15 +2737,15 @@
                     },
                     "value": {
                       "type": "StringLiteral",
-                      "start": 4426,
-                      "end": 4445,
+                      "start": 4619,
+                      "end": 4638,
                       "loc": {
                         "start": {
-                          "line": 71,
+                          "line": 74,
                           "column": 22
                         },
                         "end": {
-                          "line": 71,
+                          "line": 74,
                           "column": 41
                         }
                       },
@@ -2594,15 +2759,15 @@
                       {
                         "type": "CommentLine",
                         "value": " Identifier for an internal exception happening inside hls.js while handling an event",
-                        "start": 4316,
-                        "end": 4403,
+                        "start": 4509,
+                        "end": 4596,
                         "loc": {
                           "start": {
-                            "line": 70,
+                            "line": 73,
                             "column": 2
                           },
                           "end": {
-                            "line": 70,
+                            "line": 73,
                             "column": 89
                           }
                         }
@@ -2757,15 +2922,15 @@
     {
       "type": "CommentLine",
       "value": " Identifier for a manifest load error - data: { url : faulty URL, response : { code: error code, text: error text }}",
-      "start": 753,
-      "end": 871,
+      "start": 946,
+      "end": 1064,
       "loc": {
         "start": {
-          "line": 23,
+          "line": 26,
           "column": 2
         },
         "end": {
-          "line": 23,
+          "line": 26,
           "column": 120
         }
       }
@@ -2773,15 +2938,15 @@
     {
       "type": "CommentLine",
       "value": " Identifier for a manifest load timeout - data: { url : faulty URL, response : { code: error code, text: error text }}",
-      "start": 918,
-      "end": 1038,
+      "start": 1111,
+      "end": 1231,
       "loc": {
         "start": {
-          "line": 25,
+          "line": 28,
           "column": 2
         },
         "end": {
-          "line": 25,
+          "line": 28,
           "column": 122
         }
       }
@@ -2789,15 +2954,15 @@
     {
       "type": "CommentLine",
       "value": " Identifier for a manifest parsing error - data: { url : faulty URL, reason : error reason}",
-      "start": 1089,
-      "end": 1182,
+      "start": 1282,
+      "end": 1375,
       "loc": {
         "start": {
-          "line": 27,
+          "line": 30,
           "column": 2
         },
         "end": {
-          "line": 27,
+          "line": 30,
           "column": 95
         }
       }
@@ -2805,15 +2970,15 @@
     {
       "type": "CommentLine",
       "value": " Identifier for a manifest with only incompatible codecs error - data: { url : faulty URL, reason : error reason}",
-      "start": 1235,
-      "end": 1350,
+      "start": 1428,
+      "end": 1543,
       "loc": {
         "start": {
-          "line": 29,
+          "line": 32,
           "column": 2
         },
         "end": {
-          "line": 29,
+          "line": 32,
           "column": 117
         }
       }
@@ -2821,15 +2986,15 @@
     {
       "type": "CommentLine",
       "value": " Identifier for a level load error - data: { url : faulty URL, response : { code: error code, text: error text }}",
-      "start": 1426,
-      "end": 1541,
+      "start": 1619,
+      "end": 1734,
       "loc": {
         "start": {
-          "line": 31,
+          "line": 34,
           "column": 2
         },
         "end": {
-          "line": 31,
+          "line": 34,
           "column": 117
         }
       }
@@ -2837,15 +3002,15 @@
     {
       "type": "CommentLine",
       "value": " Identifier for a level load timeout - data: { url : faulty URL, response : { code: error code, text: error text }}",
-      "start": 1582,
-      "end": 1699,
+      "start": 1775,
+      "end": 1892,
       "loc": {
         "start": {
-          "line": 33,
+          "line": 36,
           "column": 2
         },
         "end": {
-          "line": 33,
+          "line": 36,
           "column": 119
         }
       }
@@ -2853,15 +3018,15 @@
     {
       "type": "CommentLine",
       "value": " Identifier for a level switch error - data: { level : faulty level Id, event : error description}",
-      "start": 1744,
-      "end": 1844,
+      "start": 1937,
+      "end": 2037,
       "loc": {
         "start": {
-          "line": 35,
+          "line": 38,
           "column": 2
         },
         "end": {
-          "line": 35,
+          "line": 38,
           "column": 102
         }
       }
@@ -2869,15 +3034,15 @@
     {
       "type": "CommentLine",
       "value": " Identifier for an audio track load error - data: { url : faulty URL, response : { code: error code, text: error text }}",
-      "start": 1889,
-      "end": 2011,
+      "start": 2082,
+      "end": 2204,
       "loc": {
         "start": {
-          "line": 37,
+          "line": 40,
           "column": 2
         },
         "end": {
-          "line": 37,
+          "line": 40,
           "column": 124
         }
       }
@@ -2885,15 +3050,15 @@
     {
       "type": "CommentLine",
       "value": " Identifier for an audio track load timeout - data: { url : faulty URL, response : { code: error code, text: error text }}",
-      "start": 2063,
-      "end": 2187,
+      "start": 2256,
+      "end": 2380,
       "loc": {
         "start": {
-          "line": 39,
+          "line": 42,
           "column": 2
         },
         "end": {
-          "line": 39,
+          "line": 42,
           "column": 126
         }
       }
@@ -2901,15 +3066,15 @@
     {
       "type": "CommentLine",
       "value": " Identifier for fragment load error - data: { frag : fragment object, response : { code: error code, text: error text }}",
-      "start": 2243,
-      "end": 2365,
+      "start": 2436,
+      "end": 2558,
       "loc": {
         "start": {
-          "line": 41,
+          "line": 44,
           "column": 2
         },
         "end": {
-          "line": 41,
+          "line": 44,
           "column": 124
         }
       }
@@ -2917,15 +3082,15 @@
     {
       "type": "CommentLine",
       "value": " Identifier for fragment load timeout error - data: { frag : fragment object}",
-      "start": 2404,
-      "end": 2483,
+      "start": 2597,
+      "end": 2676,
       "loc": {
         "start": {
-          "line": 43,
+          "line": 46,
           "column": 2
         },
         "end": {
-          "line": 43,
+          "line": 46,
           "column": 81
         }
       }
@@ -2933,15 +3098,15 @@
     {
       "type": "CommentLine",
       "value": " Identifier for a fragment decryption error event - data: {id : demuxer Id,frag: fragment object, reason : parsing error description }",
-      "start": 2526,
-      "end": 2662,
+      "start": 2719,
+      "end": 2855,
       "loc": {
         "start": {
-          "line": 45,
+          "line": 48,
           "column": 2
         },
         "end": {
-          "line": 45,
+          "line": 48,
           "column": 138
         }
       }
@@ -2949,15 +3114,15 @@
     {
       "type": "CommentLine",
       "value": " Identifier for a fragment parsing error event - data: { id : demuxer Id, reason : parsing error description }",
-      "start": 2707,
-      "end": 2819,
+      "start": 2900,
+      "end": 3012,
       "loc": {
         "start": {
-          "line": 47,
+          "line": 50,
           "column": 2
         },
         "end": {
-          "line": 47,
+          "line": 50,
           "column": 114
         }
       }
@@ -2965,15 +3130,15 @@
     {
       "type": "CommentLine",
       "value": " will be renamed DEMUX_PARSING_ERROR and switched to MUX_ERROR in the next major release",
-      "start": 2822,
-      "end": 2912,
+      "start": 3015,
+      "end": 3105,
       "loc": {
         "start": {
-          "line": 48,
+          "line": 51,
           "column": 2
         },
         "end": {
-          "line": 48,
+          "line": 51,
           "column": 92
         }
       }
@@ -2981,15 +3146,15 @@
     {
       "type": "CommentLine",
       "value": " Identifier for a remux alloc error event - data: { id : demuxer Id, frag : fragment object, bytes : nb of bytes on which allocation failed , reason : error text }",
-      "start": 2957,
-      "end": 3122,
+      "start": 3150,
+      "end": 3315,
       "loc": {
         "start": {
-          "line": 50,
+          "line": 53,
           "column": 2
         },
         "end": {
-          "line": 50,
+          "line": 53,
           "column": 167
         }
       }
@@ -2997,15 +3162,15 @@
     {
       "type": "CommentLine",
       "value": " Identifier for decrypt key load error - data: { frag : fragment object, response : { code: error code, text: error text }}",
-      "start": 3165,
-      "end": 3290,
+      "start": 3358,
+      "end": 3483,
       "loc": {
         "start": {
-          "line": 52,
+          "line": 55,
           "column": 2
         },
         "end": {
-          "line": 52,
+          "line": 55,
           "column": 127
         }
       }
@@ -3013,15 +3178,15 @@
     {
       "type": "CommentLine",
       "value": " Identifier for decrypt key load timeout error - data: { frag : fragment object}",
-      "start": 3327,
-      "end": 3409,
+      "start": 3520,
+      "end": 3602,
       "loc": {
         "start": {
-          "line": 54,
+          "line": 57,
           "column": 2
         },
         "end": {
-          "line": 54,
+          "line": 57,
           "column": 84
         }
       }
@@ -3029,15 +3194,15 @@
     {
       "type": "CommentLine",
       "value": " Triggered when an exception occurs while adding a sourceBuffer to MediaSource - data : {  err : exception , mimeType : mimeType }",
-      "start": 3450,
-      "end": 3582,
+      "start": 3643,
+      "end": 3775,
       "loc": {
         "start": {
-          "line": 56,
+          "line": 59,
           "column": 2
         },
         "end": {
-          "line": 56,
+          "line": 59,
           "column": 134
         }
       }
@@ -3045,15 +3210,15 @@
     {
       "type": "CommentLine",
       "value": " Identifier for a buffer append error - data: append error description",
-      "start": 3634,
-      "end": 3706,
+      "start": 3827,
+      "end": 3899,
       "loc": {
         "start": {
-          "line": 58,
+          "line": 61,
           "column": 2
         },
         "end": {
-          "line": 58,
+          "line": 61,
           "column": 74
         }
       }
@@ -3061,15 +3226,15 @@
     {
       "type": "CommentLine",
       "value": " Identifier for a buffer appending error event - data: appending error description",
-      "start": 3753,
-      "end": 3837,
+      "start": 3946,
+      "end": 4030,
       "loc": {
         "start": {
-          "line": 60,
+          "line": 63,
           "column": 2
         },
         "end": {
-          "line": 60,
+          "line": 63,
           "column": 86
         }
       }
@@ -3077,15 +3242,15 @@
     {
       "type": "CommentLine",
       "value": " Identifier for a buffer stalled error event",
-      "start": 3890,
-      "end": 3936,
+      "start": 4083,
+      "end": 4129,
       "loc": {
         "start": {
-          "line": 62,
+          "line": 65,
           "column": 2
         },
         "end": {
-          "line": 62,
+          "line": 65,
           "column": 48
         }
       }
@@ -3093,15 +3258,15 @@
     {
       "type": "CommentLine",
       "value": " Identifier for a buffer full event",
-      "start": 3985,
-      "end": 4022,
+      "start": 4178,
+      "end": 4215,
       "loc": {
         "start": {
-          "line": 64,
+          "line": 67,
           "column": 2
         },
         "end": {
-          "line": 64,
+          "line": 67,
           "column": 39
         }
       }
@@ -3109,15 +3274,15 @@
     {
       "type": "CommentLine",
       "value": " Identifier for a buffer seek over hole event",
-      "start": 4065,
-      "end": 4112,
+      "start": 4258,
+      "end": 4305,
       "loc": {
         "start": {
-          "line": 66,
+          "line": 69,
           "column": 2
         },
         "end": {
-          "line": 66,
+          "line": 69,
           "column": 49
         }
       }
@@ -3125,15 +3290,15 @@
     {
       "type": "CommentLine",
       "value": " Identifier for a buffer nudge on stall (playback is stuck although currentTime is in a buffered area)",
-      "start": 4162,
-      "end": 4266,
+      "start": 4355,
+      "end": 4459,
       "loc": {
         "start": {
-          "line": 68,
+          "line": 71,
           "column": 2
         },
         "end": {
-          "line": 68,
+          "line": 71,
           "column": 106
         }
       }
@@ -3141,15 +3306,15 @@
     {
       "type": "CommentLine",
       "value": " Identifier for an internal exception happening inside hls.js while handling an event",
-      "start": 4316,
-      "end": 4403,
+      "start": 4509,
+      "end": 4596,
       "loc": {
         "start": {
-          "line": 70,
+          "line": 73,
           "column": 2
         },
         "end": {
-          "line": 70,
+          "line": 73,
           "column": 89
         }
       }
@@ -4082,9 +4247,9 @@
         "postfix": false,
         "binop": null
       },
-      "value": "KEY_SYSTEM_NO_KEYS",
+      "value": "KEY_SYSTEM_INVALID_HDCP_VERSION",
       "start": 550,
-      "end": 568,
+      "end": 581,
       "loc": {
         "start": {
           "line": 19,
@@ -4092,7 +4257,7 @@
         },
         "end": {
           "line": 19,
-          "column": 20
+          "column": 33
         }
       }
     },
@@ -4109,16 +4274,16 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 568,
-      "end": 569,
+      "start": 581,
+      "end": 582,
       "loc": {
         "start": {
           "line": 19,
-          "column": 20
+          "column": 33
         },
         "end": {
           "line": 19,
-          "column": 21
+          "column": 34
         }
       }
     },
@@ -4135,122 +4300,17 @@
         "binop": null,
         "updateContext": null
       },
-      "value": "keySystemNoKeys",
-      "start": 570,
-      "end": 587,
-      "loc": {
-        "start": {
-          "line": 19,
-          "column": 22
-        },
-        "end": {
-          "line": 19,
-          "column": 39
-        }
-      }
-    },
-    {
-      "type": {
-        "label": ",",
-        "beforeExpr": true,
-        "startsExpr": false,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null,
-        "updateContext": null
-      },
-      "start": 587,
-      "end": 588,
-      "loc": {
-        "start": {
-          "line": 19,
-          "column": 39
-        },
-        "end": {
-          "line": 19,
-          "column": 40
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "name",
-        "beforeExpr": false,
-        "startsExpr": true,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null
-      },
-      "value": "KEY_SYSTEM_NO_ACCESS",
-      "start": 591,
-      "end": 611,
-      "loc": {
-        "start": {
-          "line": 20,
-          "column": 2
-        },
-        "end": {
-          "line": 20,
-          "column": 22
-        }
-      }
-    },
-    {
-      "type": {
-        "label": ":",
-        "beforeExpr": true,
-        "startsExpr": false,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null,
-        "updateContext": null
-      },
-      "start": 611,
+      "value": "keySystemInvalidHdcpVersion",
+      "start": 583,
       "end": 612,
       "loc": {
         "start": {
-          "line": 20,
-          "column": 22
+          "line": 19,
+          "column": 35
         },
         "end": {
-          "line": 20,
-          "column": 23
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "string",
-        "beforeExpr": false,
-        "startsExpr": true,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null,
-        "updateContext": null
-      },
-      "value": "keySystemNoAccess",
-      "start": 613,
-      "end": 632,
-      "loc": {
-        "start": {
-          "line": 20,
-          "column": 24
-        },
-        "end": {
-          "line": 20,
-          "column": 43
+          "line": 19,
+          "column": 64
         }
       }
     },
@@ -4267,16 +4327,16 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 632,
-      "end": 633,
+      "start": 612,
+      "end": 613,
       "loc": {
         "start": {
-          "line": 20,
-          "column": 43
+          "line": 19,
+          "column": 64
         },
         "end": {
-          "line": 20,
-          "column": 44
+          "line": 19,
+          "column": 65
         }
       }
     },
@@ -4292,17 +4352,17 @@
         "postfix": false,
         "binop": null
       },
-      "value": "KEY_SYSTEM_NO_SESSION",
-      "start": 636,
-      "end": 657,
+      "value": "KEY_SYSTEM_LICENSE_INVALID_STATUS",
+      "start": 616,
+      "end": 649,
       "loc": {
         "start": {
-          "line": 21,
+          "line": 20,
           "column": 2
         },
         "end": {
-          "line": 21,
-          "column": 23
+          "line": 20,
+          "column": 35
         }
       }
     },
@@ -4319,16 +4379,16 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 657,
-      "end": 658,
+      "start": 649,
+      "end": 650,
       "loc": {
         "start": {
-          "line": 21,
-          "column": 23
+          "line": 20,
+          "column": 35
         },
         "end": {
-          "line": 21,
-          "column": 24
+          "line": 20,
+          "column": 36
         }
       }
     },
@@ -4345,17 +4405,17 @@
         "binop": null,
         "updateContext": null
       },
-      "value": "keySystemNoSession",
-      "start": 659,
-      "end": 679,
+      "value": "keySystemLicenseInvalidStatus",
+      "start": 651,
+      "end": 682,
       "loc": {
         "start": {
-          "line": 21,
-          "column": 25
+          "line": 20,
+          "column": 37
         },
         "end": {
-          "line": 21,
-          "column": 45
+          "line": 20,
+          "column": 68
         }
       }
     },
@@ -4372,16 +4432,121 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 679,
-      "end": 680,
+      "start": 682,
+      "end": 683,
+      "loc": {
+        "start": {
+          "line": 20,
+          "column": 68
+        },
+        "end": {
+          "line": 20,
+          "column": 69
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "KEY_SYSTEM_LICENSE_EXPIRED",
+      "start": 686,
+      "end": 712,
       "loc": {
         "start": {
           "line": 21,
-          "column": 45
+          "column": 2
         },
         "end": {
           "line": 21,
-          "column": 46
+          "column": 28
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ":",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 712,
+      "end": 713,
+      "loc": {
+        "start": {
+          "line": 21,
+          "column": 28
+        },
+        "end": {
+          "line": 21,
+          "column": 29
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "string",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "keySystemLicenseExpired",
+      "start": 714,
+      "end": 739,
+      "loc": {
+        "start": {
+          "line": 21,
+          "column": 30
+        },
+        "end": {
+          "line": 21,
+          "column": 55
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ",",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 739,
+      "end": 740,
+      "loc": {
+        "start": {
+          "line": 21,
+          "column": 55
+        },
+        "end": {
+          "line": 21,
+          "column": 56
         }
       }
     },
@@ -4398,8 +4563,8 @@
         "binop": null
       },
       "value": "KEY_SYSTEM_LICENSE_REQUEST_FAILED",
-      "start": 683,
-      "end": 716,
+      "start": 743,
+      "end": 776,
       "loc": {
         "start": {
           "line": 22,
@@ -4424,8 +4589,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 716,
-      "end": 717,
+      "start": 776,
+      "end": 777,
       "loc": {
         "start": {
           "line": 22,
@@ -4451,8 +4616,8 @@
         "updateContext": null
       },
       "value": "keySystemLicenseRequestFailed",
-      "start": 718,
-      "end": 749,
+      "start": 778,
+      "end": 809,
       "loc": {
         "start": {
           "line": 22,
@@ -4477,8 +4642,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 749,
-      "end": 750,
+      "start": 809,
+      "end": 810,
       "loc": {
         "start": {
           "line": 22,
@@ -4491,10 +4656,20 @@
       }
     },
     {
-      "type": "CommentLine",
-      "value": " Identifier for a manifest load error - data: { url : faulty URL, response : { code: error code, text: error text }}",
-      "start": 753,
-      "end": 871,
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "KEY_SYSTEM_NO_ACCESS",
+      "start": 813,
+      "end": 833,
       "loc": {
         "start": {
           "line": 23,
@@ -4502,6 +4677,311 @@
         },
         "end": {
           "line": 23,
+          "column": 22
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ":",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 833,
+      "end": 834,
+      "loc": {
+        "start": {
+          "line": 23,
+          "column": 22
+        },
+        "end": {
+          "line": 23,
+          "column": 23
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "string",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "keySystemNoAccess",
+      "start": 835,
+      "end": 854,
+      "loc": {
+        "start": {
+          "line": 23,
+          "column": 24
+        },
+        "end": {
+          "line": 23,
+          "column": 43
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ",",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 854,
+      "end": 855,
+      "loc": {
+        "start": {
+          "line": 23,
+          "column": 43
+        },
+        "end": {
+          "line": 23,
+          "column": 44
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "KEY_SYSTEM_NO_KEYS",
+      "start": 858,
+      "end": 876,
+      "loc": {
+        "start": {
+          "line": 24,
+          "column": 2
+        },
+        "end": {
+          "line": 24,
+          "column": 20
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ":",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 876,
+      "end": 877,
+      "loc": {
+        "start": {
+          "line": 24,
+          "column": 20
+        },
+        "end": {
+          "line": 24,
+          "column": 21
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "string",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "keySystemNoKeys",
+      "start": 878,
+      "end": 895,
+      "loc": {
+        "start": {
+          "line": 24,
+          "column": 22
+        },
+        "end": {
+          "line": 24,
+          "column": 39
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ",",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 895,
+      "end": 896,
+      "loc": {
+        "start": {
+          "line": 24,
+          "column": 39
+        },
+        "end": {
+          "line": 24,
+          "column": 40
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "KEY_SYSTEM_NO_SESSION",
+      "start": 899,
+      "end": 920,
+      "loc": {
+        "start": {
+          "line": 25,
+          "column": 2
+        },
+        "end": {
+          "line": 25,
+          "column": 23
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ":",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 920,
+      "end": 921,
+      "loc": {
+        "start": {
+          "line": 25,
+          "column": 23
+        },
+        "end": {
+          "line": 25,
+          "column": 24
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "string",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "keySystemNoSession",
+      "start": 922,
+      "end": 942,
+      "loc": {
+        "start": {
+          "line": 25,
+          "column": 25
+        },
+        "end": {
+          "line": 25,
+          "column": 45
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ",",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 942,
+      "end": 943,
+      "loc": {
+        "start": {
+          "line": 25,
+          "column": 45
+        },
+        "end": {
+          "line": 25,
+          "column": 46
+        }
+      }
+    },
+    {
+      "type": "CommentLine",
+      "value": " Identifier for a manifest load error - data: { url : faulty URL, response : { code: error code, text: error text }}",
+      "start": 946,
+      "end": 1064,
+      "loc": {
+        "start": {
+          "line": 26,
+          "column": 2
+        },
+        "end": {
+          "line": 26,
           "column": 120
         }
       }
@@ -4519,15 +4999,15 @@
         "binop": null
       },
       "value": "MANIFEST_LOAD_ERROR",
-      "start": 874,
-      "end": 893,
+      "start": 1067,
+      "end": 1086,
       "loc": {
         "start": {
-          "line": 24,
+          "line": 27,
           "column": 2
         },
         "end": {
-          "line": 24,
+          "line": 27,
           "column": 21
         }
       }
@@ -4545,15 +5025,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 893,
-      "end": 894,
+      "start": 1086,
+      "end": 1087,
       "loc": {
         "start": {
-          "line": 24,
+          "line": 27,
           "column": 21
         },
         "end": {
-          "line": 24,
+          "line": 27,
           "column": 22
         }
       }
@@ -4572,15 +5052,15 @@
         "updateContext": null
       },
       "value": "manifestLoadError",
-      "start": 895,
-      "end": 914,
+      "start": 1088,
+      "end": 1107,
       "loc": {
         "start": {
-          "line": 24,
+          "line": 27,
           "column": 23
         },
         "end": {
-          "line": 24,
+          "line": 27,
           "column": 42
         }
       }
@@ -4598,15 +5078,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 914,
-      "end": 915,
+      "start": 1107,
+      "end": 1108,
       "loc": {
         "start": {
-          "line": 24,
+          "line": 27,
           "column": 42
         },
         "end": {
-          "line": 24,
+          "line": 27,
           "column": 43
         }
       }
@@ -4614,15 +5094,15 @@
     {
       "type": "CommentLine",
       "value": " Identifier for a manifest load timeout - data: { url : faulty URL, response : { code: error code, text: error text }}",
-      "start": 918,
-      "end": 1038,
+      "start": 1111,
+      "end": 1231,
       "loc": {
         "start": {
-          "line": 25,
+          "line": 28,
           "column": 2
         },
         "end": {
-          "line": 25,
+          "line": 28,
           "column": 122
         }
       }
@@ -4640,15 +5120,15 @@
         "binop": null
       },
       "value": "MANIFEST_LOAD_TIMEOUT",
-      "start": 1041,
-      "end": 1062,
+      "start": 1234,
+      "end": 1255,
       "loc": {
         "start": {
-          "line": 26,
+          "line": 29,
           "column": 2
         },
         "end": {
-          "line": 26,
+          "line": 29,
           "column": 23
         }
       }
@@ -4666,15 +5146,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 1062,
-      "end": 1063,
+      "start": 1255,
+      "end": 1256,
       "loc": {
         "start": {
-          "line": 26,
+          "line": 29,
           "column": 23
         },
         "end": {
-          "line": 26,
+          "line": 29,
           "column": 24
         }
       }
@@ -4693,15 +5173,15 @@
         "updateContext": null
       },
       "value": "manifestLoadTimeOut",
-      "start": 1064,
-      "end": 1085,
+      "start": 1257,
+      "end": 1278,
       "loc": {
         "start": {
-          "line": 26,
+          "line": 29,
           "column": 25
         },
         "end": {
-          "line": 26,
+          "line": 29,
           "column": 46
         }
       }
@@ -4719,15 +5199,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 1085,
-      "end": 1086,
+      "start": 1278,
+      "end": 1279,
       "loc": {
         "start": {
-          "line": 26,
+          "line": 29,
           "column": 46
         },
         "end": {
-          "line": 26,
+          "line": 29,
           "column": 47
         }
       }
@@ -4735,15 +5215,15 @@
     {
       "type": "CommentLine",
       "value": " Identifier for a manifest parsing error - data: { url : faulty URL, reason : error reason}",
-      "start": 1089,
-      "end": 1182,
+      "start": 1282,
+      "end": 1375,
       "loc": {
         "start": {
-          "line": 27,
+          "line": 30,
           "column": 2
         },
         "end": {
-          "line": 27,
+          "line": 30,
           "column": 95
         }
       }
@@ -4761,15 +5241,15 @@
         "binop": null
       },
       "value": "MANIFEST_PARSING_ERROR",
-      "start": 1185,
-      "end": 1207,
+      "start": 1378,
+      "end": 1400,
       "loc": {
         "start": {
-          "line": 28,
+          "line": 31,
           "column": 2
         },
         "end": {
-          "line": 28,
+          "line": 31,
           "column": 24
         }
       }
@@ -4787,15 +5267,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 1207,
-      "end": 1208,
+      "start": 1400,
+      "end": 1401,
       "loc": {
         "start": {
-          "line": 28,
+          "line": 31,
           "column": 24
         },
         "end": {
-          "line": 28,
+          "line": 31,
           "column": 25
         }
       }
@@ -4814,15 +5294,15 @@
         "updateContext": null
       },
       "value": "manifestParsingError",
-      "start": 1209,
-      "end": 1231,
+      "start": 1402,
+      "end": 1424,
       "loc": {
         "start": {
-          "line": 28,
+          "line": 31,
           "column": 26
         },
         "end": {
-          "line": 28,
+          "line": 31,
           "column": 48
         }
       }
@@ -4840,15 +5320,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 1231,
-      "end": 1232,
+      "start": 1424,
+      "end": 1425,
       "loc": {
         "start": {
-          "line": 28,
+          "line": 31,
           "column": 48
         },
         "end": {
-          "line": 28,
+          "line": 31,
           "column": 49
         }
       }
@@ -4856,15 +5336,15 @@
     {
       "type": "CommentLine",
       "value": " Identifier for a manifest with only incompatible codecs error - data: { url : faulty URL, reason : error reason}",
-      "start": 1235,
-      "end": 1350,
+      "start": 1428,
+      "end": 1543,
       "loc": {
         "start": {
-          "line": 29,
+          "line": 32,
           "column": 2
         },
         "end": {
-          "line": 29,
+          "line": 32,
           "column": 117
         }
       }
@@ -4882,15 +5362,15 @@
         "binop": null
       },
       "value": "MANIFEST_INCOMPATIBLE_CODECS_ERROR",
-      "start": 1353,
-      "end": 1387,
+      "start": 1546,
+      "end": 1580,
       "loc": {
         "start": {
-          "line": 30,
+          "line": 33,
           "column": 2
         },
         "end": {
-          "line": 30,
+          "line": 33,
           "column": 36
         }
       }
@@ -4908,15 +5388,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 1387,
-      "end": 1388,
+      "start": 1580,
+      "end": 1581,
       "loc": {
         "start": {
-          "line": 30,
+          "line": 33,
           "column": 36
         },
         "end": {
-          "line": 30,
+          "line": 33,
           "column": 37
         }
       }
@@ -4935,15 +5415,15 @@
         "updateContext": null
       },
       "value": "manifestIncompatibleCodecsError",
-      "start": 1389,
-      "end": 1422,
+      "start": 1582,
+      "end": 1615,
       "loc": {
         "start": {
-          "line": 30,
+          "line": 33,
           "column": 38
         },
         "end": {
-          "line": 30,
+          "line": 33,
           "column": 71
         }
       }
@@ -4961,15 +5441,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 1422,
-      "end": 1423,
+      "start": 1615,
+      "end": 1616,
       "loc": {
         "start": {
-          "line": 30,
+          "line": 33,
           "column": 71
         },
         "end": {
-          "line": 30,
+          "line": 33,
           "column": 72
         }
       }
@@ -4977,15 +5457,15 @@
     {
       "type": "CommentLine",
       "value": " Identifier for a level load error - data: { url : faulty URL, response : { code: error code, text: error text }}",
-      "start": 1426,
-      "end": 1541,
+      "start": 1619,
+      "end": 1734,
       "loc": {
         "start": {
-          "line": 31,
+          "line": 34,
           "column": 2
         },
         "end": {
-          "line": 31,
+          "line": 34,
           "column": 117
         }
       }
@@ -5003,15 +5483,15 @@
         "binop": null
       },
       "value": "LEVEL_LOAD_ERROR",
-      "start": 1544,
-      "end": 1560,
+      "start": 1737,
+      "end": 1753,
       "loc": {
         "start": {
-          "line": 32,
+          "line": 35,
           "column": 2
         },
         "end": {
-          "line": 32,
+          "line": 35,
           "column": 18
         }
       }
@@ -5029,15 +5509,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 1560,
-      "end": 1561,
+      "start": 1753,
+      "end": 1754,
       "loc": {
         "start": {
-          "line": 32,
+          "line": 35,
           "column": 18
         },
         "end": {
-          "line": 32,
+          "line": 35,
           "column": 19
         }
       }
@@ -5056,15 +5536,15 @@
         "updateContext": null
       },
       "value": "levelLoadError",
-      "start": 1562,
-      "end": 1578,
+      "start": 1755,
+      "end": 1771,
       "loc": {
         "start": {
-          "line": 32,
+          "line": 35,
           "column": 20
         },
         "end": {
-          "line": 32,
+          "line": 35,
           "column": 36
         }
       }
@@ -5082,15 +5562,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 1578,
-      "end": 1579,
+      "start": 1771,
+      "end": 1772,
       "loc": {
         "start": {
-          "line": 32,
+          "line": 35,
           "column": 36
         },
         "end": {
-          "line": 32,
+          "line": 35,
           "column": 37
         }
       }
@@ -5098,15 +5578,15 @@
     {
       "type": "CommentLine",
       "value": " Identifier for a level load timeout - data: { url : faulty URL, response : { code: error code, text: error text }}",
-      "start": 1582,
-      "end": 1699,
+      "start": 1775,
+      "end": 1892,
       "loc": {
         "start": {
-          "line": 33,
+          "line": 36,
           "column": 2
         },
         "end": {
-          "line": 33,
+          "line": 36,
           "column": 119
         }
       }
@@ -5124,15 +5604,15 @@
         "binop": null
       },
       "value": "LEVEL_LOAD_TIMEOUT",
-      "start": 1702,
-      "end": 1720,
+      "start": 1895,
+      "end": 1913,
       "loc": {
         "start": {
-          "line": 34,
+          "line": 37,
           "column": 2
         },
         "end": {
-          "line": 34,
+          "line": 37,
           "column": 20
         }
       }
@@ -5150,15 +5630,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 1720,
-      "end": 1721,
+      "start": 1913,
+      "end": 1914,
       "loc": {
         "start": {
-          "line": 34,
+          "line": 37,
           "column": 20
         },
         "end": {
-          "line": 34,
+          "line": 37,
           "column": 21
         }
       }
@@ -5177,15 +5657,15 @@
         "updateContext": null
       },
       "value": "levelLoadTimeOut",
-      "start": 1722,
-      "end": 1740,
+      "start": 1915,
+      "end": 1933,
       "loc": {
         "start": {
-          "line": 34,
+          "line": 37,
           "column": 22
         },
         "end": {
-          "line": 34,
+          "line": 37,
           "column": 40
         }
       }
@@ -5203,15 +5683,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 1740,
-      "end": 1741,
+      "start": 1933,
+      "end": 1934,
       "loc": {
         "start": {
-          "line": 34,
+          "line": 37,
           "column": 40
         },
         "end": {
-          "line": 34,
+          "line": 37,
           "column": 41
         }
       }
@@ -5219,15 +5699,15 @@
     {
       "type": "CommentLine",
       "value": " Identifier for a level switch error - data: { level : faulty level Id, event : error description}",
-      "start": 1744,
-      "end": 1844,
+      "start": 1937,
+      "end": 2037,
       "loc": {
         "start": {
-          "line": 35,
+          "line": 38,
           "column": 2
         },
         "end": {
-          "line": 35,
+          "line": 38,
           "column": 102
         }
       }
@@ -5245,15 +5725,15 @@
         "binop": null
       },
       "value": "LEVEL_SWITCH_ERROR",
-      "start": 1847,
-      "end": 1865,
+      "start": 2040,
+      "end": 2058,
       "loc": {
         "start": {
-          "line": 36,
+          "line": 39,
           "column": 2
         },
         "end": {
-          "line": 36,
+          "line": 39,
           "column": 20
         }
       }
@@ -5271,15 +5751,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 1865,
-      "end": 1866,
+      "start": 2058,
+      "end": 2059,
       "loc": {
         "start": {
-          "line": 36,
+          "line": 39,
           "column": 20
         },
         "end": {
-          "line": 36,
+          "line": 39,
           "column": 21
         }
       }
@@ -5298,15 +5778,15 @@
         "updateContext": null
       },
       "value": "levelSwitchError",
-      "start": 1867,
-      "end": 1885,
+      "start": 2060,
+      "end": 2078,
       "loc": {
         "start": {
-          "line": 36,
+          "line": 39,
           "column": 22
         },
         "end": {
-          "line": 36,
+          "line": 39,
           "column": 40
         }
       }
@@ -5324,15 +5804,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 1885,
-      "end": 1886,
+      "start": 2078,
+      "end": 2079,
       "loc": {
         "start": {
-          "line": 36,
+          "line": 39,
           "column": 40
         },
         "end": {
-          "line": 36,
+          "line": 39,
           "column": 41
         }
       }
@@ -5340,15 +5820,15 @@
     {
       "type": "CommentLine",
       "value": " Identifier for an audio track load error - data: { url : faulty URL, response : { code: error code, text: error text }}",
-      "start": 1889,
-      "end": 2011,
+      "start": 2082,
+      "end": 2204,
       "loc": {
         "start": {
-          "line": 37,
+          "line": 40,
           "column": 2
         },
         "end": {
-          "line": 37,
+          "line": 40,
           "column": 124
         }
       }
@@ -5366,15 +5846,15 @@
         "binop": null
       },
       "value": "AUDIO_TRACK_LOAD_ERROR",
-      "start": 2014,
-      "end": 2036,
+      "start": 2207,
+      "end": 2229,
       "loc": {
         "start": {
-          "line": 38,
+          "line": 41,
           "column": 2
         },
         "end": {
-          "line": 38,
+          "line": 41,
           "column": 24
         }
       }
@@ -5392,15 +5872,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 2036,
-      "end": 2037,
+      "start": 2229,
+      "end": 2230,
       "loc": {
         "start": {
-          "line": 38,
+          "line": 41,
           "column": 24
         },
         "end": {
-          "line": 38,
+          "line": 41,
           "column": 25
         }
       }
@@ -5419,15 +5899,15 @@
         "updateContext": null
       },
       "value": "audioTrackLoadError",
-      "start": 2038,
-      "end": 2059,
+      "start": 2231,
+      "end": 2252,
       "loc": {
         "start": {
-          "line": 38,
+          "line": 41,
           "column": 26
         },
         "end": {
-          "line": 38,
+          "line": 41,
           "column": 47
         }
       }
@@ -5445,15 +5925,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 2059,
-      "end": 2060,
+      "start": 2252,
+      "end": 2253,
       "loc": {
         "start": {
-          "line": 38,
+          "line": 41,
           "column": 47
         },
         "end": {
-          "line": 38,
+          "line": 41,
           "column": 48
         }
       }
@@ -5461,15 +5941,15 @@
     {
       "type": "CommentLine",
       "value": " Identifier for an audio track load timeout - data: { url : faulty URL, response : { code: error code, text: error text }}",
-      "start": 2063,
-      "end": 2187,
+      "start": 2256,
+      "end": 2380,
       "loc": {
         "start": {
-          "line": 39,
+          "line": 42,
           "column": 2
         },
         "end": {
-          "line": 39,
+          "line": 42,
           "column": 126
         }
       }
@@ -5487,15 +5967,15 @@
         "binop": null
       },
       "value": "AUDIO_TRACK_LOAD_TIMEOUT",
-      "start": 2190,
-      "end": 2214,
+      "start": 2383,
+      "end": 2407,
       "loc": {
         "start": {
-          "line": 40,
+          "line": 43,
           "column": 2
         },
         "end": {
-          "line": 40,
+          "line": 43,
           "column": 26
         }
       }
@@ -5513,15 +5993,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 2214,
-      "end": 2215,
+      "start": 2407,
+      "end": 2408,
       "loc": {
         "start": {
-          "line": 40,
+          "line": 43,
           "column": 26
         },
         "end": {
-          "line": 40,
+          "line": 43,
           "column": 27
         }
       }
@@ -5540,15 +6020,15 @@
         "updateContext": null
       },
       "value": "audioTrackLoadTimeOut",
-      "start": 2216,
-      "end": 2239,
+      "start": 2409,
+      "end": 2432,
       "loc": {
         "start": {
-          "line": 40,
+          "line": 43,
           "column": 28
         },
         "end": {
-          "line": 40,
+          "line": 43,
           "column": 51
         }
       }
@@ -5566,15 +6046,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 2239,
-      "end": 2240,
+      "start": 2432,
+      "end": 2433,
       "loc": {
         "start": {
-          "line": 40,
+          "line": 43,
           "column": 51
         },
         "end": {
-          "line": 40,
+          "line": 43,
           "column": 52
         }
       }
@@ -5582,15 +6062,15 @@
     {
       "type": "CommentLine",
       "value": " Identifier for fragment load error - data: { frag : fragment object, response : { code: error code, text: error text }}",
-      "start": 2243,
-      "end": 2365,
+      "start": 2436,
+      "end": 2558,
       "loc": {
         "start": {
-          "line": 41,
+          "line": 44,
           "column": 2
         },
         "end": {
-          "line": 41,
+          "line": 44,
           "column": 124
         }
       }
@@ -5608,15 +6088,15 @@
         "binop": null
       },
       "value": "FRAG_LOAD_ERROR",
-      "start": 2368,
-      "end": 2383,
+      "start": 2561,
+      "end": 2576,
       "loc": {
         "start": {
-          "line": 42,
+          "line": 45,
           "column": 2
         },
         "end": {
-          "line": 42,
+          "line": 45,
           "column": 17
         }
       }
@@ -5634,15 +6114,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 2383,
-      "end": 2384,
+      "start": 2576,
+      "end": 2577,
       "loc": {
         "start": {
-          "line": 42,
+          "line": 45,
           "column": 17
         },
         "end": {
-          "line": 42,
+          "line": 45,
           "column": 18
         }
       }
@@ -5661,15 +6141,15 @@
         "updateContext": null
       },
       "value": "fragLoadError",
-      "start": 2385,
-      "end": 2400,
+      "start": 2578,
+      "end": 2593,
       "loc": {
         "start": {
-          "line": 42,
+          "line": 45,
           "column": 19
         },
         "end": {
-          "line": 42,
+          "line": 45,
           "column": 34
         }
       }
@@ -5687,15 +6167,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 2400,
-      "end": 2401,
+      "start": 2593,
+      "end": 2594,
       "loc": {
         "start": {
-          "line": 42,
+          "line": 45,
           "column": 34
         },
         "end": {
-          "line": 42,
+          "line": 45,
           "column": 35
         }
       }
@@ -5703,15 +6183,15 @@
     {
       "type": "CommentLine",
       "value": " Identifier for fragment load timeout error - data: { frag : fragment object}",
-      "start": 2404,
-      "end": 2483,
+      "start": 2597,
+      "end": 2676,
       "loc": {
         "start": {
-          "line": 43,
+          "line": 46,
           "column": 2
         },
         "end": {
-          "line": 43,
+          "line": 46,
           "column": 81
         }
       }
@@ -5729,15 +6209,15 @@
         "binop": null
       },
       "value": "FRAG_LOAD_TIMEOUT",
-      "start": 2486,
-      "end": 2503,
+      "start": 2679,
+      "end": 2696,
       "loc": {
         "start": {
-          "line": 44,
+          "line": 47,
           "column": 2
         },
         "end": {
-          "line": 44,
+          "line": 47,
           "column": 19
         }
       }
@@ -5755,15 +6235,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 2503,
-      "end": 2504,
+      "start": 2696,
+      "end": 2697,
       "loc": {
         "start": {
-          "line": 44,
+          "line": 47,
           "column": 19
         },
         "end": {
-          "line": 44,
+          "line": 47,
           "column": 20
         }
       }
@@ -5782,15 +6262,15 @@
         "updateContext": null
       },
       "value": "fragLoadTimeOut",
-      "start": 2505,
-      "end": 2522,
+      "start": 2698,
+      "end": 2715,
       "loc": {
         "start": {
-          "line": 44,
+          "line": 47,
           "column": 21
         },
         "end": {
-          "line": 44,
+          "line": 47,
           "column": 38
         }
       }
@@ -5808,15 +6288,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 2522,
-      "end": 2523,
+      "start": 2715,
+      "end": 2716,
       "loc": {
         "start": {
-          "line": 44,
+          "line": 47,
           "column": 38
         },
         "end": {
-          "line": 44,
+          "line": 47,
           "column": 39
         }
       }
@@ -5824,15 +6304,15 @@
     {
       "type": "CommentLine",
       "value": " Identifier for a fragment decryption error event - data: {id : demuxer Id,frag: fragment object, reason : parsing error description }",
-      "start": 2526,
-      "end": 2662,
+      "start": 2719,
+      "end": 2855,
       "loc": {
         "start": {
-          "line": 45,
+          "line": 48,
           "column": 2
         },
         "end": {
-          "line": 45,
+          "line": 48,
           "column": 138
         }
       }
@@ -5850,15 +6330,15 @@
         "binop": null
       },
       "value": "FRAG_DECRYPT_ERROR",
-      "start": 2665,
-      "end": 2683,
+      "start": 2858,
+      "end": 2876,
       "loc": {
         "start": {
-          "line": 46,
+          "line": 49,
           "column": 2
         },
         "end": {
-          "line": 46,
+          "line": 49,
           "column": 20
         }
       }
@@ -5876,15 +6356,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 2683,
-      "end": 2684,
+      "start": 2876,
+      "end": 2877,
       "loc": {
         "start": {
-          "line": 46,
+          "line": 49,
           "column": 20
         },
         "end": {
-          "line": 46,
+          "line": 49,
           "column": 21
         }
       }
@@ -5903,15 +6383,15 @@
         "updateContext": null
       },
       "value": "fragDecryptError",
-      "start": 2685,
-      "end": 2703,
+      "start": 2878,
+      "end": 2896,
       "loc": {
         "start": {
-          "line": 46,
+          "line": 49,
           "column": 22
         },
         "end": {
-          "line": 46,
+          "line": 49,
           "column": 40
         }
       }
@@ -5929,15 +6409,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 2703,
-      "end": 2704,
+      "start": 2896,
+      "end": 2897,
       "loc": {
         "start": {
-          "line": 46,
+          "line": 49,
           "column": 40
         },
         "end": {
-          "line": 46,
+          "line": 49,
           "column": 41
         }
       }
@@ -5945,15 +6425,15 @@
     {
       "type": "CommentLine",
       "value": " Identifier for a fragment parsing error event - data: { id : demuxer Id, reason : parsing error description }",
-      "start": 2707,
-      "end": 2819,
+      "start": 2900,
+      "end": 3012,
       "loc": {
         "start": {
-          "line": 47,
+          "line": 50,
           "column": 2
         },
         "end": {
-          "line": 47,
+          "line": 50,
           "column": 114
         }
       }
@@ -5961,15 +6441,15 @@
     {
       "type": "CommentLine",
       "value": " will be renamed DEMUX_PARSING_ERROR and switched to MUX_ERROR in the next major release",
-      "start": 2822,
-      "end": 2912,
+      "start": 3015,
+      "end": 3105,
       "loc": {
         "start": {
-          "line": 48,
+          "line": 51,
           "column": 2
         },
         "end": {
-          "line": 48,
+          "line": 51,
           "column": 92
         }
       }
@@ -5987,15 +6467,15 @@
         "binop": null
       },
       "value": "FRAG_PARSING_ERROR",
-      "start": 2915,
-      "end": 2933,
+      "start": 3108,
+      "end": 3126,
       "loc": {
         "start": {
-          "line": 49,
+          "line": 52,
           "column": 2
         },
         "end": {
-          "line": 49,
+          "line": 52,
           "column": 20
         }
       }
@@ -6013,15 +6493,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 2933,
-      "end": 2934,
+      "start": 3126,
+      "end": 3127,
       "loc": {
         "start": {
-          "line": 49,
+          "line": 52,
           "column": 20
         },
         "end": {
-          "line": 49,
+          "line": 52,
           "column": 21
         }
       }
@@ -6040,15 +6520,15 @@
         "updateContext": null
       },
       "value": "fragParsingError",
-      "start": 2935,
-      "end": 2953,
+      "start": 3128,
+      "end": 3146,
       "loc": {
         "start": {
-          "line": 49,
+          "line": 52,
           "column": 22
         },
         "end": {
-          "line": 49,
+          "line": 52,
           "column": 40
         }
       }
@@ -6066,15 +6546,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 2953,
-      "end": 2954,
+      "start": 3146,
+      "end": 3147,
       "loc": {
         "start": {
-          "line": 49,
+          "line": 52,
           "column": 40
         },
         "end": {
-          "line": 49,
+          "line": 52,
           "column": 41
         }
       }
@@ -6082,15 +6562,15 @@
     {
       "type": "CommentLine",
       "value": " Identifier for a remux alloc error event - data: { id : demuxer Id, frag : fragment object, bytes : nb of bytes on which allocation failed , reason : error text }",
-      "start": 2957,
-      "end": 3122,
+      "start": 3150,
+      "end": 3315,
       "loc": {
         "start": {
-          "line": 50,
+          "line": 53,
           "column": 2
         },
         "end": {
-          "line": 50,
+          "line": 53,
           "column": 167
         }
       }
@@ -6108,15 +6588,15 @@
         "binop": null
       },
       "value": "REMUX_ALLOC_ERROR",
-      "start": 3125,
-      "end": 3142,
+      "start": 3318,
+      "end": 3335,
       "loc": {
         "start": {
-          "line": 51,
+          "line": 54,
           "column": 2
         },
         "end": {
-          "line": 51,
+          "line": 54,
           "column": 19
         }
       }
@@ -6134,15 +6614,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 3142,
-      "end": 3143,
+      "start": 3335,
+      "end": 3336,
       "loc": {
         "start": {
-          "line": 51,
+          "line": 54,
           "column": 19
         },
         "end": {
-          "line": 51,
+          "line": 54,
           "column": 20
         }
       }
@@ -6161,15 +6641,15 @@
         "updateContext": null
       },
       "value": "remuxAllocError",
-      "start": 3144,
-      "end": 3161,
+      "start": 3337,
+      "end": 3354,
       "loc": {
         "start": {
-          "line": 51,
+          "line": 54,
           "column": 21
         },
         "end": {
-          "line": 51,
+          "line": 54,
           "column": 38
         }
       }
@@ -6187,15 +6667,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 3161,
-      "end": 3162,
+      "start": 3354,
+      "end": 3355,
       "loc": {
         "start": {
-          "line": 51,
+          "line": 54,
           "column": 38
         },
         "end": {
-          "line": 51,
+          "line": 54,
           "column": 39
         }
       }
@@ -6203,15 +6683,15 @@
     {
       "type": "CommentLine",
       "value": " Identifier for decrypt key load error - data: { frag : fragment object, response : { code: error code, text: error text }}",
-      "start": 3165,
-      "end": 3290,
+      "start": 3358,
+      "end": 3483,
       "loc": {
         "start": {
-          "line": 52,
+          "line": 55,
           "column": 2
         },
         "end": {
-          "line": 52,
+          "line": 55,
           "column": 127
         }
       }
@@ -6229,15 +6709,15 @@
         "binop": null
       },
       "value": "KEY_LOAD_ERROR",
-      "start": 3293,
-      "end": 3307,
+      "start": 3486,
+      "end": 3500,
       "loc": {
         "start": {
-          "line": 53,
+          "line": 56,
           "column": 2
         },
         "end": {
-          "line": 53,
+          "line": 56,
           "column": 16
         }
       }
@@ -6255,15 +6735,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 3307,
-      "end": 3308,
+      "start": 3500,
+      "end": 3501,
       "loc": {
         "start": {
-          "line": 53,
+          "line": 56,
           "column": 16
         },
         "end": {
-          "line": 53,
+          "line": 56,
           "column": 17
         }
       }
@@ -6282,15 +6762,15 @@
         "updateContext": null
       },
       "value": "keyLoadError",
-      "start": 3309,
-      "end": 3323,
+      "start": 3502,
+      "end": 3516,
       "loc": {
         "start": {
-          "line": 53,
+          "line": 56,
           "column": 18
         },
         "end": {
-          "line": 53,
+          "line": 56,
           "column": 32
         }
       }
@@ -6308,15 +6788,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 3323,
-      "end": 3324,
+      "start": 3516,
+      "end": 3517,
       "loc": {
         "start": {
-          "line": 53,
+          "line": 56,
           "column": 32
         },
         "end": {
-          "line": 53,
+          "line": 56,
           "column": 33
         }
       }
@@ -6324,15 +6804,15 @@
     {
       "type": "CommentLine",
       "value": " Identifier for decrypt key load timeout error - data: { frag : fragment object}",
-      "start": 3327,
-      "end": 3409,
+      "start": 3520,
+      "end": 3602,
       "loc": {
         "start": {
-          "line": 54,
+          "line": 57,
           "column": 2
         },
         "end": {
-          "line": 54,
+          "line": 57,
           "column": 84
         }
       }
@@ -6350,15 +6830,15 @@
         "binop": null
       },
       "value": "KEY_LOAD_TIMEOUT",
-      "start": 3412,
-      "end": 3428,
+      "start": 3605,
+      "end": 3621,
       "loc": {
         "start": {
-          "line": 55,
+          "line": 58,
           "column": 2
         },
         "end": {
-          "line": 55,
+          "line": 58,
           "column": 18
         }
       }
@@ -6376,15 +6856,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 3428,
-      "end": 3429,
+      "start": 3621,
+      "end": 3622,
       "loc": {
         "start": {
-          "line": 55,
+          "line": 58,
           "column": 18
         },
         "end": {
-          "line": 55,
+          "line": 58,
           "column": 19
         }
       }
@@ -6403,15 +6883,15 @@
         "updateContext": null
       },
       "value": "keyLoadTimeOut",
-      "start": 3430,
-      "end": 3446,
+      "start": 3623,
+      "end": 3639,
       "loc": {
         "start": {
-          "line": 55,
+          "line": 58,
           "column": 20
         },
         "end": {
-          "line": 55,
+          "line": 58,
           "column": 36
         }
       }
@@ -6429,15 +6909,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 3446,
-      "end": 3447,
+      "start": 3639,
+      "end": 3640,
       "loc": {
         "start": {
-          "line": 55,
+          "line": 58,
           "column": 36
         },
         "end": {
-          "line": 55,
+          "line": 58,
           "column": 37
         }
       }
@@ -6445,15 +6925,15 @@
     {
       "type": "CommentLine",
       "value": " Triggered when an exception occurs while adding a sourceBuffer to MediaSource - data : {  err : exception , mimeType : mimeType }",
-      "start": 3450,
-      "end": 3582,
+      "start": 3643,
+      "end": 3775,
       "loc": {
         "start": {
-          "line": 56,
+          "line": 59,
           "column": 2
         },
         "end": {
-          "line": 56,
+          "line": 59,
           "column": 134
         }
       }
@@ -6471,15 +6951,15 @@
         "binop": null
       },
       "value": "BUFFER_ADD_CODEC_ERROR",
-      "start": 3585,
-      "end": 3607,
+      "start": 3778,
+      "end": 3800,
       "loc": {
         "start": {
-          "line": 57,
+          "line": 60,
           "column": 2
         },
         "end": {
-          "line": 57,
+          "line": 60,
           "column": 24
         }
       }
@@ -6497,15 +6977,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 3607,
-      "end": 3608,
+      "start": 3800,
+      "end": 3801,
       "loc": {
         "start": {
-          "line": 57,
+          "line": 60,
           "column": 24
         },
         "end": {
-          "line": 57,
+          "line": 60,
           "column": 25
         }
       }
@@ -6524,15 +7004,15 @@
         "updateContext": null
       },
       "value": "bufferAddCodecError",
-      "start": 3609,
-      "end": 3630,
+      "start": 3802,
+      "end": 3823,
       "loc": {
         "start": {
-          "line": 57,
+          "line": 60,
           "column": 26
         },
         "end": {
-          "line": 57,
+          "line": 60,
           "column": 47
         }
       }
@@ -6550,15 +7030,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 3630,
-      "end": 3631,
+      "start": 3823,
+      "end": 3824,
       "loc": {
         "start": {
-          "line": 57,
+          "line": 60,
           "column": 47
         },
         "end": {
-          "line": 57,
+          "line": 60,
           "column": 48
         }
       }
@@ -6566,15 +7046,15 @@
     {
       "type": "CommentLine",
       "value": " Identifier for a buffer append error - data: append error description",
-      "start": 3634,
-      "end": 3706,
+      "start": 3827,
+      "end": 3899,
       "loc": {
         "start": {
-          "line": 58,
+          "line": 61,
           "column": 2
         },
         "end": {
-          "line": 58,
+          "line": 61,
           "column": 74
         }
       }
@@ -6592,15 +7072,15 @@
         "binop": null
       },
       "value": "BUFFER_APPEND_ERROR",
-      "start": 3709,
-      "end": 3728,
+      "start": 3902,
+      "end": 3921,
       "loc": {
         "start": {
-          "line": 59,
+          "line": 62,
           "column": 2
         },
         "end": {
-          "line": 59,
+          "line": 62,
           "column": 21
         }
       }
@@ -6618,15 +7098,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 3728,
-      "end": 3729,
+      "start": 3921,
+      "end": 3922,
       "loc": {
         "start": {
-          "line": 59,
+          "line": 62,
           "column": 21
         },
         "end": {
-          "line": 59,
+          "line": 62,
           "column": 22
         }
       }
@@ -6645,15 +7125,15 @@
         "updateContext": null
       },
       "value": "bufferAppendError",
-      "start": 3730,
-      "end": 3749,
+      "start": 3923,
+      "end": 3942,
       "loc": {
         "start": {
-          "line": 59,
+          "line": 62,
           "column": 23
         },
         "end": {
-          "line": 59,
+          "line": 62,
           "column": 42
         }
       }
@@ -6671,15 +7151,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 3749,
-      "end": 3750,
+      "start": 3942,
+      "end": 3943,
       "loc": {
         "start": {
-          "line": 59,
+          "line": 62,
           "column": 42
         },
         "end": {
-          "line": 59,
+          "line": 62,
           "column": 43
         }
       }
@@ -6687,15 +7167,15 @@
     {
       "type": "CommentLine",
       "value": " Identifier for a buffer appending error event - data: appending error description",
-      "start": 3753,
-      "end": 3837,
+      "start": 3946,
+      "end": 4030,
       "loc": {
         "start": {
-          "line": 60,
+          "line": 63,
           "column": 2
         },
         "end": {
-          "line": 60,
+          "line": 63,
           "column": 86
         }
       }
@@ -6713,15 +7193,15 @@
         "binop": null
       },
       "value": "BUFFER_APPENDING_ERROR",
-      "start": 3840,
-      "end": 3862,
+      "start": 4033,
+      "end": 4055,
       "loc": {
         "start": {
-          "line": 61,
+          "line": 64,
           "column": 2
         },
         "end": {
-          "line": 61,
+          "line": 64,
           "column": 24
         }
       }
@@ -6739,15 +7219,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 3862,
-      "end": 3863,
+      "start": 4055,
+      "end": 4056,
       "loc": {
         "start": {
-          "line": 61,
+          "line": 64,
           "column": 24
         },
         "end": {
-          "line": 61,
+          "line": 64,
           "column": 25
         }
       }
@@ -6766,15 +7246,15 @@
         "updateContext": null
       },
       "value": "bufferAppendingError",
-      "start": 3864,
-      "end": 3886,
+      "start": 4057,
+      "end": 4079,
       "loc": {
         "start": {
-          "line": 61,
+          "line": 64,
           "column": 26
         },
         "end": {
-          "line": 61,
+          "line": 64,
           "column": 48
         }
       }
@@ -6792,15 +7272,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 3886,
-      "end": 3887,
+      "start": 4079,
+      "end": 4080,
       "loc": {
         "start": {
-          "line": 61,
+          "line": 64,
           "column": 48
         },
         "end": {
-          "line": 61,
+          "line": 64,
           "column": 49
         }
       }
@@ -6808,15 +7288,15 @@
     {
       "type": "CommentLine",
       "value": " Identifier for a buffer stalled error event",
-      "start": 3890,
-      "end": 3936,
+      "start": 4083,
+      "end": 4129,
       "loc": {
         "start": {
-          "line": 62,
+          "line": 65,
           "column": 2
         },
         "end": {
-          "line": 62,
+          "line": 65,
           "column": 48
         }
       }
@@ -6834,15 +7314,15 @@
         "binop": null
       },
       "value": "BUFFER_STALLED_ERROR",
-      "start": 3939,
-      "end": 3959,
+      "start": 4132,
+      "end": 4152,
       "loc": {
         "start": {
-          "line": 63,
+          "line": 66,
           "column": 2
         },
         "end": {
-          "line": 63,
+          "line": 66,
           "column": 22
         }
       }
@@ -6860,15 +7340,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 3959,
-      "end": 3960,
+      "start": 4152,
+      "end": 4153,
       "loc": {
         "start": {
-          "line": 63,
+          "line": 66,
           "column": 22
         },
         "end": {
-          "line": 63,
+          "line": 66,
           "column": 23
         }
       }
@@ -6887,15 +7367,15 @@
         "updateContext": null
       },
       "value": "bufferStalledError",
-      "start": 3961,
-      "end": 3981,
+      "start": 4154,
+      "end": 4174,
       "loc": {
         "start": {
-          "line": 63,
+          "line": 66,
           "column": 24
         },
         "end": {
-          "line": 63,
+          "line": 66,
           "column": 44
         }
       }
@@ -6913,15 +7393,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 3981,
-      "end": 3982,
+      "start": 4174,
+      "end": 4175,
       "loc": {
         "start": {
-          "line": 63,
+          "line": 66,
           "column": 44
         },
         "end": {
-          "line": 63,
+          "line": 66,
           "column": 45
         }
       }
@@ -6929,15 +7409,15 @@
     {
       "type": "CommentLine",
       "value": " Identifier for a buffer full event",
-      "start": 3985,
-      "end": 4022,
+      "start": 4178,
+      "end": 4215,
       "loc": {
         "start": {
-          "line": 64,
+          "line": 67,
           "column": 2
         },
         "end": {
-          "line": 64,
+          "line": 67,
           "column": 39
         }
       }
@@ -6955,15 +7435,15 @@
         "binop": null
       },
       "value": "BUFFER_FULL_ERROR",
-      "start": 4025,
-      "end": 4042,
+      "start": 4218,
+      "end": 4235,
       "loc": {
         "start": {
-          "line": 65,
+          "line": 68,
           "column": 2
         },
         "end": {
-          "line": 65,
+          "line": 68,
           "column": 19
         }
       }
@@ -6981,15 +7461,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 4042,
-      "end": 4043,
+      "start": 4235,
+      "end": 4236,
       "loc": {
         "start": {
-          "line": 65,
+          "line": 68,
           "column": 19
         },
         "end": {
-          "line": 65,
+          "line": 68,
           "column": 20
         }
       }
@@ -7008,15 +7488,15 @@
         "updateContext": null
       },
       "value": "bufferFullError",
-      "start": 4044,
-      "end": 4061,
+      "start": 4237,
+      "end": 4254,
       "loc": {
         "start": {
-          "line": 65,
+          "line": 68,
           "column": 21
         },
         "end": {
-          "line": 65,
+          "line": 68,
           "column": 38
         }
       }
@@ -7034,15 +7514,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 4061,
-      "end": 4062,
+      "start": 4254,
+      "end": 4255,
       "loc": {
         "start": {
-          "line": 65,
+          "line": 68,
           "column": 38
         },
         "end": {
-          "line": 65,
+          "line": 68,
           "column": 39
         }
       }
@@ -7050,15 +7530,15 @@
     {
       "type": "CommentLine",
       "value": " Identifier for a buffer seek over hole event",
-      "start": 4065,
-      "end": 4112,
+      "start": 4258,
+      "end": 4305,
       "loc": {
         "start": {
-          "line": 66,
+          "line": 69,
           "column": 2
         },
         "end": {
-          "line": 66,
+          "line": 69,
           "column": 49
         }
       }
@@ -7076,15 +7556,15 @@
         "binop": null
       },
       "value": "BUFFER_SEEK_OVER_HOLE",
-      "start": 4115,
-      "end": 4136,
+      "start": 4308,
+      "end": 4329,
       "loc": {
         "start": {
-          "line": 67,
+          "line": 70,
           "column": 2
         },
         "end": {
-          "line": 67,
+          "line": 70,
           "column": 23
         }
       }
@@ -7102,15 +7582,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 4136,
-      "end": 4137,
+      "start": 4329,
+      "end": 4330,
       "loc": {
         "start": {
-          "line": 67,
+          "line": 70,
           "column": 23
         },
         "end": {
-          "line": 67,
+          "line": 70,
           "column": 24
         }
       }
@@ -7129,15 +7609,15 @@
         "updateContext": null
       },
       "value": "bufferSeekOverHole",
-      "start": 4138,
-      "end": 4158,
+      "start": 4331,
+      "end": 4351,
       "loc": {
         "start": {
-          "line": 67,
+          "line": 70,
           "column": 25
         },
         "end": {
-          "line": 67,
+          "line": 70,
           "column": 45
         }
       }
@@ -7155,15 +7635,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 4158,
-      "end": 4159,
+      "start": 4351,
+      "end": 4352,
       "loc": {
         "start": {
-          "line": 67,
+          "line": 70,
           "column": 45
         },
         "end": {
-          "line": 67,
+          "line": 70,
           "column": 46
         }
       }
@@ -7171,15 +7651,15 @@
     {
       "type": "CommentLine",
       "value": " Identifier for a buffer nudge on stall (playback is stuck although currentTime is in a buffered area)",
-      "start": 4162,
-      "end": 4266,
+      "start": 4355,
+      "end": 4459,
       "loc": {
         "start": {
-          "line": 68,
+          "line": 71,
           "column": 2
         },
         "end": {
-          "line": 68,
+          "line": 71,
           "column": 106
         }
       }
@@ -7197,15 +7677,15 @@
         "binop": null
       },
       "value": "BUFFER_NUDGE_ON_STALL",
-      "start": 4269,
-      "end": 4290,
+      "start": 4462,
+      "end": 4483,
       "loc": {
         "start": {
-          "line": 69,
+          "line": 72,
           "column": 2
         },
         "end": {
-          "line": 69,
+          "line": 72,
           "column": 23
         }
       }
@@ -7223,15 +7703,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 4290,
-      "end": 4291,
+      "start": 4483,
+      "end": 4484,
       "loc": {
         "start": {
-          "line": 69,
+          "line": 72,
           "column": 23
         },
         "end": {
-          "line": 69,
+          "line": 72,
           "column": 24
         }
       }
@@ -7250,15 +7730,15 @@
         "updateContext": null
       },
       "value": "bufferNudgeOnStall",
-      "start": 4292,
-      "end": 4312,
+      "start": 4485,
+      "end": 4505,
       "loc": {
         "start": {
-          "line": 69,
+          "line": 72,
           "column": 25
         },
         "end": {
-          "line": 69,
+          "line": 72,
           "column": 45
         }
       }
@@ -7276,15 +7756,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 4312,
-      "end": 4313,
+      "start": 4505,
+      "end": 4506,
       "loc": {
         "start": {
-          "line": 69,
+          "line": 72,
           "column": 45
         },
         "end": {
-          "line": 69,
+          "line": 72,
           "column": 46
         }
       }
@@ -7292,15 +7772,15 @@
     {
       "type": "CommentLine",
       "value": " Identifier for an internal exception happening inside hls.js while handling an event",
-      "start": 4316,
-      "end": 4403,
+      "start": 4509,
+      "end": 4596,
       "loc": {
         "start": {
-          "line": 70,
+          "line": 73,
           "column": 2
         },
         "end": {
-          "line": 70,
+          "line": 73,
           "column": 89
         }
       }
@@ -7318,15 +7798,15 @@
         "binop": null
       },
       "value": "INTERNAL_EXCEPTION",
-      "start": 4406,
-      "end": 4424,
+      "start": 4599,
+      "end": 4617,
       "loc": {
         "start": {
-          "line": 71,
+          "line": 74,
           "column": 2
         },
         "end": {
-          "line": 71,
+          "line": 74,
           "column": 20
         }
       }
@@ -7344,15 +7824,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 4424,
-      "end": 4425,
+      "start": 4617,
+      "end": 4618,
       "loc": {
         "start": {
-          "line": 71,
+          "line": 74,
           "column": 20
         },
         "end": {
-          "line": 71,
+          "line": 74,
           "column": 21
         }
       }
@@ -7371,15 +7851,15 @@
         "updateContext": null
       },
       "value": "internalException",
-      "start": 4426,
-      "end": 4445,
+      "start": 4619,
+      "end": 4638,
       "loc": {
         "start": {
-          "line": 71,
+          "line": 74,
           "column": 22
         },
         "end": {
-          "line": 71,
+          "line": 74,
           "column": 41
         }
       }
@@ -7396,15 +7876,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 4446,
-      "end": 4447,
+      "start": 4639,
+      "end": 4640,
       "loc": {
         "start": {
-          "line": 72,
+          "line": 75,
           "column": 0
         },
         "end": {
-          "line": 72,
+          "line": 75,
           "column": 1
         }
       }
@@ -7422,15 +7902,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 4447,
-      "end": 4448,
+      "start": 4640,
+      "end": 4641,
       "loc": {
         "start": {
-          "line": 72,
+          "line": 75,
           "column": 1
         },
         "end": {
-          "line": 72,
+          "line": 75,
           "column": 2
         }
       }
@@ -7448,15 +7928,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 4449,
-      "end": 4449,
+      "start": 4642,
+      "end": 4642,
       "loc": {
         "start": {
-          "line": 73,
+          "line": 76,
           "column": 0
         },
         "end": {
-          "line": 73,
+          "line": 76,
           "column": 0
         }
       }

@@ -1,28 +1,28 @@
 {
   "type": "File",
   "start": 0,
-  "end": 8398,
+  "end": 8521,
   "loc": {
     "start": {
       "line": 1,
       "column": 0
     },
     "end": {
-      "line": 111,
+      "line": 113,
       "column": 0
     }
   },
   "program": {
     "type": "Program",
     "start": 0,
-    "end": 8398,
+    "end": 8521,
     "loc": {
       "start": {
         "line": 1,
         "column": 0
       },
       "end": {
-        "line": 111,
+        "line": 113,
         "column": 0
       }
     },
@@ -31,14 +31,14 @@
       {
         "type": "Identifier",
         "start": 39,
-        "end": 8370,
+        "end": 8493,
         "loc": {
           "start": {
             "line": 5,
             "column": 0
           },
           "end": {
-            "line": 108,
+            "line": 110,
             "column": 2
           }
         },
@@ -46,14 +46,14 @@
           {
             "type": "VariableDeclarator",
             "start": 45,
-            "end": 8369,
+            "end": 8492,
             "loc": {
               "start": {
                 "line": 5,
                 "column": 6
               },
               "end": {
-                "line": 108,
+                "line": 110,
                 "column": 1
               }
             },
@@ -78,14 +78,14 @@
             "init": {
               "type": "ObjectExpression",
               "start": 57,
-              "end": 8369,
+              "end": 8492,
               "loc": {
                 "start": {
                   "line": 5,
                   "column": 18
                 },
                 "end": {
-                  "line": 108,
+                  "line": 110,
                   "column": 1
                 }
               },
@@ -3863,6 +3863,80 @@
                       }
                     }
                   ]
+                },
+                {
+                  "type": "ObjectProperty",
+                  "start": 8458,
+                  "end": 8490,
+                  "loc": {
+                    "start": {
+                      "line": 109,
+                      "column": 2
+                    },
+                    "end": {
+                      "line": 109,
+                      "column": 34
+                    }
+                  },
+                  "method": false,
+                  "shorthand": false,
+                  "computed": false,
+                  "key": {
+                    "type": "Identifier",
+                    "start": 8458,
+                    "end": 8471,
+                    "loc": {
+                      "start": {
+                        "line": 109,
+                        "column": 2
+                      },
+                      "end": {
+                        "line": 109,
+                        "column": 15
+                      },
+                      "identifierName": "EME_DESTROYED"
+                    },
+                    "name": "EME_DESTROYED",
+                    "leadingComments": null
+                  },
+                  "value": {
+                    "type": "StringLiteral",
+                    "start": 8473,
+                    "end": 8490,
+                    "loc": {
+                      "start": {
+                        "line": 109,
+                        "column": 17
+                      },
+                      "end": {
+                        "line": 109,
+                        "column": 34
+                      }
+                    },
+                    "extra": {
+                      "rawValue": "hlsEmeDestroyed",
+                      "raw": "'hlsEmeDestroyed'"
+                    },
+                    "value": "hlsEmeDestroyed"
+                  },
+                  "leadingComments": [
+                    {
+                      "type": "CommentLine",
+                      "value": " fired when EME media key sessions are closed and media key is removed - data: { }",
+                      "start": 8371,
+                      "end": 8455,
+                      "loc": {
+                        "start": {
+                          "line": 108,
+                          "column": 2
+                        },
+                        "end": {
+                          "line": 108,
+                          "column": 86
+                        }
+                      }
+                    }
+                  ]
                 }
               ]
             },
@@ -3876,29 +3950,29 @@
       },
       {
         "type": "Identifier",
-        "start": 8372,
-        "end": 8397,
+        "start": 8495,
+        "end": 8520,
         "loc": {
           "start": {
-            "line": 110,
+            "line": 112,
             "column": 0
           },
           "end": {
-            "line": 110,
+            "line": 112,
             "column": 25
           }
         },
         "declaration": {
           "type": "Identifier",
-          "start": 8387,
-          "end": 8396,
+          "start": 8510,
+          "end": 8519,
           "loc": {
             "start": {
-              "line": 110,
+              "line": 112,
               "column": 15
             },
             "end": {
-              "line": 110,
+              "line": 112,
               "column": 24
             },
             "identifierName": "HlsEvents"
@@ -3911,29 +3985,29 @@
       },
       {
         "type": "ExportDefaultDeclaration",
-        "start": 8372,
-        "end": 8397,
+        "start": 8495,
+        "end": 8520,
         "loc": {
           "start": {
-            "line": 110,
+            "line": 112,
             "column": 0
           },
           "end": {
-            "line": 110,
+            "line": 112,
             "column": 25
           }
         },
         "declaration": {
           "type": "VariableDeclaration",
           "start": 39,
-          "end": 8370,
+          "end": 8493,
           "loc": {
             "start": {
               "line": 5,
               "column": 0
             },
             "end": {
-              "line": 108,
+              "line": 110,
               "column": 2
             }
           },
@@ -3941,14 +4015,14 @@
             {
               "type": "VariableDeclarator",
               "start": 45,
-              "end": 8369,
+              "end": 8492,
               "loc": {
                 "start": {
                   "line": 5,
                   "column": 6
                 },
                 "end": {
-                  "line": 108,
+                  "line": 110,
                   "column": 1
                 }
               },
@@ -3973,14 +4047,14 @@
               "init": {
                 "type": "ObjectExpression",
                 "start": 57,
-                "end": 8369,
+                "end": 8492,
                 "loc": {
                   "start": {
                     "line": 5,
                     "column": 18
                   },
                   "end": {
-                    "line": 108,
+                    "line": 110,
                     "column": 1
                   }
                 },
@@ -7758,6 +7832,80 @@
                         }
                       }
                     ]
+                  },
+                  {
+                    "type": "ObjectProperty",
+                    "start": 8458,
+                    "end": 8490,
+                    "loc": {
+                      "start": {
+                        "line": 109,
+                        "column": 2
+                      },
+                      "end": {
+                        "line": 109,
+                        "column": 34
+                      }
+                    },
+                    "method": false,
+                    "shorthand": false,
+                    "computed": false,
+                    "key": {
+                      "type": "Identifier",
+                      "start": 8458,
+                      "end": 8471,
+                      "loc": {
+                        "start": {
+                          "line": 109,
+                          "column": 2
+                        },
+                        "end": {
+                          "line": 109,
+                          "column": 15
+                        },
+                        "identifierName": "EME_DESTROYED"
+                      },
+                      "name": "EME_DESTROYED",
+                      "leadingComments": null
+                    },
+                    "value": {
+                      "type": "StringLiteral",
+                      "start": 8473,
+                      "end": 8490,
+                      "loc": {
+                        "start": {
+                          "line": 109,
+                          "column": 17
+                        },
+                        "end": {
+                          "line": 109,
+                          "column": 34
+                        }
+                      },
+                      "extra": {
+                        "rawValue": "hlsEmeDestroyed",
+                        "raw": "'hlsEmeDestroyed'"
+                      },
+                      "value": "hlsEmeDestroyed"
+                    },
+                    "leadingComments": [
+                      {
+                        "type": "CommentLine",
+                        "value": " fired when EME media key sessions are closed and media key is removed - data: { }",
+                        "start": 8371,
+                        "end": 8455,
+                        "loc": {
+                          "start": {
+                            "line": 108,
+                            "column": 2
+                          },
+                          "end": {
+                            "line": 108,
+                            "column": 86
+                          }
+                        }
+                      }
+                    ]
                   }
                 ]
               },
@@ -8619,6 +8767,22 @@
         "end": {
           "line": 106,
           "column": 88
+        }
+      }
+    },
+    {
+      "type": "CommentLine",
+      "value": " fired when EME media key sessions are closed and media key is removed - data: { }",
+      "start": 8371,
+      "end": 8455,
+      "loc": {
+        "start": {
+          "line": 108,
+          "column": 2
+        },
+        "end": {
+          "line": 108,
+          "column": 86
         }
       }
     }
@@ -14893,6 +15057,127 @@
     },
     {
       "type": {
+        "label": ",",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 8367,
+      "end": 8368,
+      "loc": {
+        "start": {
+          "line": 107,
+          "column": 53
+        },
+        "end": {
+          "line": 107,
+          "column": 54
+        }
+      }
+    },
+    {
+      "type": "CommentLine",
+      "value": " fired when EME media key sessions are closed and media key is removed - data: { }",
+      "start": 8371,
+      "end": 8455,
+      "loc": {
+        "start": {
+          "line": 108,
+          "column": 2
+        },
+        "end": {
+          "line": 108,
+          "column": 86
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "EME_DESTROYED",
+      "start": 8458,
+      "end": 8471,
+      "loc": {
+        "start": {
+          "line": 109,
+          "column": 2
+        },
+        "end": {
+          "line": 109,
+          "column": 15
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ":",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 8471,
+      "end": 8472,
+      "loc": {
+        "start": {
+          "line": 109,
+          "column": 15
+        },
+        "end": {
+          "line": 109,
+          "column": 16
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "string",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "hlsEmeDestroyed",
+      "start": 8473,
+      "end": 8490,
+      "loc": {
+        "start": {
+          "line": 109,
+          "column": 17
+        },
+        "end": {
+          "line": 109,
+          "column": 34
+        }
+      }
+    },
+    {
+      "type": {
         "label": "}",
         "beforeExpr": false,
         "startsExpr": false,
@@ -14903,15 +15188,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 8368,
-      "end": 8369,
+      "start": 8491,
+      "end": 8492,
       "loc": {
         "start": {
-          "line": 108,
+          "line": 110,
           "column": 0
         },
         "end": {
-          "line": 108,
+          "line": 110,
           "column": 1
         }
       }
@@ -14929,15 +15214,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 8369,
-      "end": 8370,
+      "start": 8492,
+      "end": 8493,
       "loc": {
         "start": {
-          "line": 108,
+          "line": 110,
           "column": 1
         },
         "end": {
-          "line": 108,
+          "line": 110,
           "column": 2
         }
       }
@@ -14957,15 +15242,15 @@
         "updateContext": null
       },
       "value": "export",
-      "start": 8372,
-      "end": 8378,
+      "start": 8495,
+      "end": 8501,
       "loc": {
         "start": {
-          "line": 110,
+          "line": 112,
           "column": 0
         },
         "end": {
-          "line": 110,
+          "line": 112,
           "column": 6
         }
       }
@@ -14985,15 +15270,15 @@
         "updateContext": null
       },
       "value": "default",
-      "start": 8379,
-      "end": 8386,
+      "start": 8502,
+      "end": 8509,
       "loc": {
         "start": {
-          "line": 110,
+          "line": 112,
           "column": 7
         },
         "end": {
-          "line": 110,
+          "line": 112,
           "column": 14
         }
       }
@@ -15011,15 +15296,15 @@
         "binop": null
       },
       "value": "HlsEvents",
-      "start": 8387,
-      "end": 8396,
+      "start": 8510,
+      "end": 8519,
       "loc": {
         "start": {
-          "line": 110,
+          "line": 112,
           "column": 15
         },
         "end": {
-          "line": 110,
+          "line": 112,
           "column": 24
         }
       }
@@ -15037,15 +15322,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 8396,
-      "end": 8397,
+      "start": 8519,
+      "end": 8520,
       "loc": {
         "start": {
-          "line": 110,
+          "line": 112,
           "column": 24
         },
         "end": {
-          "line": 110,
+          "line": 112,
           "column": 25
         }
       }
@@ -15063,15 +15348,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 8398,
-      "end": 8398,
+      "start": 8521,
+      "end": 8521,
       "loc": {
         "start": {
-          "line": 111,
+          "line": 113,
           "column": 0
         },
         "end": {
-          "line": 111,
+          "line": 113,
           "column": 0
         }
       }

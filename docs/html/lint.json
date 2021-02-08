@@ -317,19 +317,19 @@
     "filePath": "src/remux/mp4-generator.js",
     "lines": [
       {
-        "lineNumber": 232,
+        "lineNumber": 229,
         "line": "  /**"
       },
       {
-        "lineNumber": 233,
+        "lineNumber": 230,
         "line": " * @param tracks... (optional) {array} the tracks associated with this movie"
       },
       {
-        "lineNumber": 234,
+        "lineNumber": 231,
         "line": " */"
       },
       {
-        "lineNumber": 235,
+        "lineNumber": 232,
         "line": "  static moov (tracks) {"
       }
     ],

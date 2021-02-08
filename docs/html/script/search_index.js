@@ -1,602 +1,602 @@
 window.esdocSearchIndex = [
   [
-    "hls.js/src/remux/aac-helper.js~aac",
+    "@tubitv/hls.js/src/remux/aac-helper.js~aac",
     "class/src/remux/aac-helper.js~AAC.html",
-    "<span>AAC</span> <span class=\"search-result-import-path\">hls.js/src/remux/aac-helper.js</span>",
+    "<span>AAC</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/remux/aac-helper.js</span>",
     "class"
   ],
   [
-    "hls.js/src/demux/aacdemuxer.js~aacdemuxer",
+    "@tubitv/hls.js/src/demux/aacdemuxer.js~aacdemuxer",
     "class/src/demux/aacdemuxer.js~AACDemuxer.html",
-    "<span>AACDemuxer</span> <span class=\"search-result-import-path\">hls.js/src/demux/aacdemuxer.js</span>",
+    "<span>AACDemuxer</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/demux/aacdemuxer.js</span>",
     "class"
   ],
   [
-    "hls.js/src/crypt/aes-crypto.js~aescrypto",
+    "@tubitv/hls.js/src/crypt/aes-crypto.js~aescrypto",
     "class/src/crypt/aes-crypto.js~AESCrypto.html",
-    "<span>AESCrypto</span> <span class=\"search-result-import-path\">hls.js/src/crypt/aes-crypto.js</span>",
+    "<span>AESCrypto</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/crypt/aes-crypto.js</span>",
     "class"
   ],
   [
-    "hls.js/src/crypt/aes-decryptor.js~aesdecryptor",
+    "@tubitv/hls.js/src/crypt/aes-decryptor.js~aesdecryptor",
     "class/src/crypt/aes-decryptor.js~AESDecryptor.html",
-    "<span>AESDecryptor</span> <span class=\"search-result-import-path\">hls.js/src/crypt/aes-decryptor.js</span>",
+    "<span>AESDecryptor</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/crypt/aes-decryptor.js</span>",
     "class"
   ],
   [
-    "hls.js/src/controller/abr-controller.js~abrcontroller",
+    "@tubitv/hls.js/src/controller/abr-controller.js~abrcontroller",
     "class/src/controller/abr-controller.js~AbrController.html",
-    "<span>AbrController</span> <span class=\"search-result-import-path\">hls.js/src/controller/abr-controller.js</span>",
+    "<span>AbrController</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/controller/abr-controller.js</span>",
     "class"
   ],
   [
-    "hls.js/src/utils/attr-list.js~attrlist",
+    "@tubitv/hls.js/src/utils/attr-list.js~attrlist",
     "class/src/utils/attr-list.js~AttrList.html",
-    "<span>AttrList</span> <span class=\"search-result-import-path\">hls.js/src/utils/attr-list.js</span>",
+    "<span>AttrList</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/utils/attr-list.js</span>",
     "class"
   ],
   [
-    "hls.js/src/controller/audio-stream-controller.js~audiostreamcontroller",
+    "@tubitv/hls.js/src/controller/audio-stream-controller.js~audiostreamcontroller",
     "class/src/controller/audio-stream-controller.js~AudioStreamController.html",
-    "<span>AudioStreamController</span> <span class=\"search-result-import-path\">hls.js/src/controller/audio-stream-controller.js</span>",
+    "<span>AudioStreamController</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/controller/audio-stream-controller.js</span>",
     "class"
   ],
   [
-    "hls.js/src/controller/audio-track-controller.js~audiotrackcontroller",
+    "@tubitv/hls.js/src/controller/audio-track-controller.js~audiotrackcontroller",
     "class/src/controller/audio-track-controller.js~AudioTrackController.html",
-    "<span>AudioTrackController</span> <span class=\"search-result-import-path\">hls.js/src/controller/audio-track-controller.js</span>",
+    "<span>AudioTrackController</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/controller/audio-track-controller.js</span>",
     "class"
   ],
   [
-    "hls.js/src/utils/binary-search.js~binarysearch",
+    "@tubitv/hls.js/src/utils/binary-search.js~binarysearch",
     "variable/index.html#static-variable-BinarySearch",
-    "<span>BinarySearch</span> <span class=\"search-result-import-path\">hls.js/src/utils/binary-search.js</span>",
+    "<span>BinarySearch</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/utils/binary-search.js</span>",
     "variable"
   ],
   [
-    "hls.js/src/controller/buffer-controller.js~buffercontroller",
+    "@tubitv/hls.js/src/controller/buffer-controller.js~buffercontroller",
     "class/src/controller/buffer-controller.js~BufferController.html",
-    "<span>BufferController</span> <span class=\"search-result-import-path\">hls.js/src/controller/buffer-controller.js</span>",
+    "<span>BufferController</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/controller/buffer-controller.js</span>",
     "class"
   ],
   [
-    "hls.js/src/utils/buffer-helper.js~bufferhelper",
+    "@tubitv/hls.js/src/utils/buffer-helper.js~bufferhelper",
     "class/src/utils/buffer-helper.js~BufferHelper.html",
-    "<span>BufferHelper</span> <span class=\"search-result-import-path\">hls.js/src/utils/buffer-helper.js</span>",
+    "<span>BufferHelper</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/utils/buffer-helper.js</span>",
     "class"
   ],
   [
-    "hls.js/src/controller/cap-level-controller.js~caplevelcontroller",
+    "@tubitv/hls.js/src/controller/cap-level-controller.js~caplevelcontroller",
     "class/src/controller/cap-level-controller.js~CapLevelController.html",
-    "<span>CapLevelController</span> <span class=\"search-result-import-path\">hls.js/src/controller/cap-level-controller.js</span>",
+    "<span>CapLevelController</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/controller/cap-level-controller.js</span>",
     "class"
   ],
   [
-    "hls.js/src/utils/cea-608-parser.js~cea608parser",
+    "@tubitv/hls.js/src/utils/cea-608-parser.js~cea608parser",
     "class/src/utils/cea-608-parser.js~Cea608Parser.html",
-    "<span>Cea608Parser</span> <span class=\"search-result-import-path\">hls.js/src/utils/cea-608-parser.js</span>",
+    "<span>Cea608Parser</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/utils/cea-608-parser.js</span>",
     "class"
   ],
   [
-    "hls.js/src/crypt/decrypter.js~decrypter",
+    "@tubitv/hls.js/src/crypt/decrypter.js~decrypter",
     "class/src/crypt/decrypter.js~Decrypter.html",
-    "<span>Decrypter</span> <span class=\"search-result-import-path\">hls.js/src/crypt/decrypter.js</span>",
+    "<span>Decrypter</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/crypt/decrypter.js</span>",
     "class"
   ],
   [
-    "hls.js/src/demux/demuxer.js~demuxer",
+    "@tubitv/hls.js/src/demux/demuxer.js~demuxer",
     "class/src/demux/demuxer.js~Demuxer.html",
-    "<span>Demuxer</span> <span class=\"search-result-import-path\">hls.js/src/demux/demuxer.js</span>",
+    "<span>Demuxer</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/demux/demuxer.js</span>",
     "class"
   ],
   [
-    "hls.js/src/demux/demuxer-inline.js~demuxerinline",
+    "@tubitv/hls.js/src/demux/demuxer-inline.js~demuxerinline",
     "class/src/demux/demuxer-inline.js~DemuxerInline.html",
-    "<span>DemuxerInline</span> <span class=\"search-result-import-path\">hls.js/src/demux/demuxer-inline.js</span>",
+    "<span>DemuxerInline</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/demux/demuxer-inline.js</span>",
     "class"
   ],
   [
-    "hls.js/src/demux/demuxer-worker.js~demuxerworker",
+    "@tubitv/hls.js/src/demux/demuxer-worker.js~demuxerworker",
     "function/index.html#static-function-DemuxerWorker",
-    "<span>DemuxerWorker</span> <span class=\"search-result-import-path\">hls.js/src/demux/demuxer-worker.js</span>",
+    "<span>DemuxerWorker</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/demux/demuxer-worker.js</span>",
     "function"
   ],
   [
-    "hls.js/src/remux/dummy-remuxer.js~dummyremuxer",
+    "@tubitv/hls.js/src/remux/dummy-remuxer.js~dummyremuxer",
     "class/src/remux/dummy-remuxer.js~DummyRemuxer.html",
-    "<span>DummyRemuxer</span> <span class=\"search-result-import-path\">hls.js/src/remux/dummy-remuxer.js</span>",
+    "<span>DummyRemuxer</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/remux/dummy-remuxer.js</span>",
     "class"
   ],
   [
-    "hls.js/src/controller/eme-controller.js~emecontroller",
+    "@tubitv/hls.js/src/controller/eme-controller.js~emecontroller",
     "class/src/controller/eme-controller.js~EMEController.html",
-    "<span>EMEController</span> <span class=\"search-result-import-path\">hls.js/src/controller/eme-controller.js</span>",
+    "<span>EMEController</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/controller/eme-controller.js</span>",
     "class"
   ],
   [
-    "hls.js/src/utils/ewma.js~ewma",
+    "@tubitv/hls.js/src/utils/ewma.js~ewma",
     "class/src/utils/ewma.js~EWMA.html",
-    "<span>EWMA</span> <span class=\"search-result-import-path\">hls.js/src/utils/ewma.js</span>",
+    "<span>EWMA</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/utils/ewma.js</span>",
     "class"
   ],
   [
-    "hls.js/src/errors.js~errortypes",
+    "@tubitv/hls.js/src/errors.js~errortypes",
     "variable/index.html#static-variable-ErrorTypes",
-    "<span>ErrorTypes</span> <span class=\"search-result-import-path\">hls.js/src/errors.js</span>",
+    "<span>ErrorTypes</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/errors.js</span>",
     "variable"
   ],
   [
-    "hls.js/src/event-handler.js~eventhandler",
+    "@tubitv/hls.js/src/event-handler.js~eventhandler",
     "class/src/event-handler.js~EventHandler.html",
-    "<span>EventHandler</span> <span class=\"search-result-import-path\">hls.js/src/event-handler.js</span>",
+    "<span>EventHandler</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/event-handler.js</span>",
     "class"
   ],
   [
-    "hls.js/src/utils/ewma-bandwidth-estimator.js~ewmabandwidthestimator",
+    "@tubitv/hls.js/src/utils/ewma-bandwidth-estimator.js~ewmabandwidthestimator",
     "class/src/utils/ewma-bandwidth-estimator.js~EwmaBandWidthEstimator.html",
-    "<span>EwmaBandWidthEstimator</span> <span class=\"search-result-import-path\">hls.js/src/utils/ewma-bandwidth-estimator.js</span>",
+    "<span>EwmaBandWidthEstimator</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/utils/ewma-bandwidth-estimator.js</span>",
     "class"
   ],
   [
-    "hls.js/src/demux/exp-golomb.js~expgolomb",
+    "@tubitv/hls.js/src/demux/exp-golomb.js~expgolomb",
     "class/src/demux/exp-golomb.js~ExpGolomb.html",
-    "<span>ExpGolomb</span> <span class=\"search-result-import-path\">hls.js/src/demux/exp-golomb.js</span>",
+    "<span>ExpGolomb</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/demux/exp-golomb.js</span>",
     "class"
   ],
   [
-    "hls.js/src/controller/fps-controller.js~fpscontroller",
+    "@tubitv/hls.js/src/controller/fps-controller.js~fpscontroller",
     "class/src/controller/fps-controller.js~FPSController.html",
-    "<span>FPSController</span> <span class=\"search-result-import-path\">hls.js/src/controller/fps-controller.js</span>",
+    "<span>FPSController</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/controller/fps-controller.js</span>",
     "class"
   ],
   [
-    "hls.js/src/crypt/fast-aes-key.js~fastaeskey",
+    "@tubitv/hls.js/src/crypt/fast-aes-key.js~fastaeskey",
     "class/src/crypt/fast-aes-key.js~FastAESKey.html",
-    "<span>FastAESKey</span> <span class=\"search-result-import-path\">hls.js/src/crypt/fast-aes-key.js</span>",
+    "<span>FastAESKey</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/crypt/fast-aes-key.js</span>",
     "class"
   ],
   [
-    "hls.js/src/utils/fetch-loader.js~fetchloader",
+    "@tubitv/hls.js/src/utils/fetch-loader.js~fetchloader",
     "class/src/utils/fetch-loader.js~FetchLoader.html",
-    "<span>FetchLoader</span> <span class=\"search-result-import-path\">hls.js/src/utils/fetch-loader.js</span>",
+    "<span>FetchLoader</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/utils/fetch-loader.js</span>",
     "class"
   ],
   [
-    "hls.js/src/loader/fragment.js~fragment",
+    "@tubitv/hls.js/src/loader/fragment.js~fragment",
     "class/src/loader/fragment.js~Fragment.html",
-    "<span>Fragment</span> <span class=\"search-result-import-path\">hls.js/src/loader/fragment.js</span>",
+    "<span>Fragment</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/loader/fragment.js</span>",
     "class"
   ],
   [
-    "hls.js/src/loader/fragment-loader.js~fragmentloader",
+    "@tubitv/hls.js/src/loader/fragment-loader.js~fragmentloader",
     "class/src/loader/fragment-loader.js~FragmentLoader.html",
-    "<span>FragmentLoader</span> <span class=\"search-result-import-path\">hls.js/src/loader/fragment-loader.js</span>",
+    "<span>FragmentLoader</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/loader/fragment-loader.js</span>",
     "class"
   ],
   [
-    "hls.js/src/controller/fragment-tracker.js~fragmentstate",
+    "@tubitv/hls.js/src/controller/fragment-tracker.js~fragmentstate",
     "variable/index.html#static-variable-FragmentState",
-    "<span>FragmentState</span> <span class=\"search-result-import-path\">hls.js/src/controller/fragment-tracker.js</span>",
+    "<span>FragmentState</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/controller/fragment-tracker.js</span>",
     "variable"
   ],
   [
-    "hls.js/src/controller/fragment-tracker.js~fragmenttracker",
+    "@tubitv/hls.js/src/controller/fragment-tracker.js~fragmenttracker",
     "class/src/controller/fragment-tracker.js~FragmentTracker.html",
-    "<span>FragmentTracker</span> <span class=\"search-result-import-path\">hls.js/src/controller/fragment-tracker.js</span>",
+    "<span>FragmentTracker</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/controller/fragment-tracker.js</span>",
     "class"
   ],
   [
-    "hls.js/src/utils/hex.js~hex",
+    "@tubitv/hls.js/src/utils/hex.js~hex",
     "variable/index.html#static-variable-Hex",
-    "<span>Hex</span> <span class=\"search-result-import-path\">hls.js/src/utils/hex.js</span>",
+    "<span>Hex</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/utils/hex.js</span>",
     "variable"
   ],
   [
-    "hls.js/src/hls.js~hls",
+    "@tubitv/hls.js/src/hls.js~hls",
     "class/src/hls.js~Hls.html",
-    "<span>Hls</span> <span class=\"search-result-import-path\">hls.js/src/hls.js</span>",
+    "<span>Hls</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/hls.js</span>",
     "class"
   ],
   [
-    "hls.js/src/events.js~hlsevents",
+    "@tubitv/hls.js/src/events.js~hlsevents",
     "variable/index.html#static-variable-HlsEvents",
-    "<span>HlsEvents</span> <span class=\"search-result-import-path\">hls.js/src/events.js</span>",
+    "<span>HlsEvents</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/events.js</span>",
     "variable"
   ],
   [
-    "hls.js/src/demux/id3.js~id3",
+    "@tubitv/hls.js/src/demux/id3.js~id3",
     "class/src/demux/id3.js~ID3.html",
-    "<span>ID3</span> <span class=\"search-result-import-path\">hls.js/src/demux/id3.js</span>",
+    "<span>ID3</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/demux/id3.js</span>",
     "class"
   ],
   [
-    "hls.js/src/controller/id3-track-controller.js~id3trackcontroller",
+    "@tubitv/hls.js/src/controller/id3-track-controller.js~id3trackcontroller",
     "class/src/controller/id3-track-controller.js~ID3TrackController.html",
-    "<span>ID3TrackController</span> <span class=\"search-result-import-path\">hls.js/src/controller/id3-track-controller.js</span>",
+    "<span>ID3TrackController</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/controller/id3-track-controller.js</span>",
     "class"
   ],
   [
-    "hls.js/src/loader/key-loader.js~keyloader",
+    "@tubitv/hls.js/src/loader/key-loader.js~keyloader",
     "class/src/loader/key-loader.js~KeyLoader.html",
-    "<span>KeyLoader</span> <span class=\"search-result-import-path\">hls.js/src/loader/key-loader.js</span>",
+    "<span>KeyLoader</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/loader/key-loader.js</span>",
     "class"
   ],
   [
-    "hls.js/src/controller/level-controller.js~levelcontroller",
+    "@tubitv/hls.js/src/utils/mediakeys-helper.js~keysystems",
+    "variable/index.html#static-variable-KeySystems",
+    "<span>KeySystems</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/utils/mediakeys-helper.js</span>",
+    "variable"
+  ],
+  [
+    "@tubitv/hls.js/src/controller/level-controller.js~levelcontroller",
     "class/src/controller/level-controller.js~LevelController.html",
-    "<span>LevelController</span> <span class=\"search-result-import-path\">hls.js/src/controller/level-controller.js</span>",
+    "<span>LevelController</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/controller/level-controller.js</span>",
     "class"
   ],
   [
-    "hls.js/src/loader/level-key.js~levelkey",
+    "@tubitv/hls.js/src/loader/level-key.js~levelkey",
     "class/src/loader/level-key.js~LevelKey.html",
-    "<span>LevelKey</span> <span class=\"search-result-import-path\">hls.js/src/loader/level-key.js</span>",
+    "<span>LevelKey</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/loader/level-key.js</span>",
     "class"
   ],
   [
-    "hls.js/src/loader/m3u8-parser.js~m3u8parser",
+    "@tubitv/hls.js/src/loader/m3u8-parser.js~m3u8parser",
     "class/src/loader/m3u8-parser.js~M3U8Parser.html",
-    "<span>M3U8Parser</span> <span class=\"search-result-import-path\">hls.js/src/loader/m3u8-parser.js</span>",
+    "<span>M3U8Parser</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/loader/m3u8-parser.js</span>",
     "class"
   ],
   [
-    "hls.js/src/demux/mp3demuxer.js~mp3demuxer",
+    "@tubitv/hls.js/src/demux/mp3demuxer.js~mp3demuxer",
     "class/src/demux/mp3demuxer.js~MP3Demuxer.html",
-    "<span>MP3Demuxer</span> <span class=\"search-result-import-path\">hls.js/src/demux/mp3demuxer.js</span>",
+    "<span>MP3Demuxer</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/demux/mp3demuxer.js</span>",
     "class"
   ],
   [
-    "hls.js/src/remux/mp4-generator.js~mp4",
+    "@tubitv/hls.js/src/remux/mp4-generator.js~mp4",
     "class/src/remux/mp4-generator.js~MP4.html",
-    "<span>MP4</span> <span class=\"search-result-import-path\">hls.js/src/remux/mp4-generator.js</span>",
+    "<span>MP4</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/remux/mp4-generator.js</span>",
     "class"
   ],
   [
-    "hls.js/src/demux/mp4demuxer.js~mp4demuxer",
+    "@tubitv/hls.js/src/demux/mp4demuxer.js~mp4demuxer",
     "class/src/demux/mp4demuxer.js~MP4Demuxer.html",
-    "<span>MP4Demuxer</span> <span class=\"search-result-import-path\">hls.js/src/demux/mp4demuxer.js</span>",
+    "<span>MP4Demuxer</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/demux/mp4demuxer.js</span>",
     "class"
   ],
   [
-    "hls.js/src/remux/mp4-remuxer.js~mp4remuxer",
+    "@tubitv/hls.js/src/remux/mp4-remuxer.js~mp4remuxer",
     "class/src/remux/mp4-remuxer.js~MP4Remuxer.html",
-    "<span>MP4Remuxer</span> <span class=\"search-result-import-path\">hls.js/src/remux/mp4-remuxer.js</span>",
+    "<span>MP4Remuxer</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/remux/mp4-remuxer.js</span>",
     "class"
   ],
   [
-    "hls.js/src/demux/mpegaudio.js~mpegaudio",
+    "@tubitv/hls.js/src/demux/mpegaudio.js~mpegaudio",
     "variable/index.html#static-variable-MpegAudio",
-    "<span>MpegAudio</span> <span class=\"search-result-import-path\">hls.js/src/demux/mpegaudio.js</span>",
+    "<span>MpegAudio</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/demux/mpegaudio.js</span>",
     "variable"
   ],
   [
-    "hls.js/src/utils/output-filter.js~outputfilter",
+    "@tubitv/hls.js/src/utils/output-filter.js~outputfilter",
     "class/src/utils/output-filter.js~OutputFilter.html",
-    "<span>OutputFilter</span> <span class=\"search-result-import-path\">hls.js/src/utils/output-filter.js</span>",
+    "<span>OutputFilter</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/utils/output-filter.js</span>",
     "class"
   ],
   [
-    "hls.js/src/remux/passthrough-remuxer.js~passthroughremuxer",
+    "@tubitv/hls.js/src/remux/passthrough-remuxer.js~passthroughremuxer",
     "class/src/remux/passthrough-remuxer.js~PassThroughRemuxer.html",
-    "<span>PassThroughRemuxer</span> <span class=\"search-result-import-path\">hls.js/src/remux/passthrough-remuxer.js</span>",
+    "<span>PassThroughRemuxer</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/remux/passthrough-remuxer.js</span>",
     "class"
   ],
   [
-    "hls.js/src/loader/playlist-loader.js~playlistloader",
+    "@tubitv/hls.js/src/loader/playlist-loader.js~playlistloader",
     "class/src/loader/playlist-loader.js~PlaylistLoader.html",
-    "<span>PlaylistLoader</span> <span class=\"search-result-import-path\">hls.js/src/loader/playlist-loader.js</span>",
+    "<span>PlaylistLoader</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/loader/playlist-loader.js</span>",
     "class"
   ],
   [
-    "hls.js/src/demux/sample-aes.js~sampleaesdecrypter",
+    "@tubitv/hls.js/src/demux/sample-aes.js~sampleaesdecrypter",
     "class/src/demux/sample-aes.js~SampleAesDecrypter.html",
-    "<span>SampleAesDecrypter</span> <span class=\"search-result-import-path\">hls.js/src/demux/sample-aes.js</span>",
+    "<span>SampleAesDecrypter</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/demux/sample-aes.js</span>",
     "class"
   ],
   [
-    "hls.js/src/controller/stream-controller.js~state",
+    "@tubitv/hls.js/src/controller/stream-controller.js~state",
     "variable/index.html#static-variable-State",
-    "<span>State</span> <span class=\"search-result-import-path\">hls.js/src/controller/stream-controller.js</span>",
+    "<span>State</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/controller/stream-controller.js</span>",
     "variable"
   ],
   [
-    "hls.js/src/controller/stream-controller.js~streamcontroller",
+    "@tubitv/hls.js/src/controller/stream-controller.js~streamcontroller",
     "class/src/controller/stream-controller.js~StreamController.html",
-    "<span>StreamController</span> <span class=\"search-result-import-path\">hls.js/src/controller/stream-controller.js</span>",
+    "<span>StreamController</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/controller/stream-controller.js</span>",
     "class"
   ],
   [
-    "hls.js/src/controller/subtitle-stream-controller.js~subtitlestreamcontroller",
+    "@tubitv/hls.js/src/controller/subtitle-stream-controller.js~subtitlestreamcontroller",
     "class/src/controller/subtitle-stream-controller.js~SubtitleStreamController.html",
-    "<span>SubtitleStreamController</span> <span class=\"search-result-import-path\">hls.js/src/controller/subtitle-stream-controller.js</span>",
+    "<span>SubtitleStreamController</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/controller/subtitle-stream-controller.js</span>",
     "class"
   ],
   [
-    "hls.js/src/controller/subtitle-track-controller.js~subtitletrackcontroller",
+    "@tubitv/hls.js/src/controller/subtitle-track-controller.js~subtitletrackcontroller",
     "class/src/controller/subtitle-track-controller.js~SubtitleTrackController.html",
-    "<span>SubtitleTrackController</span> <span class=\"search-result-import-path\">hls.js/src/controller/subtitle-track-controller.js</span>",
+    "<span>SubtitleTrackController</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/controller/subtitle-track-controller.js</span>",
     "class"
   ],
   [
-    "hls.js/src/demux/tsdemuxer.js~tsdemuxer",
+    "@tubitv/hls.js/src/demux/tsdemuxer.js~tsdemuxer",
     "class/src/demux/tsdemuxer.js~TSDemuxer.html",
-    "<span>TSDemuxer</span> <span class=\"search-result-import-path\">hls.js/src/demux/tsdemuxer.js</span>",
+    "<span>TSDemuxer</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/demux/tsdemuxer.js</span>",
     "class"
   ],
   [
-    "hls.js/src/task-loop.js~taskloop",
+    "@tubitv/hls.js/src/task-loop.js~taskloop",
     "class/src/task-loop.js~TaskLoop.html",
-    "<span>TaskLoop</span> <span class=\"search-result-import-path\">hls.js/src/task-loop.js</span>",
+    "<span>TaskLoop</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/task-loop.js</span>",
     "class"
   ],
   [
-    "hls.js/src/utils/time-ranges.js~timeranges",
+    "@tubitv/hls.js/src/utils/time-ranges.js~timeranges",
     "variable/index.html#static-variable-TimeRanges",
-    "<span>TimeRanges</span> <span class=\"search-result-import-path\">hls.js/src/utils/time-ranges.js</span>",
+    "<span>TimeRanges</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/utils/time-ranges.js</span>",
     "variable"
   ],
   [
-    "hls.js/src/controller/timeline-controller.js~timelinecontroller",
+    "@tubitv/hls.js/src/controller/timeline-controller.js~timelinecontroller",
     "class/src/controller/timeline-controller.js~TimelineController.html",
-    "<span>TimelineController</span> <span class=\"search-result-import-path\">hls.js/src/controller/timeline-controller.js</span>",
+    "<span>TimelineController</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/controller/timeline-controller.js</span>",
     "class"
   ],
   [
-    "hls.js/src/utils/vttparser.js~vttparser",
+    "@tubitv/hls.js/src/utils/vttparser.js~vttparser",
     "function/index.html#static-function-VTTParser",
-    "<span>VTTParser</span> <span class=\"search-result-import-path\">hls.js/src/utils/vttparser.js</span>",
+    "<span>VTTParser</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/utils/vttparser.js</span>",
     "function"
   ],
   [
-    "hls.js/src/utils/webvtt-parser.js~webvttparser",
+    "@tubitv/hls.js/src/utils/webvtt-parser.js~webvttparser",
     "variable/index.html#static-variable-WebVTTParser",
-    "<span>WebVTTParser</span> <span class=\"search-result-import-path\">hls.js/src/utils/webvtt-parser.js</span>",
+    "<span>WebVTTParser</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/utils/webvtt-parser.js</span>",
     "variable"
   ],
   [
-    "hls.js/src/utils/xhr-loader.js~xhrloader",
+    "@tubitv/hls.js/src/utils/xhr-loader.js~xhrloader",
     "class/src/utils/xhr-loader.js~XhrLoader.html",
-    "<span>XhrLoader</span> <span class=\"search-result-import-path\">hls.js/src/utils/xhr-loader.js</span>",
+    "<span>XhrLoader</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/utils/xhr-loader.js</span>",
     "class"
   ],
   [
-    "hls.js/src/controller/level-helper.js~addgroupid",
+    "@tubitv/hls.js/src/controller/level-helper.js~addgroupid",
     "function/index.html#static-function-addGroupId",
-    "<span>addGroupId</span> <span class=\"search-result-import-path\">hls.js/src/controller/level-helper.js</span>",
+    "<span>addGroupId</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/controller/level-helper.js</span>",
     "function"
   ],
   [
-    "hls.js/src/utils/discontinuities.js~adjustpts",
+    "@tubitv/hls.js/src/utils/discontinuities.js~adjustpts",
     "function/index.html#static-function-adjustPts",
-    "<span>adjustPts</span> <span class=\"search-result-import-path\">hls.js/src/utils/discontinuities.js</span>",
+    "<span>adjustPts</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/utils/discontinuities.js</span>",
     "function"
   ],
   [
-    "hls.js/src/utils/discontinuities.js~aligndiscontinuities",
+    "@tubitv/hls.js/src/utils/discontinuities.js~aligndiscontinuities",
     "function/index.html#static-function-alignDiscontinuities",
-    "<span>alignDiscontinuities</span> <span class=\"search-result-import-path\">hls.js/src/utils/discontinuities.js</span>",
+    "<span>alignDiscontinuities</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/utils/discontinuities.js</span>",
     "function"
   ],
   [
-    "hls.js/src/demux/adts.js~appendframe",
+    "@tubitv/hls.js/src/demux/adts.js~appendframe",
     "function/index.html#static-function-appendFrame",
-    "<span>appendFrame</span> <span class=\"search-result-import-path\">hls.js/src/demux/adts.js</span>",
+    "<span>appendFrame</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/demux/adts.js</span>",
     "function"
   ],
   [
-    "hls.js/src/controller/fragment-finders.js~calculatenextpdt",
+    "@tubitv/hls.js/src/controller/fragment-finders.js~calculatenextpdt",
     "function/index.html#static-function-calculateNextPDT",
-    "<span>calculateNextPDT</span> <span class=\"search-result-import-path\">hls.js/src/controller/fragment-finders.js</span>",
+    "<span>calculateNextPDT</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/controller/fragment-finders.js</span>",
     "function"
   ],
   [
-    "hls.js/src/utils/texttrack-utils.js~clearcurrentcues",
+    "@tubitv/hls.js/src/utils/texttrack-utils.js~clearcurrentcues",
     "function/index.html#static-function-clearCurrentCues",
-    "<span>clearCurrentCues</span> <span class=\"search-result-import-path\">hls.js/src/utils/texttrack-utils.js</span>",
+    "<span>clearCurrentCues</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/utils/texttrack-utils.js</span>",
     "function"
   ],
   [
-    "hls.js/src/utils/logger.js~enablelogs",
+    "@tubitv/hls.js/src/utils/logger.js~enablelogs",
     "function/index.html#static-function-enableLogs",
-    "<span>enableLogs</span> <span class=\"search-result-import-path\">hls.js/src/utils/logger.js</span>",
+    "<span>enableLogs</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/utils/logger.js</span>",
     "function"
   ],
   [
-    "hls.js/src/utils/discontinuities.js~finddiscontinuousreferencefrag",
+    "@tubitv/hls.js/src/utils/discontinuities.js~finddiscontinuousreferencefrag",
     "function/index.html#static-function-findDiscontinuousReferenceFrag",
-    "<span>findDiscontinuousReferenceFrag</span> <span class=\"search-result-import-path\">hls.js/src/utils/discontinuities.js</span>",
+    "<span>findDiscontinuousReferenceFrag</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/utils/discontinuities.js</span>",
     "function"
   ],
   [
-    "hls.js/src/utils/discontinuities.js~findfirstfragwithcc",
+    "@tubitv/hls.js/src/utils/discontinuities.js~findfirstfragwithcc",
     "function/index.html#static-function-findFirstFragWithCC",
-    "<span>findFirstFragWithCC</span> <span class=\"search-result-import-path\">hls.js/src/utils/discontinuities.js</span>",
+    "<span>findFirstFragWithCC</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/utils/discontinuities.js</span>",
     "function"
   ],
   [
-    "hls.js/src/utils/discontinuities.js~findfragwithcc",
+    "@tubitv/hls.js/src/utils/discontinuities.js~findfragwithcc",
     "function/index.html#static-function-findFragWithCC",
-    "<span>findFragWithCC</span> <span class=\"search-result-import-path\">hls.js/src/utils/discontinuities.js</span>",
+    "<span>findFragWithCC</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/utils/discontinuities.js</span>",
     "function"
   ],
   [
-    "hls.js/src/controller/fragment-finders.js~findfragmentbypdt",
+    "@tubitv/hls.js/src/controller/fragment-finders.js~findfragmentbypdt",
     "function/index.html#static-function-findFragmentByPDT",
-    "<span>findFragmentByPDT</span> <span class=\"search-result-import-path\">hls.js/src/controller/fragment-finders.js</span>",
+    "<span>findFragmentByPDT</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/controller/fragment-finders.js</span>",
     "function"
   ],
   [
-    "hls.js/src/controller/fragment-finders.js~findfragmentbysn",
+    "@tubitv/hls.js/src/controller/fragment-finders.js~findfragmentbysn",
     "function/index.html#static-function-findFragmentBySN",
-    "<span>findFragmentBySN</span> <span class=\"search-result-import-path\">hls.js/src/controller/fragment-finders.js</span>",
+    "<span>findFragmentBySN</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/controller/fragment-finders.js</span>",
     "function"
   ],
   [
-    "hls.js/src/utils/vttparser.js~fixlinebreaks",
+    "@tubitv/hls.js/src/utils/vttparser.js~fixlinebreaks",
     "function/index.html#static-function-fixLineBreaks",
-    "<span>fixLineBreaks</span> <span class=\"search-result-import-path\">hls.js/src/utils/vttparser.js</span>",
+    "<span>fixLineBreaks</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/utils/vttparser.js</span>",
     "function"
   ],
   [
-    "hls.js/src/controller/fragment-finders.js~fragmentwithintolerancetest",
+    "@tubitv/hls.js/src/controller/fragment-finders.js~fragmentwithintolerancetest",
     "function/index.html#static-function-fragmentWithinToleranceTest",
-    "<span>fragmentWithinToleranceTest</span> <span class=\"search-result-import-path\">hls.js/src/controller/fragment-finders.js</span>",
+    "<span>fragmentWithinToleranceTest</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/controller/fragment-finders.js</span>",
     "function"
   ],
   [
-    "hls.js/src/demux/adts.js~getaudioconfig",
+    "@tubitv/hls.js/src/demux/adts.js~getaudioconfig",
     "function/index.html#static-function-getAudioConfig",
-    "<span>getAudioConfig</span> <span class=\"search-result-import-path\">hls.js/src/demux/adts.js</span>",
+    "<span>getAudioConfig</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/demux/adts.js</span>",
     "function"
   ],
   [
-    "hls.js/src/demux/adts.js~getframeduration",
+    "@tubitv/hls.js/src/demux/adts.js~getframeduration",
     "function/index.html#static-function-getFrameDuration",
-    "<span>getFrameDuration</span> <span class=\"search-result-import-path\">hls.js/src/demux/adts.js</span>",
+    "<span>getFrameDuration</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/demux/adts.js</span>",
     "function"
   ],
   [
-    "hls.js/src/demux/adts.js~getfullframelength",
+    "@tubitv/hls.js/src/demux/adts.js~getfullframelength",
     "function/index.html#static-function-getFullFrameLength",
-    "<span>getFullFrameLength</span> <span class=\"search-result-import-path\">hls.js/src/demux/adts.js</span>",
+    "<span>getFullFrameLength</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/demux/adts.js</span>",
     "function"
   ],
   [
-    "hls.js/src/demux/adts.js~getheaderlength",
+    "@tubitv/hls.js/src/demux/adts.js~getheaderlength",
     "function/index.html#static-function-getHeaderLength",
-    "<span>getHeaderLength</span> <span class=\"search-result-import-path\">hls.js/src/demux/adts.js</span>",
+    "<span>getHeaderLength</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/demux/adts.js</span>",
     "function"
   ],
   [
-    "hls.js/src/utils/mediasource-helper.js~getmediasource",
+    "@tubitv/hls.js/src/utils/mediasource-helper.js~getmediasource",
     "function/index.html#static-function-getMediaSource",
-    "<span>getMediaSource</span> <span class=\"search-result-import-path\">hls.js/src/utils/mediasource-helper.js</span>",
+    "<span>getMediaSource</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/utils/mediasource-helper.js</span>",
     "function"
   ],
   [
-    "hls.js/src/utils/get-self-scope.js~getselfscope",
+    "@tubitv/hls.js/src/utils/get-self-scope.js~getselfscope",
     "function/index.html#static-function-getSelfScope",
-    "<span>getSelfScope</span> <span class=\"search-result-import-path\">hls.js/src/utils/get-self-scope.js</span>",
+    "<span>getSelfScope</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/utils/get-self-scope.js</span>",
     "function"
   ],
   [
-    "hls.js/src/config.js~hlsdefaultconfig",
+    "@tubitv/hls.js/src/config.js~hlsdefaultconfig",
     "variable/index.html#static-variable-hlsDefaultConfig",
-    "<span>hlsDefaultConfig</span> <span class=\"search-result-import-path\">hls.js/src/config.js</span>",
+    "<span>hlsDefaultConfig</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/config.js</span>",
     "variable"
   ],
   [
-    "hls.js/src/demux/adts.js~inittrackconfig",
+    "@tubitv/hls.js/src/demux/adts.js~inittrackconfig",
     "function/index.html#static-function-initTrackConfig",
-    "<span>initTrackConfig</span> <span class=\"search-result-import-path\">hls.js/src/demux/adts.js</span>",
+    "<span>initTrackConfig</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/demux/adts.js</span>",
     "function"
   ],
   [
-    "hls.js/src/utils/codecs.js~iscodecsupportedinmp4",
+    "@tubitv/hls.js/src/utils/codecs.js~iscodecsupportedinmp4",
     "function/index.html#static-function-isCodecSupportedInMp4",
-    "<span>isCodecSupportedInMp4</span> <span class=\"search-result-import-path\">hls.js/src/utils/codecs.js</span>",
+    "<span>isCodecSupportedInMp4</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/utils/codecs.js</span>",
     "function"
   ],
   [
-    "hls.js/src/utils/codecs.js~iscodectype",
+    "@tubitv/hls.js/src/utils/codecs.js~iscodectype",
     "function/index.html#static-function-isCodecType",
-    "<span>isCodecType</span> <span class=\"search-result-import-path\">hls.js/src/utils/codecs.js</span>",
+    "<span>isCodecType</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/utils/codecs.js</span>",
     "function"
   ],
   [
-    "hls.js/src/demux/adts.js~isheader",
+    "@tubitv/hls.js/src/demux/adts.js~isheader",
     "function/index.html#static-function-isHeader",
-    "<span>isHeader</span> <span class=\"search-result-import-path\">hls.js/src/demux/adts.js</span>",
+    "<span>isHeader</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/demux/adts.js</span>",
     "function"
   ],
   [
-    "hls.js/src/demux/adts.js~isheaderpattern",
+    "@tubitv/hls.js/src/demux/adts.js~isheaderpattern",
     "function/index.html#static-function-isHeaderPattern",
-    "<span>isHeaderPattern</span> <span class=\"search-result-import-path\">hls.js/src/demux/adts.js</span>",
+    "<span>isHeaderPattern</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/demux/adts.js</span>",
     "function"
   ],
   [
-    "hls.js/src/is-supported.js~issupported",
+    "@tubitv/hls.js/src/is-supported.js~issupported",
     "function/index.html#static-function-isSupported",
-    "<span>isSupported</span> <span class=\"search-result-import-path\">hls.js/src/is-supported.js</span>",
+    "<span>isSupported</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/is-supported.js</span>",
     "function"
   ],
   [
-    "hls.js/src/utils/logger.js~logger",
+    "@tubitv/hls.js/src/utils/logger.js~logger",
     "variable/index.html#static-variable-logger",
-    "<span>logger</span> <span class=\"search-result-import-path\">hls.js/src/utils/logger.js</span>",
+    "<span>logger</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/utils/logger.js</span>",
     "variable"
   ],
   [
-    "hls.js/src/utils/make-array-from-array-like.js~makearrayfromarraylike",
-    "variable/index.html#static-variable-makeArrayFromArrayLike",
-    "<span>makeArrayFromArrayLike</span> <span class=\"search-result-import-path\">hls.js/src/utils/make-array-from-array-like.js</span>",
-    "variable"
-  ],
-  [
-    "hls.js/src/controller/level-helper.js~mergedetails",
+    "@tubitv/hls.js/src/controller/level-helper.js~mergedetails",
     "function/index.html#static-function-mergeDetails",
-    "<span>mergeDetails</span> <span class=\"search-result-import-path\">hls.js/src/controller/level-helper.js</span>",
+    "<span>mergeDetails</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/controller/level-helper.js</span>",
     "function"
   ],
   [
-    "hls.js/src/utils/cues.js~newcue",
+    "@tubitv/hls.js/src/utils/cues.js~newcue",
     "function/index.html#static-function-newCue",
-    "<span>newCue</span> <span class=\"search-result-import-path\">hls.js/src/utils/cues.js</span>",
+    "<span>newCue</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/utils/cues.js</span>",
     "function"
   ],
   [
-    "hls.js/src/demux/adts.js~parseframeheader",
+    "@tubitv/hls.js/src/demux/adts.js~parseframeheader",
     "function/index.html#static-function-parseFrameHeader",
-    "<span>parseFrameHeader</span> <span class=\"search-result-import-path\">hls.js/src/demux/adts.js</span>",
+    "<span>parseFrameHeader</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/demux/adts.js</span>",
     "function"
   ],
   [
-    "hls.js/src/demux/adts.js~probe",
+    "@tubitv/hls.js/src/demux/adts.js~probe",
     "function/index.html#static-function-probe",
-    "<span>probe</span> <span class=\"search-result-import-path\">hls.js/src/demux/adts.js</span>",
+    "<span>probe</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/demux/adts.js</span>",
     "function"
   ],
   [
-    "hls.js/src/crypt/aes-decryptor.js~removepadding",
+    "@tubitv/hls.js/src/crypt/aes-decryptor.js~removepadding",
     "function/index.html#static-function-removePadding",
-    "<span>removePadding</span> <span class=\"search-result-import-path\">hls.js/src/crypt/aes-decryptor.js</span>",
+    "<span>removePadding</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/crypt/aes-decryptor.js</span>",
     "function"
   ],
   [
-    "hls.js/src/utils/mediakeys-helper.js~requestmediakeysystemaccess",
+    "@tubitv/hls.js/src/utils/mediakeys-helper.js~requestmediakeysystemaccess",
     "variable/index.html#static-variable-requestMediaKeySystemAccess",
-    "<span>requestMediaKeySystemAccess</span> <span class=\"search-result-import-path\">hls.js/src/utils/mediakeys-helper.js</span>",
+    "<span>requestMediaKeySystemAccess</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/utils/mediakeys-helper.js</span>",
     "variable"
   ],
   [
-    "hls.js/src/utils/texttrack-utils.js~sendaddtrackevent",
+    "@tubitv/hls.js/src/utils/texttrack-utils.js~sendaddtrackevent",
     "function/index.html#static-function-sendAddTrackEvent",
-    "<span>sendAddTrackEvent</span> <span class=\"search-result-import-path\">hls.js/src/utils/texttrack-utils.js</span>",
+    "<span>sendAddTrackEvent</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/utils/texttrack-utils.js</span>",
     "function"
   ],
   [
-    "hls.js/src/utils/discontinuities.js~shouldalignondiscontinuities",
+    "@tubitv/hls.js/src/utils/discontinuities.js~shouldalignondiscontinuities",
     "function/index.html#static-function-shouldAlignOnDiscontinuities",
-    "<span>shouldAlignOnDiscontinuities</span> <span class=\"search-result-import-path\">hls.js/src/utils/discontinuities.js</span>",
+    "<span>shouldAlignOnDiscontinuities</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/utils/discontinuities.js</span>",
     "function"
   ],
   [
-    "hls.js/src/controller/level-helper.js~updatefragptsdts",
+    "@tubitv/hls.js/src/controller/level-helper.js~updatefragptsdts",
     "function/index.html#static-function-updateFragPTSDTS",
-    "<span>updateFragPTSDTS</span> <span class=\"search-result-import-path\">hls.js/src/controller/level-helper.js</span>",
+    "<span>updateFragPTSDTS</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/controller/level-helper.js</span>",
     "function"
   ],
   [
-    "hls.js/src/controller/level-helper.js~updatepts",
+    "@tubitv/hls.js/src/controller/level-helper.js~updatepts",
     "function/index.html#static-function-updatePTS",
-    "<span>updatePTS</span> <span class=\"search-result-import-path\">hls.js/src/controller/level-helper.js</span>",
+    "<span>updatePTS</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/controller/level-helper.js</span>",
     "function"
   ],
   [
-    "hls.js/src/demux/id3.js~utf8arraytostr",
+    "@tubitv/hls.js/src/demux/id3.js~utf8arraytostr",
     "variable/index.html#static-variable-utf8ArrayToStr",
-    "<span>utf8ArrayToStr</span> <span class=\"search-result-import-path\">hls.js/src/demux/id3.js</span>",
+    "<span>utf8ArrayToStr</span> <span class=\"search-result-import-path\">@tubitv/hls.js/src/demux/id3.js</span>",
     "variable"
   ],
   [
@@ -1303,13 +1303,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/controller/audio-stream-controller.js~audiostreamcontroller#state",
-    "class/src/controller/audio-stream-controller.js~AudioStreamController.html#instance-set-state",
+    "class/src/controller/audio-stream-controller.js~AudioStreamController.html#instance-get-state",
     "src/controller/audio-stream-controller.js~AudioStreamController#state",
     "member"
   ],
   [
     "src/controller/audio-stream-controller.js~audiostreamcontroller#state",
-    "class/src/controller/audio-stream-controller.js~AudioStreamController.html#instance-get-state",
+    "class/src/controller/audio-stream-controller.js~AudioStreamController.html#instance-set-state",
     "src/controller/audio-stream-controller.js~AudioStreamController#state",
     "member"
   ],
@@ -1393,13 +1393,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/controller/audio-track-controller.js~audiotrackcontroller#audiotrack",
-    "class/src/controller/audio-track-controller.js~AudioTrackController.html#instance-get-audioTrack",
+    "class/src/controller/audio-track-controller.js~AudioTrackController.html#instance-set-audioTrack",
     "src/controller/audio-track-controller.js~AudioTrackController#audioTrack",
     "member"
   ],
   [
     "src/controller/audio-track-controller.js~audiotrackcontroller#audiotrack",
-    "class/src/controller/audio-track-controller.js~AudioTrackController.html#instance-set-audioTrack",
+    "class/src/controller/audio-track-controller.js~AudioTrackController.html#instance-get-audioTrack",
     "src/controller/audio-track-controller.js~AudioTrackController#audioTrack",
     "member"
   ],
@@ -1944,6 +1944,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/controller/eme-controller.js~emecontroller#_drmsystemoptions",
+    "class/src/controller/eme-controller.js~EMEController.html#instance-member-_drmSystemOptions",
+    "src/controller/eme-controller.js~EMEController#_drmSystemOptions",
+    "member"
+  ],
+  [
     "src/controller/eme-controller.js~emecontroller#_emeenabled",
     "class/src/controller/eme-controller.js~EMEController.html#instance-member-_emeEnabled",
     "src/controller/eme-controller.js~EMEController#_emeEnabled",
@@ -1968,16 +1974,16 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
-    "src/controller/eme-controller.js~emecontroller#_ismediaencrypted",
-    "class/src/controller/eme-controller.js~EMEController.html#instance-member-_isMediaEncrypted",
-    "src/controller/eme-controller.js~EMEController#_isMediaEncrypted",
-    "member"
-  ],
-  [
     "src/controller/eme-controller.js~emecontroller#_licensexhrsetup",
     "class/src/controller/eme-controller.js~EMEController.html#instance-member-_licenseXhrSetup",
     "src/controller/eme-controller.js~EMEController#_licenseXhrSetup",
     "member"
+  ],
+  [
+    "src/controller/eme-controller.js~emecontroller#_loadservercertificate",
+    "class/src/controller/eme-controller.js~EMEController.html#instance-method-_loadServerCertificate",
+    "src/controller/eme-controller.js~EMEController#_loadServerCertificate",
+    "method"
   ],
   [
     "src/controller/eme-controller.js~emecontroller#_media",
@@ -1986,22 +1992,28 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
-    "src/controller/eme-controller.js~emecontroller#_mediaencryptioninitdata",
-    "class/src/controller/eme-controller.js~EMEController.html#instance-member-_mediaEncryptionInitData",
-    "src/controller/eme-controller.js~EMEController#_mediaEncryptionInitData",
-    "member"
-  ],
-  [
-    "src/controller/eme-controller.js~emecontroller#_mediaencryptioninitdatatype",
-    "class/src/controller/eme-controller.js~EMEController.html#instance-member-_mediaEncryptionInitDataType",
-    "src/controller/eme-controller.js~EMEController#_mediaEncryptionInitDataType",
-    "member"
-  ],
-  [
     "src/controller/eme-controller.js~emecontroller#_mediakeyslist",
     "class/src/controller/eme-controller.js~EMEController.html#instance-member-_mediaKeysList",
     "src/controller/eme-controller.js~EMEController#_mediaKeysList",
     "member"
+  ],
+  [
+    "src/controller/eme-controller.js~emecontroller#_mediakeyspromise",
+    "class/src/controller/eme-controller.js~EMEController.html#instance-member-_mediaKeysPromise",
+    "src/controller/eme-controller.js~EMEController#_mediaKeysPromise",
+    "member"
+  ],
+  [
+    "src/controller/eme-controller.js~emecontroller#_minhdcpversion",
+    "class/src/controller/eme-controller.js~EMEController.html#instance-member-_minHdcpVersion",
+    "src/controller/eme-controller.js~EMEController#_minHdcpVersion",
+    "member"
+  ],
+  [
+    "src/controller/eme-controller.js~emecontroller#_onkeysessionkeystatuseschange",
+    "class/src/controller/eme-controller.js~EMEController.html#instance-method-_onKeySessionKeyStatusesChange",
+    "src/controller/eme-controller.js~EMEController#_onKeySessionKeyStatusesChange",
+    "method"
   ],
   [
     "src/controller/eme-controller.js~emecontroller#_onkeysessionmessage",
@@ -2040,6 +2052,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/controller/eme-controller.js~emecontroller#_playreadylicenseurl",
+    "class/src/controller/eme-controller.js~EMEController.html#instance-member-_playreadyLicenseUrl",
+    "src/controller/eme-controller.js~EMEController#_playreadyLicenseUrl",
+    "member"
+  ],
+  [
     "src/controller/eme-controller.js~emecontroller#_requestlicense",
     "class/src/controller/eme-controller.js~EMEController.html#instance-method-_requestLicense",
     "src/controller/eme-controller.js~EMEController#_requestLicense",
@@ -2058,9 +2076,21 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
+    "src/controller/eme-controller.js~emecontroller#_throwlicensesystemerror",
+    "class/src/controller/eme-controller.js~EMEController.html#instance-method-_throwLicenseSystemError",
+    "src/controller/eme-controller.js~EMEController#_throwLicenseSystemError",
+    "method"
+  ],
+  [
     "src/controller/eme-controller.js~emecontroller#_widevinelicenseurl",
     "class/src/controller/eme-controller.js~EMEController.html#instance-member-_widevineLicenseUrl",
     "src/controller/eme-controller.js~EMEController#_widevineLicenseUrl",
+    "member"
+  ],
+  [
+    "src/controller/eme-controller.js~emecontroller#_xhr",
+    "class/src/controller/eme-controller.js~EMEController.html#instance-member-_xhr",
+    "src/controller/eme-controller.js~EMEController#_xhr",
     "member"
   ],
   [
@@ -2085,6 +2115,12 @@ window.esdocSearchIndex = [
     "src/controller/eme-controller.js~emecontroller#onmediaattached",
     "class/src/controller/eme-controller.js~EMEController.html#instance-method-onMediaAttached",
     "src/controller/eme-controller.js~EMEController#onMediaAttached",
+    "method"
+  ],
+  [
+    "src/controller/eme-controller.js~emecontroller#onmediadetached",
+    "class/src/controller/eme-controller.js~EMEController.html#instance-method-onMediaDetached",
+    "src/controller/eme-controller.js~EMEController#onMediaDetached",
     "method"
   ],
   [
@@ -2413,13 +2449,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/controller/level-controller.js~levelcontroller#level",
-    "class/src/controller/level-controller.js~LevelController.html#instance-get-level",
+    "class/src/controller/level-controller.js~LevelController.html#instance-set-level",
     "src/controller/level-controller.js~LevelController#level",
     "member"
   ],
   [
     "src/controller/level-controller.js~levelcontroller#level",
-    "class/src/controller/level-controller.js~LevelController.html#instance-set-level",
+    "class/src/controller/level-controller.js~LevelController.html#instance-get-level",
     "src/controller/level-controller.js~LevelController#level",
     "member"
   ],
@@ -2443,13 +2479,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/controller/level-controller.js~levelcontroller#manuallevel",
-    "class/src/controller/level-controller.js~LevelController.html#instance-set-manualLevel",
+    "class/src/controller/level-controller.js~LevelController.html#instance-get-manualLevel",
     "src/controller/level-controller.js~LevelController#manualLevel",
     "member"
   ],
   [
     "src/controller/level-controller.js~levelcontroller#manuallevel",
-    "class/src/controller/level-controller.js~LevelController.html#instance-get-manualLevel",
+    "class/src/controller/level-controller.js~LevelController.html#instance-set-manualLevel",
     "src/controller/level-controller.js~LevelController#manualLevel",
     "member"
   ],
@@ -2461,13 +2497,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/controller/level-controller.js~levelcontroller#nextloadlevel",
-    "class/src/controller/level-controller.js~LevelController.html#instance-get-nextLoadLevel",
+    "class/src/controller/level-controller.js~LevelController.html#instance-set-nextLoadLevel",
     "src/controller/level-controller.js~LevelController#nextLoadLevel",
     "member"
   ],
   [
     "src/controller/level-controller.js~levelcontroller#nextloadlevel",
-    "class/src/controller/level-controller.js~LevelController.html#instance-set-nextLoadLevel",
+    "class/src/controller/level-controller.js~LevelController.html#instance-get-nextLoadLevel",
     "src/controller/level-controller.js~LevelController#nextLoadLevel",
     "member"
   ],
@@ -2833,13 +2869,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/controller/stream-controller.js~streamcontroller#livesyncposition",
-    "class/src/controller/stream-controller.js~StreamController.html#instance-get-liveSyncPosition",
+    "class/src/controller/stream-controller.js~StreamController.html#instance-set-liveSyncPosition",
     "src/controller/stream-controller.js~StreamController#liveSyncPosition",
     "member"
   ],
   [
     "src/controller/stream-controller.js~streamcontroller#livesyncposition",
-    "class/src/controller/stream-controller.js~StreamController.html#instance-set-liveSyncPosition",
+    "class/src/controller/stream-controller.js~StreamController.html#instance-get-liveSyncPosition",
     "src/controller/stream-controller.js~StreamController#liveSyncPosition",
     "member"
   ],
@@ -3091,13 +3127,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/controller/stream-controller.js~streamcontroller#state",
-    "class/src/controller/stream-controller.js~StreamController.html#instance-set-state",
+    "class/src/controller/stream-controller.js~StreamController.html#instance-get-state",
     "src/controller/stream-controller.js~StreamController#state",
     "member"
   ],
   [
     "src/controller/stream-controller.js~streamcontroller#state",
-    "class/src/controller/stream-controller.js~StreamController.html#instance-get-state",
+    "class/src/controller/stream-controller.js~StreamController.html#instance-set-state",
     "src/controller/stream-controller.js~StreamController#state",
     "member"
   ],
@@ -3367,13 +3403,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/controller/subtitle-track-controller.js~subtitletrackcontroller#subtitletrack",
-    "class/src/controller/subtitle-track-controller.js~SubtitleTrackController.html#instance-get-subtitleTrack",
+    "class/src/controller/subtitle-track-controller.js~SubtitleTrackController.html#instance-set-subtitleTrack",
     "src/controller/subtitle-track-controller.js~SubtitleTrackController#subtitleTrack",
     "member"
   ],
   [
     "src/controller/subtitle-track-controller.js~subtitletrackcontroller#subtitletrack",
-    "class/src/controller/subtitle-track-controller.js~SubtitleTrackController.html#instance-set-subtitleTrack",
+    "class/src/controller/subtitle-track-controller.js~SubtitleTrackController.html#instance-get-subtitleTrack",
     "src/controller/subtitle-track-controller.js~SubtitleTrackController#subtitleTrack",
     "member"
   ],
@@ -5053,13 +5089,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/hls.js~hls#firstlevel",
-    "class/src/hls.js~Hls.html#instance-set-firstLevel",
+    "class/src/hls.js~Hls.html#instance-get-firstLevel",
     "src/hls.js~Hls#firstLevel",
     "member"
   ],
   [
     "src/hls.js~hls#firstlevel",
-    "class/src/hls.js~Hls.html#instance-get-firstLevel",
+    "class/src/hls.js~Hls.html#instance-set-firstLevel",
     "src/hls.js~Hls#firstLevel",
     "member"
   ],
@@ -5077,13 +5113,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/hls.js~hls#loadlevel",
-    "class/src/hls.js~Hls.html#instance-set-loadLevel",
+    "class/src/hls.js~Hls.html#instance-get-loadLevel",
     "src/hls.js~Hls#loadLevel",
     "member"
   ],
   [
     "src/hls.js~hls#loadlevel",
-    "class/src/hls.js~Hls.html#instance-get-loadLevel",
+    "class/src/hls.js~Hls.html#instance-set-loadLevel",
     "src/hls.js~Hls#loadLevel",
     "member"
   ],
@@ -5125,25 +5161,25 @@ window.esdocSearchIndex = [
   ],
   [
     "src/hls.js~hls#nextautolevel",
-    "class/src/hls.js~Hls.html#instance-get-nextAutoLevel",
-    "src/hls.js~Hls#nextAutoLevel",
-    "member"
-  ],
-  [
-    "src/hls.js~hls#nextautolevel",
     "class/src/hls.js~Hls.html#instance-set-nextAutoLevel",
     "src/hls.js~Hls#nextAutoLevel",
     "member"
   ],
   [
-    "src/hls.js~hls#nextlevel",
-    "class/src/hls.js~Hls.html#instance-set-nextLevel",
-    "src/hls.js~Hls#nextLevel",
+    "src/hls.js~hls#nextautolevel",
+    "class/src/hls.js~Hls.html#instance-get-nextAutoLevel",
+    "src/hls.js~Hls#nextAutoLevel",
     "member"
   ],
   [
     "src/hls.js~hls#nextlevel",
     "class/src/hls.js~Hls.html#instance-get-nextLevel",
+    "src/hls.js~Hls#nextLevel",
+    "member"
+  ],
+  [
+    "src/hls.js~hls#nextlevel",
+    "class/src/hls.js~Hls.html#instance-set-nextLevel",
     "src/hls.js~Hls#nextLevel",
     "member"
   ],
@@ -5209,13 +5245,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/hls.js~hls#subtitledisplay",
-    "class/src/hls.js~Hls.html#instance-get-subtitleDisplay",
+    "class/src/hls.js~Hls.html#instance-set-subtitleDisplay",
     "src/hls.js~Hls#subtitleDisplay",
     "member"
   ],
   [
     "src/hls.js~hls#subtitledisplay",
-    "class/src/hls.js~Hls.html#instance-set-subtitleDisplay",
+    "class/src/hls.js~Hls.html#instance-get-subtitleDisplay",
     "src/hls.js~Hls#subtitleDisplay",
     "member"
   ],
@@ -5263,13 +5299,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/hls.js~hls.defaultconfig",
-    "class/src/hls.js~Hls.html#static-set-DefaultConfig",
+    "class/src/hls.js~Hls.html#static-get-DefaultConfig",
     "src/hls.js~Hls.DefaultConfig",
     "member"
   ],
   [
     "src/hls.js~hls.defaultconfig",
-    "class/src/hls.js~Hls.html#static-get-DefaultConfig",
+    "class/src/hls.js~Hls.html#static-set-DefaultConfig",
     "src/hls.js~Hls.DefaultConfig",
     "member"
   ],
@@ -6705,12 +6741,6 @@ window.esdocSearchIndex = [
     "src/utils/logger.js",
     "file/src/utils/logger.js.html",
     "src/utils/logger.js",
-    "file"
-  ],
-  [
-    "src/utils/make-array-from-array-like.js",
-    "file/src/utils/make-array-from-array-like.js.html",
-    "src/utils/make-array-from-array-like.js",
     "file"
   ],
   [
