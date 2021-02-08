@@ -4,6 +4,8 @@
  * DRM support for Hls.js
  */
 
+/* eslint-disable indent */
+
 import EventHandler from '../event-handler';
 import Event from '../events';
 import { ErrorTypes, ErrorDetails } from '../errors';
@@ -357,14 +359,28 @@ class EMEController extends EventHandler {
     // `keyStatuses` is `Map`-like object connecting to the length of `KeyIds`,
     // but every `keyStatuses` needs to be `usable` to continue.
     keySession.keyStatuses.forEach((status) => {
-      if (status === 'output-downscaled' || status === 'output-restricted') {
-        logger.error(`Key session (status: ${status}) is not in a valid status.`);
+      switch (status) {
+        case 'expired': {
+          logger.error('Key session (status: expired) is expired.');
 
-        this.hls.trigger(Event.ERROR, {
-          type: ErrorTypes.KEY_SYSTEM_ERROR,
-          details: ErrorDetails.KEY_SYSTEM_LICENSE_INVALID_STATUS,
-          fatal: true
-        });
+          this.hls.trigger(Event.ERROR, {
+            type: ErrorTypes.KEY_SYSTEM_ERROR,
+            details: ErrorDetails.KEY_SYSTEM_LICENSE_EXPIRED,
+            fatal: true
+          });
+          break;
+        }
+        case 'output-downscaled':
+        case 'output-restricted': {
+          logger.error(`Key session (status: ${status}) is not in a valid status.`);
+
+          this.hls.trigger(Event.ERROR, {
+            type: ErrorTypes.KEY_SYSTEM_ERROR,
+            details: ErrorDetails.KEY_SYSTEM_LICENSE_INVALID_STATUS,
+            fatal: true
+          });
+          break;
+        }
       }
     });
   }
